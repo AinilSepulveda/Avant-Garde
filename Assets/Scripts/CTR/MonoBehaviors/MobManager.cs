@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class MobManager : MonoBehaviour
 {
     public GameObject[] Mobs;
+    public GameObject[] MobsActive;
 
     private int currentWaveIndex = 0;
     private int activeMobs;
@@ -22,8 +23,8 @@ public class MobManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnpoints = FindObjectsOfType<Spawnpoint>();
-        SpawnWave();
+     
+
     }
 
     public void SpawnWave()
@@ -46,6 +47,8 @@ public class MobManager : MonoBehaviour
         {
             Spawnpoint spawnpoint = selectRamdomSpawnpoint();
             GameObject mobs = Instantiate(selectRamdonMob(), spawnpoint.transform.position, Quaternion.identity);
+            MobsActive[Waves[currentWaveIndex].NumberOfMobs] = mobs;
+           // Mobs[Waves[currentWaveIndex].NumberOfMobs] = mobs; 
             mobs.GetComponent<NPCController>().waypoints = findClosestWayPoints(mobs.transform);
             //Para tomar los stats de MobWaves
             CharacterStats stats = mobs.GetComponent<CharacterStats>();

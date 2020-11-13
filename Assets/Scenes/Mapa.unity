@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8363,7 +8363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1811355288
 Transform:
   m_ObjectHideFlags: 0
@@ -8393,6 +8393,8 @@ MonoBehaviour:
   Mobs:
   - {fileID: 2234403662610979725, guid: 1216f789388b592438534fcfe0223f2f, type: 3}
   - {fileID: 2806325330459352919, guid: b62141bb2934d174cb7b92a7e8f0f253, type: 3}
+  - {fileID: 8612178752234458532, guid: a8c62349fee004b46a930a29effee795, type: 3}
+  MobsActive: []
   dropTables:
   - {fileID: 11400000, guid: c5701dd419e9c9e4a8938c448a1d1087, type: 2}
   - {fileID: 11400000, guid: 3bd2d6deba397a74f91153c7d6561c9b, type: 2}
