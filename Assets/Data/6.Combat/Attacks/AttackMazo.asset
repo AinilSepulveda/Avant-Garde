@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1773096611d388a4a8746b70ff875bb9, type: 3}
+  m_Name: AttackMazo
+  m_EditorClassIdentifier: 
+  Cooldown: 10
+  costAmount: 0
+  Range: 2
+  minDamage: 5
+  maxDamage: 16
+  criticalMultiplier: 2
+  criticalChange: 0.3
+  weaponPreb: {fileID: 1546170626093080486, guid: 39fa9a0ed6996bc44868af5d2f3a447c,
+    type: 3}
+  forceToadd: 50

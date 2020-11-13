@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42433cce0c9f44a4181a1123d1dc4223, type: 3}
+  m_Name: CharacterMain
+  m_EditorClassIdentifier: 
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  isHero: 1
+  saveDataonClose: 0
+  maxHealth: 0
+  currentHeath: 0
+  maxMana: 0
+  currentMana: 10
+  maxWealth: 0
+  currentWealth: 0
+  baseDamage: 10
+  currentDamage: 12
+  baseResistance: 0
+  currentResistance: 0
+  currentEncumbrance: 5
+  maxEncumbrance: 0
+  charExperience: 100
+  charLevel: 1
+  charLevelups:
+  - maxHealth: 200
+    maxMana: 200
+    maxWealth: 200
+    baseDamage: 10
+    baseResistence: 10
+    maxEncumberance: 10
+    requiredXP: 30
+  - maxHealth: 220
+    maxMana: 220
+    maxWealth: 11
+    baseDamage: 12
+    baseResistence: 12
+    maxEncumberance: 13
+    requiredXP: 50
+  - maxHealth: 250
+    maxMana: 250
+    maxWealth: 22
+    baseDamage: 15
+    baseResistence: 15
+    maxEncumberance: 15
+    requiredXP: 70
+  - maxHealth: 300
+    maxMana: 300
+    maxWealth: 25
+    baseDamage: 20
+    baseResistence: 20
+    maxEncumberance: 20
+    requiredXP: 180
