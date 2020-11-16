@@ -26,13 +26,13 @@ public class HeroController : MonoBehaviour
     //  public questPanel Panel;
 
 
-
+    Rigidbody rb;
 
 
     CharacterInventory characterInventory;
     void Awake()
     {
-
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         stats = GetComponent<CharacterStats>();
@@ -78,6 +78,7 @@ public class HeroController : MonoBehaviour
         StopAllCoroutines();
         agent.destination = destination;
         agent.isStopped = false;
+      //  rb.isKinematic = true;
     }
 
 

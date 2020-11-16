@@ -18,3 +18,4 @@ MonoBehaviour:
   NumberOfMobs: 5
   PointsPerkill: 10
   WaveValue: 0
+  waypoints: []

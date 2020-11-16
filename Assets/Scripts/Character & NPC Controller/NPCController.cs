@@ -36,6 +36,10 @@ public class NPCController : MonoBehaviour
     bool attackOnCooldown;
     bool acechar;
 
+    //Offset distancia 
+   public float offsetDistanciaMin;
+   public float offsetDistanciaMax;
+
     void Awake()
     {
         characterStatsNPC = GetComponent<CharacterStats>();
@@ -125,7 +129,9 @@ public class NPCController : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-
+        Vector3 direccion = (player.position - transform.position);
+        direccion.Normalize();
+        Vector3 destino = player.position - direccion * 2;
 
         if (player != null && distance <  aggroRange)
         {
@@ -134,12 +140,12 @@ public class NPCController : MonoBehaviour
             {
 
 
-                agent.destination = player.position;
+                agent.destination = destino;
                 agent.speed = agentSpeed;
 
                 if (distance < aggroRange/2)
                 {                   
-                    agent.destination = player.position;
+                    agent.destination = destino;
                     agent.speed = agentSpeed * 2;
                 }
 
@@ -156,6 +162,7 @@ public class NPCController : MonoBehaviour
                     agent.updatePosition = true;
                     agent.destination += agent.nextPosition;
                     //agent.nextPosition = transform.position += LenardJonesMov();
+                   
 
                 }
 
@@ -167,7 +174,7 @@ public class NPCController : MonoBehaviour
             {
 
 
-                agent.destination = player.position;
+                agent.destination = destino;
                 agent.speed = agentSpeed;
             }
 

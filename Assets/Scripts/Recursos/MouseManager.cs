@@ -77,6 +77,7 @@ public class MouseManager : MonoBehaviour
             if (isAttackble)
             {
                 Cursor.SetCursor(swood, new Vector2(16, 16), CursorMode.Auto);
+
             }
 
             if (Input.GetMouseButton(0))
@@ -113,8 +114,9 @@ public class MouseManager : MonoBehaviour
                  if (isAttackble)
                 {
                     GameObject attackable = hit.collider.gameObject;
-                //    Vector3 asd = hit.point;
-                //    asd = attackable.transform.position;
+                    //    Vector3 asd = hit.point;
+                    //    asd = attackable.transform.position;
+                    transform.LookAt(attackable.transform.position);
                     Debug.Log(attackable.name);
                     OnClickAttackble.Invoke(attackable);
                 }

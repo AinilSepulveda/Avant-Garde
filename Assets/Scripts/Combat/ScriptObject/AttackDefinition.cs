@@ -76,7 +76,7 @@ public class AttackDefinition : ScriptableObject
         if ((typeAttack & Attacks.Punch) != 0)
         {
         
-            //  rbody.isKinematic = defnavMesh.enabled = false;
+             rbody.isKinematic = false;
             var forceDirection = defender.transform.position - attacker.transform.position;
             forceDirection.y += 0.5f;
             forceDirection.Normalize();

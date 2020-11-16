@@ -215,6 +215,7 @@ MonoBehaviour:
   characterWeaponSlot: {fileID: 0}
   caca: {fileID: 0}
   burnTickTimers: 
+  iskeepDamage: 0
   attack: {fileID: 11400000, guid: 3862514e0ffc45b4f8d7013b9d3b2fb9, type: 2}
 --- !u!114 &3472573261246504112
 MonoBehaviour:
@@ -282,8 +283,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9754062, y: 1, z: 2.1786957}
-  m_Center: {x: -0.07675052, y: 0.85, z: -0.057991028}
+  m_Size: {x: 2.4512134, y: 1, z: 1.4088707}
+  m_Center: {x: -0.27764297, y: 0.85, z: -0.0114040375}
 --- !u!114 &8658744455472861063
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,5 +11,5 @@ public class MobWave : ScriptableObject
     public int WaveValue;
 
     public Waypoint[] waypoints;
-    public Spawnpoint[] spawnpoints;
+
 }

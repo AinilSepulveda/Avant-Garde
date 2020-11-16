@@ -6,9 +6,10 @@ using System.Collections.Generic;
 public class MobManager : MonoBehaviour
 {
     public GameObject[] Mobs;
-    public GameObject[] MobsActive;
+    
 
     private int currentWaveIndex = 0;
+    [SerializeField]
     private int activeMobs;
 
     //drops
@@ -20,34 +21,51 @@ public class MobManager : MonoBehaviour
     public Events.EventIntegerEvent OnMobKilled;
     public Events.EventIntegerEvent OnWaveCompleted;
     public UnityEvent OnOutOfWave;
+    //ALAScript
+    alasScript alas;
     // Start is called before the first frame update
     void Start()
     {
-     
+        alas = GetComponent<alasScript>();
+        //Spawn() y //spawnpoints
+        // SpawnWave();
+        //spawnpoints =  alasScripts[Alas].spawnpoints;
 
+        //spawnpoints = FindObjectsOfType<Spawnpoint>();
     }
 
     public void SpawnWave()
     {
+        spawnpoints = FindObjectsOfType<Spawnpoint>();
+
         if (Waves.Length - 1 < currentWaveIndex)
         {
+            
             Debug.Log("No hay mas waves");
             OnOutOfWave.Invoke();
+            alas.spawnpoints = null;
+            
             return;
         }
 
         if(currentWaveIndex > 0)
         {
             SoundManager.Instance.PlaySoundEffect(SoundEffect.NextWave);
+            //musica de waves
         }
 
         activeMobs = Waves[currentWaveIndex].NumberOfMobs;
 
-        for (int i = 0; i <= Waves[ currentWaveIndex].NumberOfMobs - 1; i++)
+        for (int i = 0; i <= Waves[currentWaveIndex].NumberOfMobs - 1; i++)
         {
+            
             Spawnpoint spawnpoint = selectRamdomSpawnpoint();
             GameObject mobs = Instantiate(selectRamdonMob(), spawnpoint.transform.position, Quaternion.identity);
-            MobsActive[Waves[currentWaveIndex].NumberOfMobs] = mobs;
+
+
+          
+
+
            // Mobs[Waves[currentWaveIndex].NumberOfMobs] = mobs; 
             mobs.GetComponent<NPCController>().waypoints = findClosestWayPoints(mobs.transform);
             //Para tomar los stats de MobWaves
@@ -78,18 +96,24 @@ public class MobManager : MonoBehaviour
             SpawnWave();
         }
     }
+
+    //Selectcionar un mobs
     private GameObject selectRamdonMob()
     {
         int mobIndex = Random.Range(0, Mobs.Length);
         return Mobs[mobIndex];
     }
+
+
     //void que retorna un Spawnpoint -> spawnpoints ramdom mente; 
     private Spawnpoint selectRamdomSpawnpoint()
     {
         int pointIndex = Random.Range(0, spawnpoints.Length -1);
+     //   alasScripts[alanumber].spawnpoints = spawnpoints;
         return spawnpoints[pointIndex];
     }
 
+    //Find to Waypoints
     private Transform[] findClosestWayPoints(Transform mobTranform)
     {
         Vector3 mobPosition = mobTranform.position;
@@ -106,6 +130,8 @@ public class MobManager : MonoBehaviour
         //retorna transforms
         return transforms.ToArray();
     }
+
+    //SpawnDrops
     private void SpawnDrops(MobyType mobyType, Vector3 position)
     {
         ItemPickUp_SO item = GetDrop(mobyType);
