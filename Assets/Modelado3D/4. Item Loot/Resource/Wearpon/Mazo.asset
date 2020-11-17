@@ -15,10 +15,9 @@ MonoBehaviour:
   itemName: Mazo
   itemType: 3
   ItemArmorSubType: 0
-  itemMaterial: {fileID: 2100000, guid: 8574ef34885c3d54c9451a9aaef7e13e, type: 2}
+  itemMaterial: {fileID: 2100000, guid: ed55e60c7316b344793b3d14d9d8bd6b, type: 2}
   ItemIcon: {fileID: 21300000, guid: 7a6e3d79f26e1fa45b21760fbb936826, type: 3}
-  itemSpawnObject: {fileID: 762733086183737544, guid: 93c73fb22dfd9c8419c2ce0b78b4648d,
-    type: 3}
+  itemSpawnObject: {fileID: 407959148, guid: 14a82eb09100c204092b848b492bb86c, type: 3}
   WeaponSpawnObject: {fileID: 11400000, guid: d7f438f0b219df64b9312b199b399d64, type: 2}
   spawnChangeWeight: 5
   isEquipped: 0
