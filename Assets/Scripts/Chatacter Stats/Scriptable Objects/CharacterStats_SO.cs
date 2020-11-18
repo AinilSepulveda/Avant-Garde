@@ -231,6 +231,7 @@ public class CharacterStats_SO : ScriptableObject
             }
             characterInventory.inventoryDisplaySlots[2].sprite = null;
             Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
+            weapon = null;
             currentDamage += (baseDamage + (int)weapon.itemDefinition.bonusDamage);
             currentDamageMagic += (baseDamage + (int)weapon.itemDefinition.bonusDamageMagic);
             maxHealth += (baseDamage + (int)weapon.itemDefinition.bonusHealthPoint);

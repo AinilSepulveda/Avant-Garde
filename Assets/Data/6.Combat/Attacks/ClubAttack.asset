@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1773096611d388a4a8746b70ff875bb9, type: 3}
-  m_Name: AttackMazo
+  m_Name: ClubAttack
   m_EditorClassIdentifier: 
-  Cooldown: 10
+  Cooldown: 2
   costAmount: 0
   Range: 2
-  minDamage: 5
-  maxDamage: 16
+  minDamage: 10
+  maxDamage: 25
   criticalMultiplier: 2
   criticalChange: 0.3
-  VariableAttack: 0
-  forceToadd: 50
+  VariableAttack: 4
+  forceToadd: 2
   isMagic: 0
   Iskeep: 0
   TimeInScene: 0
   TickTimers: 
-  weaponPreb: {fileID: 1786027340189150084, guid: f8a7e5f1d5f95744ead7001de878f061,
+  weaponPreb: {fileID: 1212457930350023852, guid: ca97e89b52bf58346871b532fa35c3b3,
     type: 3}
