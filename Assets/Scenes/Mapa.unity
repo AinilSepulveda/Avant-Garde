@@ -904,6 +904,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1828377278}
     m_Modifications:
+    - target: {fileID: -7020592007961730288, guid: 6b8b1cb5082b9e446b8e2be7896ee61d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6b8b1cb5082b9e446b8e2be7896ee61d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2499,6 +2504,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 210731243}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &450167566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4763807861349777104, guid: 82349d0dfcd2402478d5c210a44ec924,
+    type: 3}
+  m_PrefabInstance: {fileID: 210731243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450167557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e58bb899f6986c4699cf173baad77ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &463250972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9026,9 +9043,9 @@ MonoBehaviour:
   OnMobKilled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnMobKilled
-        m_Mode: 3
+      - m_Target: {fileID: 450167566}
+        m_MethodName: IncreaseXP
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9040,9 +9057,9 @@ MonoBehaviour:
   OnWaveCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnWaveCompleted
-        m_Mode: 3
+      - m_Target: {fileID: 450167566}
+        m_MethodName: IncreaseXP
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11322,17 +11339,17 @@ PrefabInstance:
     - target: {fileID: 8614795391428873740, guid: a8c62349fee004b46a930a29effee795,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6
+      value: -231.16
       objectReference: {fileID: 0}
     - target: {fileID: 8614795391428873740, guid: a8c62349fee004b46a930a29effee795,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 8614795391428873740, guid: a8c62349fee004b46a930a29effee795,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 146.33
+      value: 59.6
       objectReference: {fileID: 0}
     - target: {fileID: 8614795391428873740, guid: a8c62349fee004b46a930a29effee795,
         type: 3}

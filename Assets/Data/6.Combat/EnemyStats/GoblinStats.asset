@@ -12,7 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42433cce0c9f44a4181a1123d1dc4223, type: 3}
   m_Name: GoblinStats
   m_EditorClassIdentifier: 
-  setManually: 1
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  isHero: 0
   saveDataonClose: 0
   maxHealth: 80
   currentHeath: 80
@@ -20,13 +35,14 @@ MonoBehaviour:
   currentMana: 0
   maxWealth: 0
   currentWealth: 0
-  baseDamage: 3
-  currentDamage: 4
+  baseDamage: 5
+  currentDamage: 10
+  currentDamageMagic: 0
+  baseDamageMagic: 0
   baseResistance: 5
   currentResistance: 5
   currentEncumbrance: 0
   maxEncumbrance: 0
   charExperience: 0
-  LevelExperience: 0
   charLevel: 0
   charLevelups: []

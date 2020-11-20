@@ -162,7 +162,7 @@ public class NPCController : MonoBehaviour
                     agent.updatePosition = true;
                     agent.destination += agent.nextPosition;
                     //agent.nextPosition = transform.position += LenardJonesMov();
-                   
+
 
                 }
 

@@ -57,10 +57,10 @@ public class AttackDefinition : ScriptableObject
             }    
             if (defenderStats != null)
             {
-                coreDamage -= defenderStats.GetResistence();
+                coreDamage -= defenderStats.GetResistence() ;
             }
 
-
+            Debug.Log(coreDamage);
 
         return new Attack((int)coreDamage, isCritical); 
 
@@ -73,20 +73,25 @@ public class AttackDefinition : ScriptableObject
         UnityEngine.AI.NavMeshAgent defnavMesh = defender.GetComponent<UnityEngine.AI.NavMeshAgent>();
         UnityEngine.AI.NavMeshAgent attackernavMesh = attacker.GetComponent<UnityEngine.AI.NavMeshAgent>();
 
+        CharacterStats chDefender = defender.GetComponent<CharacterStats>();
+
         if ((typeAttack & Attacks.Punch) != 0)
         {
-        
-             rbody.isKinematic = false;
-            var forceDirection = defender.transform.position - attacker.transform.position;
+
+
+            rbody.isKinematic = false;
+            var forceDirection = defender.transform.position - attacker.transform.position; //Direccion
             forceDirection.y += 0.5f;
             forceDirection.Normalize();
-
+            //Empujamos 
             rbody.AddForce(forceDirection * forceToadd, ForceMode.Impulse);
+            defnavMesh.enabled = false;
+
+            float distance = Vector3.Distance(rbody.position, forceDirection * forceToadd);
+            //    float Velocidad = forceToadd;
+            chDefender.Empujar(distance, forceToadd);
 
 
-
-            defnavMesh.enabled = float.MinValue < Time.deltaTime;
-            defnavMesh.transform.position = rbody.transform.position;
             rbody.rotation = Quaternion.identity;
 
 
@@ -99,7 +104,7 @@ public class AttackDefinition : ScriptableObject
         }
         if ((typeAttack & Attacks.Born) != 0)
         {
-            CharacterStats chDefender = defender.GetComponent<CharacterStats>();
+
             chDefender.ApplyBurn(5, (int)minDamage);
         }
         if ((typeAttack & Attacks.Teletransportacion) != 0)

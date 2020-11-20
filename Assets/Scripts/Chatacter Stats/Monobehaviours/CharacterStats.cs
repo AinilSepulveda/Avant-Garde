@@ -19,6 +19,9 @@ public class CharacterStats : MonoBehaviour
     List<int> burnTickTimers = new List<int>();
     public bool iskeepDamage;
 
+    Rigidbody rbody;
+    UnityEngine.AI.NavMeshAgent agent;
+
     //Ataques
     public AttackDefinition attack;
 
@@ -38,7 +41,9 @@ public class CharacterStats : MonoBehaviour
         
             if (character_Template != null) // Se crea un modelo de characterDefinition
                 characterDefinition = Instantiate(character_Template);
-        
+
+        rbody = GetComponent<Rigidbody>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     private void Start()
@@ -46,8 +51,8 @@ public class CharacterStats : MonoBehaviour
 
         if (characterDefinition.isHero) //no si controlamos la wea. 
         {
-            characterDefinition.maxHealth = 500;
-            characterDefinition.currentHeath = 500;
+            characterDefinition.maxHealth = 150;
+            characterDefinition.currentHeath = 150;
 
             characterDefinition.maxMana = 25;
             characterDefinition.currentMana = 25;
@@ -225,7 +230,32 @@ public class CharacterStats : MonoBehaviour
         iskeepDamage = false;
     }
     //Punch
+    public void Empujar(float Distancia, float Velocidad)
+    {
+        StartCoroutine(empujar(Distancia, Velocidad));
+    }
 
+    IEnumerator empujar(float Distancia, float Velocidad)
+    {
+        float timer = 0f;
+        agent.enabled = false;
+        float Tiempo = Distancia / Velocidad * Time.deltaTime ;
+
+        Debug.Log(Tiempo + " " + this.gameObject.name);
+        while (timer < Tiempo)
+        {
+            timer += Time.deltaTime;
+
+            yield return null;
+        }
+        agent.enabled = true;
+        rbody.isKinematic = true;
+        agent.transform.position = rbody.transform.position;
+        rbody.rotation = Quaternion.identity;
+
+
+
+    }
 
 
 
