@@ -76,6 +76,29 @@ public class CharacterStats : MonoBehaviour
         {
             return;
         }
+        else if (characterDefinition.GodMode)
+        {
+            characterDefinition.maxHealth = 150000;
+            characterDefinition.currentHeath = 150000;
+
+            characterDefinition.maxMana = 25000;
+            characterDefinition.currentMana = 25000;
+
+            characterDefinition.maxWealth = 500;
+            characterDefinition.currentWealth = 0;
+
+            characterDefinition.baseResistance = 0;
+            characterDefinition.currentResistance = 0;
+
+            characterDefinition.maxEncumbrance = 50f; //El peso
+            characterDefinition.currentEncumbrance = 0f;
+
+            characterDefinition.charExperience = 0;
+            characterDefinition.charLevel = 1;
+
+            characterDefinition.baseDamage = 2;
+            characterDefinition.currentDamage = 1;
+        }
     }
 
     #endregion

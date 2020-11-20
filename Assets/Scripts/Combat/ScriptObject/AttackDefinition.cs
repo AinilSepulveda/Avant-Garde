@@ -123,10 +123,10 @@ public class AttackDefinition : ScriptableObject
 
 
             //Seguridad para que no se venga tan arriba JODER, TIO, COÑO
-            if (U < -8)
-                U = -8;
-            if (U > 8)
-                U = 8;
+            if (U < -5)
+                U = -5;
+            if (U > 5)
+                U = 5;
 
             attacker.transform.LookAt(defender.transform.position);
 
@@ -138,7 +138,7 @@ public class AttackDefinition : ScriptableObject
 
             attackernavMesh.updatePosition = true;
             attackernavMesh.destination += attackernavMesh.nextPosition;
-            attackernavMesh.nextPosition = attacker.transform.position += lenardJones * 10;
+            attackernavMesh.nextPosition = attacker.transform.position += lenardJones * 6;
         }
         if ((typeAttack & Attacks.none) != 0)
         {

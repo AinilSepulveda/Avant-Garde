@@ -70,6 +70,7 @@ public class CharacterStats_SO : ScriptableObject
     public CharLevelUps[] charLevelups;
     #endregion
 
+    public bool GodMode;
 
     #region Stat Increasers
 
@@ -134,11 +135,11 @@ public class CharacterStats_SO : ScriptableObject
 
 
         weapon = weaponPickUp;
-        currentDamage += (currentDamage + (int)weapon.itemDefinition.bonusDamage);
-        currentDamageMagic += (currentDamageMagic + (int)weapon.itemDefinition.bonusDamageMagic);
-        maxHealth += (maxHealth + (int)weapon.itemDefinition.bonusHealthPoint);
-        currentResistance += currentResistance + (int)weapon.itemDefinition.bonusResistence;
-        currentMana += currentMana + (int)weapon.itemDefinition.bonusManaPoint;
+        currentDamage +=  (int)weapon.itemDefinition.bonusDamage;
+        currentDamageMagic +=  (int)weapon.itemDefinition.bonusDamageMagic;
+        maxHealth +=  (int)weapon.itemDefinition.bonusHealthPoint;
+        currentResistance +=  (int)weapon.itemDefinition.bonusResistence;
+        currentMana +=  (int)weapon.itemDefinition.bonusManaPoint;
     }
     public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory)
     {
@@ -232,11 +233,11 @@ public class CharacterStats_SO : ScriptableObject
             characterInventory.inventoryDisplaySlots[2].sprite = null;
             Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
             weapon = null;
-            currentDamage -= (currentDamage + (int)weapon.itemDefinition.bonusDamage);
-            currentDamageMagic -= (currentDamageMagic + (int)weapon.itemDefinition.bonusDamageMagic);
-            maxHealth -= (maxHealth + (int)weapon.itemDefinition.bonusHealthPoint);
-            currentResistance -= currentResistance + (int)weapon.itemDefinition.bonusResistence;
-            currentMana -= currentMana + (int)weapon.itemDefinition.bonusManaPoint;
+            currentDamage -=  (int)weapon.itemDefinition.bonusDamage;
+            currentDamageMagic -=  (int)weapon.itemDefinition.bonusDamageMagic;
+            maxHealth -=  (int)weapon.itemDefinition.bonusHealthPoint;
+            currentResistance -=   (int)weapon.itemDefinition.bonusResistence;
+            currentMana -= (int)weapon.itemDefinition.bonusManaPoint;
 
         }
 

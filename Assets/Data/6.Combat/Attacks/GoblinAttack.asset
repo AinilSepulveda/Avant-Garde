@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1773096611d388a4a8746b70ff875bb9, type: 3}
   m_Name: GoblinAttack
   m_EditorClassIdentifier: 
-  Cooldown: 1
+  Cooldown: 0.5
   costAmount: 0
   Range: 3
   minDamage: 3
-  maxDamage: 5
+  maxDamage: 15
   criticalMultiplier: 2.5
   criticalChange: 0.5
   VariableAttack: 8

@@ -157,11 +157,10 @@ public class NPCController : MonoBehaviour
 
                 if (distance < aggroRange / 2)
                 {
-  
 
+                   // agent.speed = agentSpeed * 2;
                     agent.updatePosition = true;
-                    agent.destination += agent.nextPosition;
-                    //agent.nextPosition = transform.position += LenardJonesMov();
+                    agent.destination += LenardJones();
 
 
                 }
@@ -188,6 +187,37 @@ public class NPCController : MonoBehaviour
 
     }
 
+    public Vector3 LenardJones()
+    {
+        Vector3 r = agent.transform.position - player.transform.position;
+
+        //U = -A/d^n + B/d^m
+
+        float A = 700;
+        float B = 250;
+        float n = 3;
+        float m = 2;
+        float d = r.magnitude / 5;
+
+        float U = -A / Mathf.Pow(d, n) + B / Mathf.Pow(d, m);
+
+
+        //Seguridad para que no se venga tan arriba JODER, TIO, COÑO
+        if (U < -5)
+            U = -5;
+        if (U > 5)
+            U = 5;
+
+        agent.transform.LookAt(player.transform.position);
+
+        
+
+        Vector3 lenardJones = agent.transform.forward * Mathf.Clamp(U, -8, 8) * Time.deltaTime * agent.speed * 2;
+
+        Debug.Log(lenardJones);
+
+        return lenardJones;
+    }
 
 
     private void OnDrawGizmos()
