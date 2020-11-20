@@ -294,7 +294,7 @@ public class CharacterInventory : MonoBehaviour
     {
         bool triggerItem = false; // si lo hemos tengo usado
 
-        Debug.Log(itemToUseID + "Triggeritemuse");
+       // Debug.Log(itemToUseID + "Triggeritemuse");
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable

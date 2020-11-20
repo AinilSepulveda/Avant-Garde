@@ -22,7 +22,7 @@ MonoBehaviour:
   WeaponSpawnObject: {fileID: 11400000, guid: 77b4536d0adcf0c4691c76b3084eda68, type: 2}
   spawnChangeWeight: 0
   isEquipped: 0
-  isInteractable: 1
+  isInteractable: 0
   isStorable: 1
   isUnique: 1
   isIndestructable: 1

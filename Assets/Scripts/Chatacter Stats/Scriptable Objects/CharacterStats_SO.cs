@@ -129,6 +129,10 @@ public class CharacterStats_SO : ScriptableObject
 
     public void EquipWeapon(ItemPickUp weaponPickUp, CharacterInventory characterInventory, GameObject weaponSlot)
     {
+        bool busy = true;
+        if (weapon ==null)
+        {
+        busy = false;
         Rigidbody newWeapon;
         characterInventory.inventoryDisplaySlots[2].sprite = weaponPickUp.itemDefinition.ItemIcon;
         newWeapon = Instantiate(weaponPickUp.itemDefinition.WeaponSpawnObject.weaponPreb, weaponSlot.transform);
@@ -140,6 +144,24 @@ public class CharacterStats_SO : ScriptableObject
         maxHealth +=  (int)weapon.itemDefinition.bonusHealthPoint;
         currentResistance +=  (int)weapon.itemDefinition.bonusResistence;
         currentMana +=  (int)weapon.itemDefinition.bonusManaPoint;
+
+        }
+        if (weapon != null)
+        {
+            if (busy)
+            {
+                characterInventory.inventoryDisplaySlots[2].sprite = null;
+                Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
+
+                currentDamage -= (int)weapon.itemDefinition.bonusDamage;
+                currentDamageMagic -= (int)weapon.itemDefinition.bonusDamageMagic;
+                maxHealth -= (int)weapon.itemDefinition.bonusHealthPoint;
+                currentResistance -= (int)weapon.itemDefinition.bonusResistence;
+                currentMana -= (int)weapon.itemDefinition.bonusManaPoint;
+                weapon = null;
+                busy = false;
+            }
+        }
     }
     public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory)
     {
@@ -232,13 +254,13 @@ public class CharacterStats_SO : ScriptableObject
             }
             characterInventory.inventoryDisplaySlots[2].sprite = null;
             Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
-            weapon = null;
+
             currentDamage -=  (int)weapon.itemDefinition.bonusDamage;
             currentDamageMagic -=  (int)weapon.itemDefinition.bonusDamageMagic;
             maxHealth -=  (int)weapon.itemDefinition.bonusHealthPoint;
             currentResistance -=   (int)weapon.itemDefinition.bonusResistence;
             currentMana -= (int)weapon.itemDefinition.bonusManaPoint;
-
+            weapon = null;
         }
 
         return previousWeaponSame;
