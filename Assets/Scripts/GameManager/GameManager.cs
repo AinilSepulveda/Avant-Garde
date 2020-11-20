@@ -96,6 +96,7 @@ public class GameManager : Singleton<GameManager>
             case GameState.PREGAME:
                 // Initialize any systems that need to be reset
                 Time.timeScale = 1.0f;
+                LoadLevel("Boot");
                 break;
 
             case GameState.RUNNING:

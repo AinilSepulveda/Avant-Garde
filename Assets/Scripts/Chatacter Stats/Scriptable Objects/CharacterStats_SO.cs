@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 // using UnityEditor;
 
 [CreateAssetMenu (fileName ="NewStats", menuName ="Character/Stast", order =1)]
@@ -69,6 +70,9 @@ public class CharacterStats_SO : ScriptableObject
 
     public CharLevelUps[] charLevelups;
     #endregion
+
+    public VisualEffectAsset LevelUP;
+
 
     public bool GodMode;
 
