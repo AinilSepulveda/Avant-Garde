@@ -27,7 +27,7 @@ MonoBehaviour:
   OnHeroInitialized:
     m_PersistentCalls:
       m_Calls: []
-  isHero: 0
+  isHero: 1
   saveDataonClose: 0
   maxHealth: 0
   currentHeath: 0
@@ -74,4 +74,4 @@ MonoBehaviour:
     baseResistence: 20
     maxEncumberance: 20
     requiredXP: 180
-  GodMode: 1
+  GodMode: 0
