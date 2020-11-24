@@ -60,7 +60,7 @@ public class AttackDefinition : ScriptableObject
                 coreDamage -= defenderStats.GetResistence() ;
             }
 
-            Debug.Log(coreDamage);
+        Debug.Log(coreDamage);
 
         return new Attack((int)coreDamage, isCritical); 
 

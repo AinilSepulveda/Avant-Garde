@@ -23,7 +23,8 @@ public class CharacterStats : MonoBehaviour
     UnityEngine.AI.NavMeshAgent agent;
 
     //Ataques
-    public AttackDefinition attack;
+    public AttackDefinition attackDefault;
+    public AttackDefinition attackSpecial;
 
     #region Constructor
 

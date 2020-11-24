@@ -175,6 +175,9 @@ MonoBehaviour:
   SpellHotSpot: {fileID: 0}
   IDenemy: 0
   showAgroo: 1
+  attackOnCooldown: 0
+  offsetDistanciaMin: 0
+  offsetDistanciaMax: 0
 --- !u!195 &8275430662798538079
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -216,7 +219,8 @@ MonoBehaviour:
   caca: {fileID: 0}
   burnTickTimers: 
   iskeepDamage: 0
-  attack: {fileID: 11400000, guid: 3862514e0ffc45b4f8d7013b9d3b2fb9, type: 2}
+  attackDefault: {fileID: 11400000, guid: 2a56e2ded01e2aa4899cab013520041d, type: 2}
+  attackSpecial: {fileID: 11400000, guid: 3862514e0ffc45b4f8d7013b9d3b2fb9, type: 2}
 --- !u!114 &3472573261246504112
 MonoBehaviour:
   m_ObjectHideFlags: 0

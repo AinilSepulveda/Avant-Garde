@@ -24,7 +24,8 @@ public class HeroController : MonoBehaviour
     public QuestTracker questTracker;
     //  public QuestTrackerPanel TrackerPanel;
     //  public questPanel Panel;
-
+    //Cooldown
+   public float timercooldown;
 
     Rigidbody rb;
 
@@ -55,13 +56,15 @@ public class HeroController : MonoBehaviour
 
     private void Update()
     {
-
+        timercooldown = Time.time - timercooldown;
+        bool attackOnCooldown = timercooldown < Spell.Cooldown;
 
         animator.SetFloat("Speed", agent.velocity.magnitude);
 
 
-        if (Input.GetKeyDown(KeyCode.Q) && Spell is AoE)
+        if (Input.GetKeyDown(KeyCode.Q) && Spell is AoE && !attackOnCooldown)
         {
+            timercooldown = Time.time;
             StompAttack();
         }
         if (Input.GetKeyDown(KeyCode.L))
@@ -120,7 +123,7 @@ public class HeroController : MonoBehaviour
                 agent.destination = attackTarget.transform.position;
                 yield return null;
             }
-            //transform.LookAt(attackTarget.transform);
+            transform.LookAt(attackTarget.transform);
             animator.SetTrigger("Attack");
         }
         if (weapon == null)

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1773096611d388a4a8746b70ff875bb9, type: 3}
   m_Name: GoblinPunch
   m_EditorClassIdentifier: 
-  Cooldown: 1.5
+  Cooldown: 2
   costAmount: 0
   Range: 3
-  minDamage: 5
-  maxDamage: 10
+  minDamage: 10
+  maxDamage: 20
   criticalMultiplier: 2
   criticalChange: 0.3
   VariableAttack: 4

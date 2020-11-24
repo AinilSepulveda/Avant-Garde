@@ -33,12 +33,19 @@ public class NPCController : MonoBehaviour
     private bool playerIsAlive;
 
     float timeSinceLastAttack;
-    bool attackOnCooldown;
+    float timeSinceLastAttack2;
+    bool attackOnCooldownSpecial;
+    bool attackOnCooldownDefault;
     bool acechar;
 
     //Offset distancia 
    public float offsetDistanciaMin;
    public float offsetDistanciaMax;
+
+    bool attackInRange;
+    bool attackInRangeSpecial;
+
+  //  bool isSpecial;
 
     void Awake()
     {
@@ -76,49 +83,80 @@ public class NPCController : MonoBehaviour
         animator.SetFloat("Speed", agent.velocity.magnitude);
 
          timeSinceLastAttack = Time.time - timeOfLastAttack;
-         attackOnCooldown = timeSinceLastAttack < characterStatsNPC.attack.Cooldown; //Cuando timeSinceLastAttack sea menor que attack.Cooldown es true;
+         timeSinceLastAttack2 = Time.time - timeSinceLastAttack2;
+        attackOnCooldownSpecial = timeSinceLastAttack2 < characterStatsNPC.attackSpecial.Cooldown; //Cuando timeSinceLastAttack sea menor que attack.Cooldown es true;
+        attackOnCooldownDefault = timeSinceLastAttack < characterStatsNPC.attackDefault.Cooldown; //Cuando timeSinceLastAttack sea menor que attack.Cooldown es true;
 
 
         if (mobyType == MobyType.ClawGoblin && mobyType == MobyType.TankGoblin)
         {
-            agent.isStopped = attackOnCooldown;  //Para si AttackOnCooldown es true pero si false se mueve
+            agent.isStopped = attackOnCooldownSpecial;
+            agent.isStopped = attackOnCooldownDefault;   //Para si AttackOnCooldown es true pero si false se mueve
         }
       
 
         if (playerIsAlive)
         {
             float distanceFromPlayer = Vector3.Distance(transform.position, player.transform.position);
-            bool attackInRange = distanceFromPlayer < characterStatsNPC.attack.Range;
+            attackInRange = distanceFromPlayer < characterStatsNPC.attackDefault.Range;
+            attackInRangeSpecial = distanceFromPlayer < characterStatsNPC.attackSpecial.Range;
 
-           // Debug.Log(attackOnCooldown);
-            if (!attackOnCooldown && attackInRange)
+       //     isSpecial = isSpecial;
+            if (!attackOnCooldownSpecial && attackInRangeSpecial)
+            {
+                agent.isStopped = true;
+
+                transform.LookAt(player.transform);
+                timeSinceLastAttack2 = Time.time;
+
+                animator.SetTrigger("Attack");
+
+            }
+
+            else if (!attackOnCooldownDefault && attackInRange)
             {
                 agent.isStopped = true;
 
                 transform.LookAt(player.transform);
                 timeOfLastAttack = Time.time;
+
+
+                
                 animator.SetTrigger("Attack");
+                
             }
+            // Debug.Log(attackOnCooldown);
+
+
         }
     }
     public void Hit()
     {
         if (!playerIsAlive)
             return;
-        if(characterStatsNPC.attack is Weapon) //magia negra
+        //Ataque Default
+        if (characterStatsNPC.attackDefault is Weapon && attackOnCooldownSpecial) //magia negra
         {
-            ((Weapon)characterStatsNPC.attack).ExecuteAttack(gameObject, player.gameObject);
+            ((Weapon)characterStatsNPC.attackDefault).ExecuteAttack(gameObject, player.gameObject);
 
+        }
+        else if (characterStatsNPC.attackSpecial is Weapon && !attackOnCooldownSpecial) //magia negra
+        {
+            ((Weapon)characterStatsNPC.attackSpecial).ExecuteAttack(gameObject, player.gameObject);
 
         }
         //Attack es AttackDefinicion class, weapon heredera de esta clase, y aq
-        else if (characterStatsNPC.attack is Spell)
+        else if (characterStatsNPC.attackSpecial is Spell && !attackOnCooldownSpecial)
         {
 
-            ((Spell)characterStatsNPC.attack).Cast(gameObject, SpellHotSpot.position, player.transform.position, LayerMask.NameToLayer("EnemySpells"));
-            
+            ((Spell)characterStatsNPC.attackSpecial).Cast(gameObject, SpellHotSpot.position, player.transform.position, LayerMask.NameToLayer("EnemySpells"));
+
 
         }
+
+
+
+
     }
     void Patrol()
     {
@@ -136,6 +174,7 @@ public class NPCController : MonoBehaviour
         if (player != null && distance <  aggroRange)
         {
             agent.isStopped = false;
+            //ClawGoblin
             if (mobyType == MobyType.ClawGoblin)
             {
 
@@ -151,6 +190,8 @@ public class NPCController : MonoBehaviour
 
 
             }
+
+            //Caster
             if (mobyType == MobyType.CasterGoblin)
             {
               
@@ -168,7 +209,7 @@ public class NPCController : MonoBehaviour
 
 
             }
-
+            //Tanke
             if (mobyType == MobyType.TankGoblin)
             {
 

@@ -18,6 +18,9 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Image healhBar;
     [SerializeField] private TMPro.TextMeshProUGUI levelTex;
 
+    [Space(5)]
+    [SerializeField] private Image spellsCooldown;
+
     public Events.EventFadeComplete OnMainMenuFadeComplete;
 
     private void Start()
@@ -92,14 +95,17 @@ public class UIManager : Singleton<UIManager>
     {
         levelTex.text = "1";
         healhBar.fillAmount = 1;
+        spellsCooldown.fillAmount = 1;
     }
 
     public void UpdateUnitFrame(HeroController hero)
     {
         int curHeath = hero.GetCurrentHealth();
         int maxHeath = hero.GetMaxHealth();
+        float heroSpell1 = hero.Spell.Cooldown;
 
         healhBar.fillAmount = (float)curHeath / maxHeath;
+        spellsCooldown.fillAmount = hero.timercooldown / hero.Spell.Cooldown ;
         levelTex.text = hero.GetCurrentLevel().ToString();
     }
 }
