@@ -35,7 +35,7 @@ public class CharacterInventory : MonoBehaviour
         buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
         for (int i = 0; i < hotBarDisplayHolders.Length; i++)
         {
-            Image image = GameObject.Find("grpHotBarDisplay").transform.GetChild(i).GetComponent<Image>();
+            Image image = GameObject.Find("Hotkeys").transform.GetChild(i).GetComponent<Image>();
             hotBarDisplayHolders[i] = image;
             //Button button = GameObject.Find("grpHotBarDisplay").transform.GetChild(i).GetComponent<Button>();
             //buttoninv[i] = button; 
@@ -224,7 +224,7 @@ public class CharacterInventory : MonoBehaviour
         {
             hotbarCounter += 1;
             //Si es el primero
-            if(itemforHotBar.hotBarSlot == 0)
+            if(itemforHotBar.hotBarSlot == 0 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
             {
                 if (image.sprite == null)
                 {
@@ -235,6 +235,28 @@ public class CharacterInventory : MonoBehaviour
                     break;
                 }
             } //Si tomamos algo que es Stackeable
+            else if (itemforHotBar.hotBarSlot == 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
+            {
+                if (image.sprite == null)
+                {
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = true; //Todo bien y es verdadero
+                    break;
+                }
+            }
+            else if (itemforHotBar.hotBarSlot == 3 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+            {
+                if (image.sprite == null)
+                {
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = true; //Todo bien y es verdadero
+                    break;
+                }
+            }
             else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
             {
                 increaseCount = true;
@@ -265,7 +287,7 @@ public class CharacterInventory : MonoBehaviour
                 ie.Value.inventorySlot = slotCounter - 7;
                 buttoninv[slotCounter].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
             }
-            while (slotCounter < 29) //Para ver los Slot libres uwu
+            while (slotCounter < itemsInInventory.Count) //Para ver los Slot libres uwu
             {
                 slotCounter++;
                // inventoryDisplaySlots[slotCounter].sprite = null;
@@ -284,7 +306,7 @@ public class CharacterInventory : MonoBehaviour
             ie.Value.inventorySlot = slotCounter - 9;
           //  buttoninv[slotCounter - 9].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
         }
-        while (slotCounter <29) //Para ver los Slot libres uwu
+        while (slotCounter < itemsInInventory.Count) //Para ver los Slot libres uwu
         {
             slotCounter++;
             inventoryDisplaySlots[slotCounter].sprite = null;
