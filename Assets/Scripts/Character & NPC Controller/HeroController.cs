@@ -48,6 +48,7 @@ public class HeroController : MonoBehaviour
         stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnHeroLeveledUp);
         stats.characterDefinition.OnHeroDamaged.AddListener(GameManager.Instance.OnHeroDamaged);
         stats.characterDefinition.OnHeroGainedHealth.AddListener(GameManager.Instance.OnHeroGainedHealth);
+        stats.characterDefinition.OnHeroGainedMana.AddListener(GameManager.Instance.OnHeroGainedMana);
         stats.characterDefinition.OnHeroDeath.AddListener(GameManager.Instance.OnHeroDied);
         stats.characterDefinition.OnHeroInitialized.AddListener(GameManager.Instance.OnHeroInit);
 
@@ -210,9 +211,17 @@ public class HeroController : MonoBehaviour
     {
         return stats.characterDefinition.currentHeath;
     }
+    public int GetCurrentMana()
+    {
+        return stats.characterDefinition.currentMana;
+    }
     public int GetMaxHealth()
     {
         return stats.characterDefinition.maxHealth;
+    }
+    public int GetMaxMana()
+    {
+        return stats.characterDefinition.maxMana;
     }
     public int GetCurrentLevel()
     {

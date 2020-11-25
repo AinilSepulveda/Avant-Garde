@@ -45,7 +45,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+      //  DontDestroyOnLoad(gameObject);
         
         _instancedSystemPrefabs = new List<GameObject>();
         _loadOperations = new List<AsyncOperation>();
@@ -194,6 +194,22 @@ public class GameManager : Singleton<GameManager>
     public void OnHeroGainedHealth(int health)
     {
         UIManager.Instance.UpdateUnitFrame(hero);
+    }
+    public void OnHeroGainedMana(int Mana)
+    {
+        UIManager.Instance.UpdateUnitFrame(hero);
+    }
+
+    protected void OnDestroy()
+    {
+        if (_instancedSystemPrefabs == null)
+            return;
+
+        for(int i = 0; i < _instancedSystemPrefabs.Count; i++)
+        {
+            Destroy(_instancedSystemPrefabs[i]);
+        }
+        _instancedSystemPrefabs.Clear();
     }
 
     public void OnHeroDied()

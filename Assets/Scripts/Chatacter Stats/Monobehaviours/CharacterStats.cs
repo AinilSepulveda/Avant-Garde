@@ -143,10 +143,12 @@ public class CharacterStats : MonoBehaviour
     #region Weapon and Armor Change
     public void ChangeWeapon(ItemPickUp weaponPickUp) 
     {   //Basicamente cuando esta funcion hace que llame la funcion de abajo, pero si resulta negativo, te equipa el arma 
+        Debug.Log("Chanje wapom");
         if (!characterDefinition.UnEquipWeapon(weaponPickUp, charInv, characterWeaponSlot))
         {
             characterDefinition.EquipWeapon(weaponPickUp, charInv, characterWeaponSlot); //Se equipa otra arma
         }
+
     }
 
     public void ChangeArmor(ItemPickUp armorPick)

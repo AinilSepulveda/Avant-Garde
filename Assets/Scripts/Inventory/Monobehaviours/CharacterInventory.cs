@@ -109,7 +109,7 @@ public class CharacterInventory : MonoBehaviour
          //   Debug.Log("Tomando cosas");
             itemToStore.gameObject.SetActive(false);
         }
-        Debug.Log(addedItem);
+     //   Debug.Log(addedItem);
     }
     public void TryPickUP() //condiciones que tiene para tomar el item 
     {
@@ -122,7 +122,7 @@ public class CharacterInventory : MonoBehaviour
             if(itemsInInventory.Count == 0)
             {
                 addedItem = AddItemToInv(addedItem);
-                Debug.Log("Se tomo el item");
+           //     Debug.Log("Se tomo el item");
             }
             //si este item ya lo tienes - Si 
             else
@@ -173,7 +173,7 @@ public class CharacterInventory : MonoBehaviour
     }
     public bool AddItemToInv (bool finishedAdding) //Si para ver si es stackable o no  y si lo hes para dar mas posiciones o sino darle un espacio mas
     {
-
+        
 
         idCount = IncreaseID(idCount);
 
@@ -292,15 +292,16 @@ public class CharacterInventory : MonoBehaviour
     }
     public void TriggerItemUse(int itemToUseID) //usar los items
     {
-        bool triggerItem = false; // si lo hemos tengo usado
 
-       // Debug.Log(itemToUseID + "Triggeritemuse");
+
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable
+        bool triggerItem = false; // si lo hemos tengo usado
             if (itemToUseID > 100) //si es mayor a 100, se le resta 100 para ver de donde vino (por ejemplo de Hotbar) y así tienes el ID correcto
             {
                 itemToUseID -= 100;
+               // Debug.Log(ie.Key.ToString() + itemToUseID + "Triggeritemuse");
 
                 if(ie.Value.hotBarSlot == itemToUseID)
                 {
@@ -314,7 +315,7 @@ public class CharacterInventory : MonoBehaviour
                     triggerItem = true;
                 }
             }
-
+      //      Debug.Log("te pillamos" + ie.Key + " " + triggerItem + " " + ie.Value.hotBarSlot); //Es por los items
             if (triggerItem)
             {
                 if (ie.Value.stackSize == 1)
@@ -326,7 +327,7 @@ public class CharacterInventory : MonoBehaviour
                             hotBarDisplayHolders[ie.Value.hotBarSlot - 1].sprite = null;
                             hotBarDisplayHolders[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = "0";
                         }
-
+                      //  Debug.Log("Stack");
                         ie.Value.invEntry.UseItem();
                         itemsInInventory.Remove(ie.Key);
                         break;
@@ -336,12 +337,14 @@ public class CharacterInventory : MonoBehaviour
                         ie.Value.invEntry.UseItem(); //Si no es Stackeable, (por ejemplo un objeto de mision)
                         if (!ie.Value.invEntry.itemDefinition.isIndestructable)
                         {
+                    //        Debug.Log("Mision");
                             itemsInInventory.Remove(ie.Key);
                             break;
                         }
                     }
                 }else //Si es mayor que uno. se gasta un y se reescribe 
                 {
+               //     Debug.Log("Normal");
                     ie.Value.invEntry.UseItem();
                     ie.Value.stackSize -= 1;
                     hotBarDisplayHolders[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();

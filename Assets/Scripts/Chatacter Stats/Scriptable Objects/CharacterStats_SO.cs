@@ -12,6 +12,7 @@ public class CharacterStats_SO : ScriptableObject
     public Events.EventIntegerEvent OnLevelUp;
     public Events.EventIntegerEvent OnHeroDamaged;
     public Events.EventIntegerEvent OnHeroGainedHealth;
+    public Events.EventIntegerEvent OnHeroGainedMana;
     public UnityEvent OnHeroDeath;
     public UnityEvent OnHeroInitialized;
 
@@ -101,6 +102,8 @@ public class CharacterStats_SO : ScriptableObject
         {
             currentMana += ManaAmount;
         }
+        if (isHero)
+            OnHeroGainedHealth.Invoke(ManaAmount);
     }
     public void GiveWealth(int wealthMoney)
     {
@@ -133,10 +136,8 @@ public class CharacterStats_SO : ScriptableObject
 
     public void EquipWeapon(ItemPickUp weaponPickUp, CharacterInventory characterInventory, GameObject weaponSlot)
     {
-        bool busy = true;
-        if (weapon ==null)
-        {
-        busy = false;
+        Debug.Log(weaponPickUp.name);
+
         Rigidbody newWeapon;
         characterInventory.inventoryDisplaySlots[2].sprite = weaponPickUp.itemDefinition.ItemIcon;
         newWeapon = Instantiate(weaponPickUp.itemDefinition.WeaponSpawnObject.weaponPreb, weaponSlot.transform);
@@ -149,23 +150,7 @@ public class CharacterStats_SO : ScriptableObject
         currentResistance +=  (int)weapon.itemDefinition.bonusResistence;
         currentMana +=  (int)weapon.itemDefinition.bonusManaPoint;
 
-        }
-        if (weapon != null)
-        {
-            if (busy)
-            {
-                characterInventory.inventoryDisplaySlots[2].sprite = null;
-                Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
-
-                currentDamage -= (int)weapon.itemDefinition.bonusDamage;
-                currentDamageMagic -= (int)weapon.itemDefinition.bonusDamageMagic;
-                maxHealth -= (int)weapon.itemDefinition.bonusHealthPoint;
-                currentResistance -= (int)weapon.itemDefinition.bonusResistence;
-                currentMana -= (int)weapon.itemDefinition.bonusManaPoint;
-                weapon = null;
-                busy = false;
-            }
-        }
+        
     }
     public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory)
     {
@@ -250,15 +235,20 @@ public class CharacterStats_SO : ScriptableObject
     public bool UnEquipWeapon(ItemPickUp weaponPickUp, CharacterInventory characterInventory, GameObject weaponSlot) //una funcion retorna bool
     {
         bool previousWeaponSame = false;
-        if(weapon != null)
+        if(weaponSlot.transform.childCount > 0)
         {
             if(weapon == weaponPickUp)
             {
                 previousWeaponSame = true;
             }
+            if (weapon != weaponPickUp)
+            {
+                previousWeaponSame = false;
+                Debug.Log("previos false");
+            }
             characterInventory.inventoryDisplaySlots[2].sprite = null;
             Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
-
+            Debug.Log("Se destruyo el hijo");
             currentDamage -=  (int)weapon.itemDefinition.bonusDamage;
             currentDamageMagic -=  (int)weapon.itemDefinition.bonusDamageMagic;
             maxHealth -=  (int)weapon.itemDefinition.bonusHealthPoint;

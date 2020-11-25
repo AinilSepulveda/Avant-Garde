@@ -8,14 +8,15 @@ public class UIManager : Singleton<UIManager>
 
     [SerializeField] private Camera _dummyCamera;
     [SerializeField] private GameObject UnitFrame;
-    [SerializeField] private GameObject Inventory;
+    //[SerializeField] private GameObject Inventory;
     [SerializeField] private GameObject instrucciones;
     [SerializeField] private GameObject logo;
-    [SerializeField] private GameObject panelstats;
+    //[SerializeField] private GameObject panelstats;
     //   [SerializeField] private  QuestTrackerPanel TrackerPanel;
     //  [SerializeField] private GameObject InventoryDisplay;
 
     [SerializeField] private Image healhBar;
+    [SerializeField] private Image ManaBar;
     [SerializeField] private TMPro.TextMeshProUGUI levelTex;
 
     [Space(5)]
@@ -25,7 +26,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+      //  DontDestroyOnLoad(gameObject);
 
         _mainMenu.OnFadeComplete.AddListener(HandleMainMenuFadeComplete);
 
@@ -41,14 +42,14 @@ public class UIManager : Singleton<UIManager>
                 GameManager.Instance.StartGame();
             }
         }
-        if (Input.GetKeyDown(KeyCode.C) && !panelstats.activeInHierarchy)
-        {
-            panelstats.gameObject.SetActive(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.C) && panelstats.gameObject.activeInHierarchy)
-        {
-            panelstats.gameObject.SetActive(false);
-        }
+        //if (Input.GetKeyDown(KeyCode.C) && !panelstats.activeInHierarchy)
+        //{
+        //    panelstats.gameObject.SetActive(true);
+        //}
+        //else if (Input.GetKeyDown(KeyCode.C) && panelstats.gameObject.activeInHierarchy)
+        //{
+        //    panelstats.gameObject.SetActive(false);
+        //}
     }
 
     private void HandleMainMenuFadeComplete(bool fadeIn)
@@ -60,23 +61,15 @@ public class UIManager : Singleton<UIManager>
 
     private void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
     {
-        //switch (currentState)
-        //{
-        //    case GameManager.GameState.PAUSED:
-        //        _pauseMenu.gameObject.SetActive(true);
-        //        break;
 
-        //    default:
-        //        _pauseMenu.gameObject.SetActive(false);
-        //        break;
-        //}
 
         _pauseMenu.gameObject.SetActive(currentState == GameManager.GameState.PAUSED);
+        _dummyCamera.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
 
         UnitFrame.gameObject.SetActive( currentState == GameManager.GameState.RUNNING || currentState == GameManager.GameState.PAUSED);
 
-        Inventory.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
-        panelstats.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
+        //Inventory.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
+        //panelstats.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
 
 
         instrucciones.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
@@ -102,10 +95,14 @@ public class UIManager : Singleton<UIManager>
     {
         int curHeath = hero.GetCurrentHealth();
         int maxHeath = hero.GetMaxHealth();
+        int maxMana = hero.GetMaxMana();
+        int curMana = hero.GetCurrentMana();
         float heroSpell1 = hero.Spell.Cooldown;
 
         healhBar.fillAmount = (float)curHeath / maxHeath;
-        spellsCooldown.fillAmount = hero.timercooldown / hero.Spell.Cooldown ;
+        ManaBar.fillAmount = (float)curMana / maxMana;
+
+        //spellsCooldown.fillAmount = hero.timercooldown / hero.Spell.Cooldown ;
         levelTex.text = hero.GetCurrentLevel().ToString();
     }
 }

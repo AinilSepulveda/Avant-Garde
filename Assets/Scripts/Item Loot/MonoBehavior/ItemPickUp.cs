@@ -33,6 +33,7 @@ public class ItemPickUp : MonoBehaviour
     }
    public void UseItem()
     {
+        Debug.Log("usa el item");
         switch (itemDefinition.itemType)
         {
             case ItemTypeDefinition.HEALTH:
@@ -75,6 +76,7 @@ public class ItemPickUp : MonoBehaviour
             else
             {
                 UseItem();
+                Debug.Log("caca");
             }
         }
     }

@@ -32,13 +32,16 @@ MonoBehaviour:
   OnHeroGainedHealth:
     m_PersistentCalls:
       m_Calls: []
+  OnHeroGainedMana:
+    m_PersistentCalls:
+      m_Calls: []
   OnHeroDeath:
     m_PersistentCalls:
       m_Calls: []
   OnHeroInitialized:
     m_PersistentCalls:
       m_Calls: []
-  isHero: 0
+  isHero: 1
   saveDataonClose: 0
   maxHealth: 0
   currentHeath: 0
@@ -86,4 +89,4 @@ MonoBehaviour:
     maxEncumberance: 20
     requiredXP: 180
   LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}
-  GodMode: 1
+  GodMode: 0
