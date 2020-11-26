@@ -1684,6 +1684,11 @@ PrefabInstance:
       propertyPath: inventoryDisplaySlots.Array.data[28]
       value: 
       objectReference: {fileID: 2116385910}
+    - target: {fileID: 8625298749148150169, guid: 82349d0dfcd2402478d5c210a44ec924,
+        type: 3}
+      propertyPath: stastHUD
+      value: 
+      objectReference: {fileID: 1428725457}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82349d0dfcd2402478d5c210a44ec924, type: 3}
 --- !u!114 &231421639 stripped
@@ -9384,7 +9389,7 @@ PrefabInstance:
     - target: {fileID: 4294787733657571883, guid: aa31a0f09c84b9649ab055c97daecd16,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4294787733766106216, guid: aa31a0f09c84b9649ab055c97daecd16,
         type: 3}

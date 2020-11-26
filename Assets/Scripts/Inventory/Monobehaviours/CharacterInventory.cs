@@ -22,8 +22,9 @@ public class CharacterInventory : MonoBehaviour
     bool addedItem = true;
 
     public Dictionary<int, InventoryEntry> itemsInInventory = new Dictionary<int, InventoryEntry>(); // Para guardar el ID del item y además el item en si
-    public InventoryEntry itemEntry; 
+    public InventoryEntry itemEntry;
 
+    public GameObject stastHUD;
     #endregion
 
     #region Initializations
@@ -86,6 +87,11 @@ public class CharacterInventory : MonoBehaviour
         {
             DisplayInventory();
            // Debug.Log("abriendo el inventario");
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            DisplayStast();
+            // Debug.Log("abriendo el inventario");
         }
 
         #endregion
@@ -222,34 +228,44 @@ public class CharacterInventory : MonoBehaviour
         //Check for open Hotbar slot
         foreach (Image image in hotBarDisplayHolders)
         {
-            hotbarCounter += 1;
+            
             //Si es el primero
             if(itemforHotBar.hotBarSlot == 0 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
             {
+                hotbarCounter = 1;
                 if (image.sprite == null)
                 {
+                    Debug.Log("Caca");
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
                     increaseCount = true; //Todo bien y es verdadero
                     break;
                 }
-            } //Si tomamos algo que es Stackeable
-            else if (itemforHotBar.hotBarSlot == 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
+
+            } 
+            
+
+            else if (itemforHotBar.hotBarSlot < 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
             {
+                hotbarCounter = 3;
                 if (image.sprite == null)
                 {
+                    Debug.Log("Caca" + hotbarCounter);
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
                     increaseCount = true; //Todo bien y es verdadero
                     break;
+
                 }
             }
-            else if (itemforHotBar.hotBarSlot == 3 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+            else if (itemforHotBar.hotBarSlot < 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
             {
+                hotbarCounter = 4;
                 if (image.sprite == null)
                 {
+                    Debug.Log("Caca" + hotbarCounter);
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
@@ -295,6 +311,18 @@ public class CharacterInventory : MonoBehaviour
 
         }
     } 
+    void DisplayStast()
+    {
+        if (stastHUD.activeSelf == true)
+        {
+            stastHUD.SetActive(false);
+
+        }
+        else
+        {
+            stastHUD.SetActive(true);
+        }
+    }
     void FillInventoryDisplay()
     {
         int slotCounter = 9; // 9 porque no tiene que contar la armadura ni mistic y ni con el characterview

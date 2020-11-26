@@ -255,7 +255,7 @@ public class NPCController : MonoBehaviour
 
         Vector3 lenardJones = agent.transform.forward * Mathf.Clamp(U, -8, 8) * Time.deltaTime * agent.speed * 2;
 
-        Debug.Log(lenardJones);
+     //   Debug.Log(lenardJones);
 
         return lenardJones;
     }

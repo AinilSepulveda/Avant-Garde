@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class HeroController : MonoBehaviour
 {
@@ -26,9 +27,10 @@ public class HeroController : MonoBehaviour
     //  public questPanel Panel;
     //Cooldown
    public float timercooldown;
-
+    bool attackOnCooldown;
     Rigidbody rb;
 
+    public Image Skill1;
 
     CharacterInventory characterInventory;
     void Awake()
@@ -57,17 +59,24 @@ public class HeroController : MonoBehaviour
 
     private void Update()
     {
-        timercooldown = Time.time - timercooldown;
-        bool attackOnCooldown = timercooldown < Spell.Cooldown;
+        
+        attackOnCooldown = timercooldown < Spell.Cooldown;
 
         animator.SetFloat("Speed", agent.velocity.magnitude);
+
+        Skill1.fillAmount =  timercooldown / Spell.Cooldown; 
 
 
         if (Input.GetKeyDown(KeyCode.Q) && Spell is AoE && !attackOnCooldown)
         {
-            timercooldown = Time.time;
+            timercooldown = 0;
             StompAttack();
+            UIManager.Instance.UpdateUnitFrame(this);
+         //   timercooldown = 0;
+            
         }
+        if (attackOnCooldown)
+            timercooldown += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.L))
         {
             //TrackerPanel.ActualizarBotones();

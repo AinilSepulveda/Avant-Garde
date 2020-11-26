@@ -95,6 +95,7 @@ public class UIManager : Singleton<UIManager>
     {
         int curHeath = hero.GetCurrentHealth();
         int maxHeath = hero.GetMaxHealth();
+
         int maxMana = hero.GetMaxMana();
         int curMana = hero.GetCurrentMana();
         float heroSpell1 = hero.Spell.Cooldown;
