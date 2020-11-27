@@ -154,7 +154,7 @@ public class CharacterStats : MonoBehaviour
 
     public void ChangeArmor(ItemPickUp armorPick)
     {
-        if(!characterDefinition.UnEquipArmor(armorPick, charInv))
+        if(!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHeadSlot))
         {
             characterDefinition.EquipArmor(armorPick, charInv, characterArmorHeadSlot);
            // caca.SetActive(true);

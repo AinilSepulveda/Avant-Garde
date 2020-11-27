@@ -17,10 +17,10 @@ MonoBehaviour:
   ItemArmorSubType: 1
   itemMaterial: {fileID: 0}
   ItemIcon: {fileID: 21300000, guid: 4ee4ae08fb599db44896e8eb2ea16864, type: 3}
-  itemSpawnObject: {fileID: 1178681262463321595, guid: 7c26915f4f2cd62478564c3a5504b9bd,
+  itemSpawnObject: {fileID: 8326239941780932003, guid: c4a3532f37e2a114cb9903c86e38cf5e,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  itemArmor: {fileID: 1230434898463717195, guid: 7d6c98f783481454090b9586d93fe130,
+  itemArmor: {fileID: 955474667905273309, guid: a387e5e765926fc49aef95915752920c,
     type: 3}
   spawnChangeWeight: 0
   isEquipped: 0
@@ -33,8 +33,8 @@ MonoBehaviour:
   destrouOnUse: 0
   itemAmount: 0
   itemWeight: 0
-  bonusResistence: 0
-  bonusHealthPoint: 0
-  bonusDamage: 0
-  bonusDamageMagic: 0
-  bonusManaPoint: 0
+  bonusResistence: 1
+  bonusHealthPoint: 1
+  bonusDamage: 1
+  bonusDamageMagic: 1
+  bonusManaPoint: 1
