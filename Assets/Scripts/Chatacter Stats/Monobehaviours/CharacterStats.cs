@@ -9,6 +9,7 @@ public class CharacterStats : MonoBehaviour
     public CharacterStats_SO characterDefinition;
     public CharacterInventory charInv;
     public GameObject characterWeaponSlot;
+    public GameObject characterArmorHeadSlot;
 
     //quitar eso despues
     public GameObject caca;
@@ -155,8 +156,8 @@ public class CharacterStats : MonoBehaviour
     {
         if(!characterDefinition.UnEquipArmor(armorPick, charInv))
         {
-            characterDefinition.EquipArmor(armorPick, charInv);
-            caca.SetActive(true);
+            characterDefinition.EquipArmor(armorPick, charInv, characterArmorHeadSlot);
+           // caca.SetActive(true);
         }
     }
     #endregion

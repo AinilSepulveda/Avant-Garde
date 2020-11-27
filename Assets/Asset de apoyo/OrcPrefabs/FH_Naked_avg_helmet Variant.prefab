@@ -7,10 +7,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1169029035399322784, guid: deb4d5d7b04b7a1449e91adb9bd08aec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169029035399323046, guid: deb4d5d7b04b7a1449e91adb9bd08aec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1169029035399323088, guid: deb4d5d7b04b7a1449e91adb9bd08aec,
         type: 3}
       propertyPath: m_Name
-      value: FH_Naked_avg_helmet
+      value: FH_Naked_avg_helmet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1169029035399807408, guid: deb4d5d7b04b7a1449e91adb9bd08aec,
         type: 3}

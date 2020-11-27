@@ -152,7 +152,7 @@ public class CharacterStats_SO : ScriptableObject
 
         
     }
-    public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory)
+    public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory, GameObject ArmorSlot)
     {
         switch (armorPickup.itemDefinition.ItemArmorSubType) //Se hace mejor con un switch por que asi tenemos de forma mas especifica
         {
@@ -165,6 +165,10 @@ public class CharacterStats_SO : ScriptableObject
                 maxHealth += (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                 currentResistance += currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                 currentMana += currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+
+                GameObject newHead;
+                newHead = Instantiate(armorPickup.itemDefinition.itemArmor, ArmorSlot.transform );
+                 
                 break;
             case ItemArmorSubType.Chest:
                 characterInventory.inventoryDisplaySlots[4].sprite = armorPickup.itemDefinition.ItemIcon;

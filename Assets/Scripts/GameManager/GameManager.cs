@@ -57,15 +57,17 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            TogglePause();
+        }
+
         if (_currentGameState == GameState.PREGAME)
         {
             return;
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            TogglePause();
-        }
+
     }
 
     void OnLoadOperationComplete(AsyncOperation ao)
@@ -76,7 +78,7 @@ public class GameManager : Singleton<GameManager>
 
             if (_loadOperations.Count == 0)
             {
-                UpdateState(GameState.RUNNING);
+              //  UpdateState(GameState.RUNNING);
             }
         }
     }
@@ -97,6 +99,7 @@ public class GameManager : Singleton<GameManager>
                 // Initialize any systems that need to be reset
                 Time.timeScale = 1.0f;
                 LoadLevel("Boot");
+              //  UIManager.Instance.SetDummyCameraActive(true);
                 break;
 
             case GameState.RUNNING:
@@ -112,7 +115,7 @@ public class GameManager : Singleton<GameManager>
             default:
                 break;
         }
-
+    //    Debug.Log(_currentGameState + "<- Current - Previous -> " + previousGameState);        
         OnGameStateChanged.Invoke(_currentGameState, previousGameState);
     }
 
@@ -136,6 +139,7 @@ public class GameManager : Singleton<GameManager>
 
     public void LoadLevel(string levelName)
     {
+
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
         if (ao == null)
         {
@@ -169,6 +173,7 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         LoadLevel(NameLevelRunnig);
+        UpdateState(GameState.RUNNING);
     }
 
     public void QuitGame()

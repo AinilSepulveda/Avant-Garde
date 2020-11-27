@@ -65,7 +65,12 @@ PrefabInstance:
     - target: {fileID: 297873391230403855, guid: 35d9cb149cfdf7e4d87b057016585906,
         type: 3}
       propertyPath: m_Name
-      value: FH_Warrior_atl_mask
+      value: FH_Warrior_atl_mask Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 297873391233583229, guid: 35d9cb149cfdf7e4d87b057016585906,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d419643bd9d9ce428d83c570f0d8f16, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d9cb149cfdf7e4d87b057016585906, type: 3}

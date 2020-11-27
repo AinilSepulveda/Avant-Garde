@@ -21,7 +21,8 @@ public class MainMenu : MonoBehaviour
     public void OnFadeInComplete()
     {
         OnFadeComplete.Invoke(false);
-        UIManager.Instance.SetDummyCameraActive(true);
+     
+   UIManager.Instance.SetDummyCameraActive(true);
     }
 
     void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previousState)
@@ -33,7 +34,7 @@ public class MainMenu : MonoBehaviour
 
         if (previousState == GameManager.GameState.PREGAME && currentState != GameManager.GameState.PREGAME)
         {
-            UIManager.Instance.SetDummyCameraActive(false);
+           UIManager.Instance.SetDummyCameraActive(true);
             _mainMenuAnimator.clip = _fadeOutAnimation;
             _mainMenuAnimator.Play();
         }

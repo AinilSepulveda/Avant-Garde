@@ -16,13 +16,10 @@ MonoBehaviour:
   itemType: 0
   ItemArmorSubType: 0
   itemMaterial: {fileID: 0}
-  ItemIcon: {fileID: 21300000, guid: e7e509f46a8cf4149bc153b4fc1d382e, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 2081f6c6efa7c7747ab3e1aadc182952, type: 3}
   itemSpawnObject: {fileID: 54210893519517534, guid: 2a226cf746bc64abab403477ee47867c,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  SpellSpawnObject: {fileID: 0}
-  AoESpawnObject: {fileID: 0}
-  itemAmount: 20
   spawnChangeWeight: 5
   isEquipped: 0
   isInteractable: 1
@@ -32,4 +29,10 @@ MonoBehaviour:
   isQuestItem: 0
   IsStackable: 1
   destrouOnUse: 1
+  itemAmount: 20
   itemWeight: 0
+  bonusResistence: 0
+  bonusHealthPoint: 0
+  bonusDamage: 0
+  bonusDamageMagic: 0
+  bonusManaPoint: 0

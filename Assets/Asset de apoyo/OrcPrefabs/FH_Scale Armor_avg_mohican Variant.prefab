@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 5787294740513395869, guid: 7f14f8f8fdd8d3944bf8a5bc5697333d,
         type: 3}
       propertyPath: m_Name
-      value: FH_Scale Armor_avg_mohican
+      value: FH_Scale Armor_avg_mohican Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5787294740513687805, guid: 7f14f8f8fdd8d3944bf8a5bc5697333d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1199999
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5787294740513687805, guid: 7f14f8f8fdd8d3944bf8a5bc5697333d,
         type: 3}

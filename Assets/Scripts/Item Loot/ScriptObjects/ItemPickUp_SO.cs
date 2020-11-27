@@ -21,10 +21,13 @@ public class ItemPickUp_SO : ScriptableObject
     public Material itemMaterial = null;
     public Sprite ItemIcon = null;
     public Rigidbody itemSpawnObject = null;
+
     public Weapon WeaponSpawnObject = null;
+    [Header("PointArmor")]
+    public GameObject itemArmor = null;
 
 
-  //  public int itemAmount = 0; //Cuantos items hay
+    //  public int itemAmount = 0; //Cuantos items hay
     public int spawnChangeWeight = 0;
     
     [Space]
