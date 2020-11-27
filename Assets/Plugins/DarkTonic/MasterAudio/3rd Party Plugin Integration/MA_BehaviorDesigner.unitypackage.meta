@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: f0f9ae9ec9ccd044888049fc2f7a991f
 DefaultImporter:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   userData: 
 =======
@@ -9,3 +10,9 @@ DefaultImporter:
   assetBundleName: 
   assetBundleVariant: 
 >>>>>>> Stashed changes
+=======
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> Prueba
