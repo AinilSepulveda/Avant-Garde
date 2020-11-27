@@ -8,8 +8,14 @@ public class CharacterStats : MonoBehaviour
     public CharacterStats_SO character_Template;
     public CharacterStats_SO characterDefinition;
     public CharacterInventory charInv;
+    [Header ("WeaponSlot")]
     public GameObject characterWeaponSlot;
-    public GameObject characterArmorHeadSlot;
+    [Header("ArmorSlots")]
+    public GameObject characterArmorHeadSlot; //cabeza
+    public GameObject characterArmorBootsSlot; //pies
+    public GameObject characterArmorChestsSlot; //cinturon  
+    public GameObject characterArmorHandsSlot; //Manos
+    public GameObject characterArmorLegsSlot; //piernas
 
     //quitar eso despues
     public GameObject caca;
@@ -154,11 +160,41 @@ public class CharacterStats : MonoBehaviour
 
     public void ChangeArmor(ItemPickUp armorPick)
     {
-        if(!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHeadSlot))
+        switch (armorPick.itemDefinition.ItemArmorSubType)
         {
-            characterDefinition.EquipArmor(armorPick, charInv, characterArmorHeadSlot);
-           // caca.SetActive(true);
+            case ItemArmorSubType.Head:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHeadSlot))
+                {
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHeadSlot);
+                    // caca.SetActive(true);
+                }
+                break;            case ItemArmorSubType.Boots:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorBootsSlot))
+                {
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorBootsSlot);
+                    // caca.SetActive(true);
+                }
+                break;            case ItemArmorSubType.Chest:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorChestsSlot))
+                {
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorChestsSlot);
+                    // caca.SetActive(true);
+                }
+                break;            case ItemArmorSubType.Hands:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHandsSlot))
+                {
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHandsSlot);
+                    // caca.SetActive(true);
+                }
+                break;            case ItemArmorSubType.Legs:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorLegsSlot))
+                {
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorLegsSlot);
+                    // caca.SetActive(true);
+                }
+                break;          
         }
+
     }
     #endregion
     #region Reporters

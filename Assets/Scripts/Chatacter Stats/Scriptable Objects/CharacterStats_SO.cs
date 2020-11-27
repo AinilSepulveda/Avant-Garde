@@ -178,6 +178,8 @@ public class CharacterStats_SO : ScriptableObject
                 maxHealth += (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                 currentResistance += currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                 currentMana += currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+                GameObject newChest;
+                newChest = Instantiate(armorPickup.itemDefinition.itemArmor, ArmorSlot.transform);
                 break;
             case ItemArmorSubType.Boots:
                 characterInventory.inventoryDisplaySlots[7].sprite = armorPickup.itemDefinition.ItemIcon;
@@ -297,6 +299,7 @@ public class CharacterStats_SO : ScriptableObject
                     {
                         previousArmorSame = true;
                     }
+                    Destroy(weaponSlot.transform.GetChild(0).gameObject);
                     characterInventory.inventoryDisplaySlots[4].sprite = null;
                     currentDamage -= (currentDamage + (int)armorPickup.itemDefinition.bonusDamage);
                     currentDamageMagic -= (currentDamageMagic + (int)armorPickup.itemDefinition.bonusDamageMagic);
