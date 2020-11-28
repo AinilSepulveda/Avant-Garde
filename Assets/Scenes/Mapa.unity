@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14529,6 +14529,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1734458129621500272, guid: 3ae5a78afae24d847a9403dacc2c3903,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     - target: {fileID: 3924191835742013375, guid: 3ae5a78afae24d847a9403dacc2c3903,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14686,6 +14691,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2629927801152098909, guid: 979e4e31c5176a641aa6256f30a2ef65,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     - target: {fileID: 4342516131627165313, guid: 979e4e31c5176a641aa6256f30a2ef65,
         type: 3}
       propertyPath: m_Name
@@ -15108,6 +15118,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puerta (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6061431373740139855, guid: 1d40cf22715a4df4ea58084473d99464,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     - target: {fileID: 6959939683555972439, guid: 1d40cf22715a4df4ea58084473d99464,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15163,6 +15178,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8840785170906216872, guid: 1d40cf22715a4df4ea58084473d99464,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d40cf22715a4df4ea58084473d99464, type: 3}
 --- !u!114 &830833094 stripped
@@ -35222,6 +35242,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PilarEnPunta (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6692968471142610688, guid: 18c0df07d9d06a14699bc94a20887919,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     - target: {fileID: 8252209190120780239, guid: 18c0df07d9d06a14699bc94a20887919,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36496,6 +36521,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1734458129621500272, guid: 3ae5a78afae24d847a9403dacc2c3903,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 883f6e2f94ac51c40b4ce6b4e992eac9, type: 2}
     - target: {fileID: 3924191835742013375, guid: 3ae5a78afae24d847a9403dacc2c3903,
         type: 3}
       propertyPath: m_LocalPosition.x
