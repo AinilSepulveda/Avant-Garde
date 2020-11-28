@@ -104,7 +104,7 @@ public class CharacterStats : MonoBehaviour
             characterDefinition.charExperience = 0;
             characterDefinition.charLevel = 1;
 
-            characterDefinition.baseDamage = 2;
+            characterDefinition.baseDamage = 5000;
             characterDefinition.currentDamage = 1;
         }
     }
