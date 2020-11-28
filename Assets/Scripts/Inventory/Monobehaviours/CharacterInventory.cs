@@ -343,6 +343,8 @@ public class CharacterInventory : MonoBehaviour
     public void TriggerItemUse(int itemToUseID) //usar los items
     {
 
+
+
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable
         bool triggerItem = false; // si lo hemos tengo usado
