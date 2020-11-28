@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackedTakeDamage : MonoBehaviour, IAttackable
 {
+    [SerializeField]
     private CharacterStats stats;
 
     private void Awake()
@@ -21,6 +22,8 @@ public class AttackedTakeDamage : MonoBehaviour, IAttackable
             var destructibles = GetComponents(typeof(IDestructible));
             foreach (IDestructible d in destructibles)
                 d.OnDestruction(attacker);
+
+            Debug.Log(stats.name);
         }
     }
 }

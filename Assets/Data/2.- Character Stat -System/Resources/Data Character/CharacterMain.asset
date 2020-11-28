@@ -41,24 +41,24 @@ MonoBehaviour:
   OnHeroInitialized:
     m_PersistentCalls:
       m_Calls: []
-  isHero: 1
+  isHero: 0
   saveDataonClose: 0
-  maxHealth: 0
-  currentHeath: 0
-  maxMana: 0
-  currentMana: 10
-  maxWealth: 0
+  maxHealth: 770
+  currentHeath: 770
+  maxMana: 770
+  currentMana: 780
+  maxWealth: 58
   currentWealth: 0
-  baseDamage: 10
+  baseDamage: 57
   currentDamage: 12
   currentDamageMagic: 0
   baseDamageMagic: 0
-  baseResistance: 0
-  currentResistance: 0
+  baseResistance: 47
+  currentResistance: 47
   currentEncumbrance: 5
-  maxEncumbrance: 0
-  charExperience: 100
-  charLevel: 1
+  maxEncumbrance: 20
+  charExperience: 310
+  charLevel: 4
   charLevelups:
   - maxHealth: 200
     maxMana: 200
@@ -73,20 +73,20 @@ MonoBehaviour:
     baseDamage: 12
     baseResistence: 12
     maxEncumberance: 13
-    requiredXP: 50
+    requiredXP: 0
   - maxHealth: 250
     maxMana: 250
     maxWealth: 22
     baseDamage: 15
     baseResistence: 15
     maxEncumberance: 15
-    requiredXP: 70
+    requiredXP: 0
   - maxHealth: 300
     maxMana: 300
     maxWealth: 25
     baseDamage: 20
     baseResistence: 20
     maxEncumberance: 20
-    requiredXP: 180
+    requiredXP: 0
   LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}
-  GodMode: 0
+  GodMode: 1
