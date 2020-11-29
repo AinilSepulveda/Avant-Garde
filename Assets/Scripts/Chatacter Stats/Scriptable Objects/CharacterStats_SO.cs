@@ -152,7 +152,7 @@ public class CharacterStats_SO : ScriptableObject
 
         
     }
-    public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory, GameObject ArmorSlot)
+    public void EquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory, GameObject ArmorSlot, GameObject ArmorSecond = null)
     {
         switch (armorPickup.itemDefinition.ItemArmorSubType) //Se hace mejor con un switch por que asi tenemos de forma mas especifica
         {
@@ -189,6 +189,8 @@ public class CharacterStats_SO : ScriptableObject
                 maxHealth += (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                 currentResistance += currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                 currentMana += currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+                GameObject newBoots;
+                newBoots = Instantiate(armorPickup.itemDefinition.itemArmor, ArmorSlot.transform);
                 break;
             case ItemArmorSubType.Hands:
                 characterInventory.inventoryDisplaySlots[5].sprite = armorPickup.itemDefinition.ItemIcon;
@@ -198,6 +200,11 @@ public class CharacterStats_SO : ScriptableObject
                 maxHealth += (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                 currentResistance += currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                 currentMana += currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+                GameObject newHands;
+                newHands = Instantiate(armorPickup.itemDefinition.itemArmor, ArmorSlot.transform);
+                GameObject newcaca;
+                newcaca = Instantiate(armorPickup.itemDefinition.itemArmor2, ArmorSecond.transform);
+
                 break;
             case ItemArmorSubType.Legs:
                 characterInventory.inventoryDisplaySlots[6].sprite = armorPickup.itemDefinition.ItemIcon;
@@ -207,6 +214,8 @@ public class CharacterStats_SO : ScriptableObject
                 maxHealth += (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                 currentResistance += currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                 currentMana += currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+                GameObject newLegs;
+                newLegs = Instantiate(armorPickup.itemDefinition.itemArmor, ArmorSlot.transform);
                 break;
 
         }
@@ -265,7 +274,7 @@ public class CharacterStats_SO : ScriptableObject
 
         return previousWeaponSame;
     }
-    public bool UnEquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory, GameObject weaponSlot)
+    public bool UnEquipArmor(ItemPickUp armorPickup, CharacterInventory characterInventory, GameObject weaponSlot,  GameObject ArmorSecond = null)
     {
         bool previousArmorSame = false;
 
@@ -316,12 +325,15 @@ public class CharacterStats_SO : ScriptableObject
                     {
                         previousArmorSame = true;
                     }
+                    Destroy(weaponSlot.transform.GetChild(0).gameObject);
+                    Destroy(ArmorSecond.transform.GetChild(0).gameObject);
                     characterInventory.inventoryDisplaySlots[5].sprite = null;
                     currentDamage -= (currentDamage + (int)armorPickup.itemDefinition.bonusDamage);
                     currentDamageMagic -= (currentDamageMagic + (int)armorPickup.itemDefinition.bonusDamageMagic);
                     maxHealth -= (maxHealth + (int)armorPickup.itemDefinition.bonusHealthPoint);
                     currentResistance -= currentResistance + (int)armorPickup.itemDefinition.bonusResistence;
                     currentMana -= currentMana + (int)armorPickup.itemDefinition.bonusManaPoint;
+                    ArmorSecond = null;
                     handArmor = null;
                 }
                 break;
@@ -332,6 +344,8 @@ public class CharacterStats_SO : ScriptableObject
                     {
                         previousArmorSame = true;
                     }
+                    Destroy(weaponSlot.transform.GetChild(0).gameObject);
+                 //   Destroy(ArmorSecond.transform.GetChild(0).gameObject);
                     characterInventory.inventoryDisplaySlots[6].sprite = null;
                     currentDamage -= (currentDamage + (int)armorPickup.itemDefinition.bonusDamage);
                     currentDamageMagic -= (currentDamageMagic + (int)armorPickup.itemDefinition.bonusDamageMagic);
@@ -348,6 +362,8 @@ public class CharacterStats_SO : ScriptableObject
                     {
                         previousArmorSame = true;
                     }
+                    Destroy(weaponSlot.transform.GetChild(0).gameObject);
+                    Destroy(ArmorSecond.transform.GetChild(0).gameObject);
                     characterInventory.inventoryDisplaySlots[7].sprite = null;
                     currentDamage -= (currentDamage + (int)armorPickup.itemDefinition.bonusDamage);
                     currentDamageMagic -= (currentDamageMagic + (int)armorPickup.itemDefinition.bonusDamageMagic);

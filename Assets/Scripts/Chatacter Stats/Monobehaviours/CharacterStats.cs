@@ -15,6 +15,7 @@ public class CharacterStats : MonoBehaviour
     public GameObject characterArmorBootsSlot; //pies
     public GameObject characterArmorChestsSlot; //cinturon  
     public GameObject characterArmorHandsSlot; //Manos
+    public GameObject characterArmorHands1Slot; //Manos
     public GameObject characterArmorLegsSlot; //piernas
 
     //quitar eso despues
@@ -158,8 +159,9 @@ public class CharacterStats : MonoBehaviour
 
     }
 
-    public void ChangeArmor(ItemPickUp armorPick)
+    public void ChangeArmor(ItemPickUp armorPick  )
     {
+
         switch (armorPick.itemDefinition.ItemArmorSubType)
         {
             case ItemArmorSubType.Head:
@@ -181,9 +183,9 @@ public class CharacterStats : MonoBehaviour
                     // caca.SetActive(true);
                 }
                 break;            case ItemArmorSubType.Hands:
-                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHandsSlot))
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHandsSlot, characterArmorHands1Slot))
                 {
-                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHandsSlot);
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHandsSlot, characterArmorHands1Slot);
                     // caca.SetActive(true);
                 }
                 break;            case ItemArmorSubType.Legs:

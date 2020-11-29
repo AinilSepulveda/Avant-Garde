@@ -25,6 +25,7 @@ public class ItemPickUp_SO : ScriptableObject
     public Weapon WeaponSpawnObject = null;
     [Header("PointArmor")]
     public GameObject itemArmor = null;
+    public GameObject itemArmor2 = null;
 
 
     //  public int itemAmount = 0; //Cuantos items hay

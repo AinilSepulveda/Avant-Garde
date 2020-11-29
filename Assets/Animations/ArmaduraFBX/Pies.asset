@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
-  m_Name: Armorconj1
+  m_Name: Pies
   m_EditorClassIdentifier: 
-  itemName: Armorconj1
+  itemName: Bootsconj1
   itemType: 4
-  ItemArmorSubType: 2
+  ItemArmorSubType: 5
   itemMaterial: {fileID: 0}
-  ItemIcon: {fileID: 21300000, guid: cbc76fe7f2767844a949b0d195312f0d, type: 3}
-  itemSpawnObject: {fileID: 9111395719193393653, guid: d5211254d78b782468c8f53cc2b7c3ce,
+  ItemIcon: {fileID: 21300000, guid: 83eab5476b1854d4dbe80e103cfedb0f, type: 3}
+  itemSpawnObject: {fileID: 6038588436302501405, guid: ad481da0dfe0c6f4a8201afe5b626a4c,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  itemArmor: {fileID: 783726870982770926, guid: 29af15ddb02df4340b3b69cb70c0afb4,
+  itemArmor: {fileID: 4962126899808373090, guid: f373421afa20c4e49bee0e4e29fb8be6,
     type: 3}
   spawnChangeWeight: 0
   isEquipped: 0
