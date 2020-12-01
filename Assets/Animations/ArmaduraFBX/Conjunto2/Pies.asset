@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
-  m_Name: Brazosconj1
+  m_Name: Pies
   m_EditorClassIdentifier: 
-  itemName: New Item
+  itemName: Bootsconj1
   itemType: 4
-  ItemArmorSubType: 3
-  itemMaterial: {fileID: 0}
-  ItemIcon: {fileID: 21300000, guid: 35f7e60e3869570439cbbcca556e93c4, type: 3}
-  itemSpawnObject: {fileID: 8964126778248617390, guid: 51a7557fa39748044b50eb9ed7f54988,
+  ItemArmorSubType: 5
+  itemMaterial: {fileID: 2541457280464432744, guid: 9ca7c18821d06de44ace74a2bbd6f658,
+    type: 3}
+  ItemIcon: {fileID: 21300000, guid: 83eab5476b1854d4dbe80e103cfedb0f, type: 3}
+  itemSpawnObject: {fileID: 6038588436302501405, guid: ad481da0dfe0c6f4a8201afe5b626a4c,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  itemArmor: {fileID: 2010677795876486690, guid: bba793e1e7c5c1f40a07376bb8fd2a01,
+  itemArmor: {fileID: -5000790462881291293, guid: a4271ed1fdaf71a4cbe8f0475df2cd22,
     type: 3}
-  itemArmor2: {fileID: 4636546253797287607, guid: 8bf295cc9074a364c89cc9c813ebbc1c,
-    type: 3}
+  itemArmor2: {fileID: 0}
   spawnChangeWeight: 0
   isEquipped: 0
   isInteractable: 0

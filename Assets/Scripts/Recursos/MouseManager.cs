@@ -36,7 +36,7 @@ public class MouseManager : MonoBehaviour
     {
         if (_useDefaultCursor)
         {
-            Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
+            Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
             return;
         }
 
@@ -57,7 +57,7 @@ public class MouseManager : MonoBehaviour
             {
 
                 isNPC = true;
-                Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
+                Cursor.SetCursor(NPC_Quest, new Vector2(16, 16), CursorMode.Auto);
                 Debug.Log(isNPC);
             }
             else if (hit.collider.gameObject.tag == "UI")
@@ -70,13 +70,13 @@ public class MouseManager : MonoBehaviour
             }
             else
             {
-                Cursor.SetCursor(target, new Vector2(16, 16), CursorMode.Auto);
+                Cursor.SetCursor(target, new Vector2(16 , 16), CursorMode.Auto);
             }
 
             bool isAttackble = hit.collider.GetComponent(typeof(IAttackable)) != null;
             if (isAttackble)
             {
-                Cursor.SetCursor(swood, new Vector2(16, 16), CursorMode.Auto);
+                Cursor.SetCursor(swood, new Vector2(16 , 16), CursorMode.Auto);
 
             }
 

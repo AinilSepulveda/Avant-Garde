@@ -14,7 +14,7 @@ public class PanelStats : MonoBehaviour
 
     private void OnEnable()
     {
-        character = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+       // character = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         mostrarcositas();
     }
 

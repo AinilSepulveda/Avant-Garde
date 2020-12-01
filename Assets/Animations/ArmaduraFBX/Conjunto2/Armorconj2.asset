@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: Armorconj2
   m_EditorClassIdentifier: 
-  itemName: Armorconj2
+  itemName: Armorconj1
   itemType: 4
   ItemArmorSubType: 2
-  itemMaterial: {fileID: 0}
+  itemMaterial: {fileID: 9185737683893222716, guid: 6111c96f703fd0f469ad3c43ca38bc52,
+    type: 3}
   ItemIcon: {fileID: 21300000, guid: cbc76fe7f2767844a949b0d195312f0d, type: 3}
-  itemSpawnObject: {fileID: 7966623107109173624, guid: 31f1f6ffde631d747962223b29615e11,
+  itemSpawnObject: {fileID: 9111395719193393653, guid: d5211254d78b782468c8f53cc2b7c3ce,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  itemArmor: {fileID: 7948126862007401423, guid: d734e5a546902df4bb595301545ba918,
+  itemArmor: {fileID: 1596217881935114768, guid: a4271ed1fdaf71a4cbe8f0475df2cd22,
     type: 3}
+  itemArmor2: {fileID: 0}
   spawnChangeWeight: 0
   isEquipped: 0
   isInteractable: 0

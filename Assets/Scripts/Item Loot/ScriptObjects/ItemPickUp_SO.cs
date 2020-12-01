@@ -24,7 +24,7 @@ public class ItemPickUp_SO : ScriptableObject
 
     public Weapon WeaponSpawnObject = null;
     [Header("PointArmor")]
-    public GameObject itemArmor = null;
+    public Mesh itemArmor = null;
     public GameObject itemArmor2 = null;
 
 

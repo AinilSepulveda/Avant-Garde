@@ -11,7 +11,7 @@ public class CharacterInventory : MonoBehaviour
 
     public CharacterStats charStats; //una referencia al los stast
     GameObject foundStats;
-
+    public TMPro.TextMeshProUGUI textMeshPro;
     public Image[] hotBarDisplayHolders = new Image[4]; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
     public Image[] inventoryDisplaySlots = new Image[30]; //los slots de inventario, las imagenes sipo, 
@@ -32,8 +32,8 @@ public class CharacterInventory : MonoBehaviour
     void Start()
     {
         instance = this;
-        InventoryDisplayHolder = GameObject.Find("grpInventoryDisplay");
-        buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
+      
+        //    buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
         for (int i = 0; i < hotBarDisplayHolders.Length; i++)
         {
             Image image = GameObject.Find("Hotkeys").transform.GetChild(i).GetComponent<Image>();
@@ -179,7 +179,8 @@ public class CharacterInventory : MonoBehaviour
     }
     public bool AddItemToInv (bool finishedAdding) //Si para ver si es stackable o no  y si lo hes para dar mas posiciones o sino darle un espacio mas
     {
-        
+        textMeshPro.gameObject.SetActive(true);
+        textMeshPro.text = "Has recogido: " + itemEntry.invEntry.itemDefinition.name;
 
         idCount = IncreaseID(idCount);
 
@@ -220,7 +221,7 @@ public class CharacterInventory : MonoBehaviour
         return newID;
     }
 
-    private void AddItemToHotBar ( InventoryEntry itemforHotBar) // para usar lo que tenemos en el inventario
+    private void AddItemToHotBar (InventoryEntry itemforHotBar) // para usar lo que tenemos en el inventario
     {
        int hotbarCounter = 0; //Contador de HotBar :V 
        bool increaseCount = false;
@@ -243,7 +244,21 @@ public class CharacterInventory : MonoBehaviour
                     break;
                 }
 
-            } 
+            }
+           else if (itemforHotBar.hotBarSlot == 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+           {
+                hotbarCounter = 2;
+                if (image.sprite == null)
+                {
+                    Debug.Log("Caca");
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = true; //Todo bien y es verdadero
+                    break;
+                }
+
+           } 
             
 
             else if (itemforHotBar.hotBarSlot < 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
@@ -291,7 +306,7 @@ public class CharacterInventory : MonoBehaviour
         if (InventoryDisplayHolder.activeSelf == true)
         {
             InventoryDisplayHolder.SetActive(false);
-
+            textMeshPro.gameObject.SetActive(false);
         }
         else
         {
@@ -397,7 +412,7 @@ public class CharacterInventory : MonoBehaviour
                     ie.Value.stackSize -= 1;
                     hotBarDisplayHolders[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
                 }
-
+                Debug.Log(ie.Value.invEntry.itemDefinition + "Is use");
             }
         }
 

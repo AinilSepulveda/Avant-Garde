@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
+  m_Name: Pies 1
+  m_EditorClassIdentifier: 
+  itemName: Bootsconj1
+  itemType: 4
+  ItemArmorSubType: 5
+  itemMaterial: {fileID: 2541457280464432744, guid: 9ca7c18821d06de44ace74a2bbd6f658,
+    type: 3}
+  ItemIcon: {fileID: 21300000, guid: 83eab5476b1854d4dbe80e103cfedb0f, type: 3}
+  itemSpawnObject: {fileID: 6038588436302501405, guid: ad481da0dfe0c6f4a8201afe5b626a4c,
+    type: 3}
+  WeaponSpawnObject: {fileID: 0}
+  itemArmor: {fileID: -5000790462881291293, guid: a4271ed1fdaf71a4cbe8f0475df2cd22,
+    type: 3}
+  itemArmor2: {fileID: 0}
+  spawnChangeWeight: 0
+  isEquipped: 0
+  isInteractable: 0
+  isStorable: 1
+  isUnique: 1
+  isIndestructable: 1
+  isQuestItem: 0
+  IsStackable: 0
+  destrouOnUse: 0
+  itemAmount: 0
+  itemWeight: 0
+  bonusResistence: 0
+  bonusHealthPoint: 0
+  bonusDamage: 0
+  bonusDamageMagic: 0
+  bonusManaPoint: 0

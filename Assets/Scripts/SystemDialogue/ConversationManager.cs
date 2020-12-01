@@ -14,8 +14,8 @@ public class ConversationManager : Singleton <ConversationManager>
 
     public Transform optionPanel; //es para el padre
 
-    public GameObject conversationPanel; 
-
+    public GameObject conversationPanel;
+    public GameObject TextMision;
     public Button optionPrefabs;
     //Constructor
 
@@ -118,6 +118,7 @@ public class ConversationManager : Singleton <ConversationManager>
         Debug.Log("End Conversation");
         waitingAnswer = false;
         dialogues.Clear();
+        TextMision.SetActive(true);
         currentDialogue = null;
         conversationPanel.SetActive(false);
     }

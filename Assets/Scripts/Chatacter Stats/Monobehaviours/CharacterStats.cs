@@ -11,12 +11,12 @@ public class CharacterStats : MonoBehaviour
     [Header ("WeaponSlot")]
     public GameObject characterWeaponSlot;
     [Header("ArmorSlots")]
-    public GameObject characterArmorHeadSlot; //cabeza
-    public GameObject characterArmorBootsSlot; //pies
-    public GameObject characterArmorChestsSlot; //cinturon  
-    public GameObject characterArmorHandsSlot; //Manos
-    public GameObject characterArmorHands1Slot; //Manos
-    public GameObject characterArmorLegsSlot; //piernas
+    public SkinnedMeshRenderer characterArmorHeadSlot; //cabeza
+    public SkinnedMeshRenderer characterArmorBootsSlot; //pies
+    public SkinnedMeshRenderer characterArmorChestsSlot; //cinturon  
+    public SkinnedMeshRenderer characterArmorHandsSlot; //Manos
+//    public GameObject characterArmorHands1Slot; //Manos
+    public SkinnedMeshRenderer characterArmorLegsSlot; //piernas
 
     //quitar eso despues
     public GameObject caca;
@@ -159,7 +159,7 @@ public class CharacterStats : MonoBehaviour
 
     }
 
-    public void ChangeArmor(ItemPickUp armorPick  )
+    public void ChangeArmor(ItemPickUp armorPick)
     {
 
         switch (armorPick.itemDefinition.ItemArmorSubType)
@@ -174,25 +174,28 @@ public class CharacterStats : MonoBehaviour
                 if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorBootsSlot))
                 {
                     characterDefinition.EquipArmor(armorPick, charInv, characterArmorBootsSlot);
-                    // caca.SetActive(true);
+            
                 }
-                break;            case ItemArmorSubType.Chest:
+                break;
+            case ItemArmorSubType.Chest:
                 if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorChestsSlot))
                 {
-                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorChestsSlot);
-                    // caca.SetActive(true);
+                     characterDefinition.EquipArmor(armorPick, charInv, characterArmorChestsSlot);
+                   
                 }
-                break;            case ItemArmorSubType.Hands:
-                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHandsSlot, characterArmorHands1Slot))
+                break;
+            case ItemArmorSubType.Hands:
+                if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHandsSlot))
                 {
-                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHandsSlot, characterArmorHands1Slot);
-                    // caca.SetActive(true);
+                    characterDefinition.EquipArmor(armorPick, charInv, characterArmorHandsSlot);
+
                 }
-                break;            case ItemArmorSubType.Legs:
+                break;
+            case ItemArmorSubType.Legs:
                 if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorLegsSlot))
                 {
                     characterDefinition.EquipArmor(armorPick, charInv, characterArmorLegsSlot);
-                    // caca.SetActive(true);
+
                 }
                 break;          
         }
