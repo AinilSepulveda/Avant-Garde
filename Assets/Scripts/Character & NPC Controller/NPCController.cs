@@ -104,7 +104,7 @@ public class NPCController : MonoBehaviour
        //     isSpecial = isSpecial;
             if (!attackOnCooldownSpecial && attackInRangeSpecial)
             {
-                agent.isStopped = true;
+               // agent.isStopped = true;
 
                 transform.LookAt(player.transform);
                 timeSinceLastAttack2 = Time.time;
@@ -244,10 +244,10 @@ public class NPCController : MonoBehaviour
 
 
         //Seguridad para que no se venga tan arriba JODER, TIO, COÑO
-        if (U < -5)
-            U = -5;
-        if (U > 5)
-            U = 5;
+        if (U < -10)
+            U = -10;
+        if (U > 10)
+            U = 10;
 
         agent.transform.LookAt(player.transform.position);
 
@@ -255,7 +255,7 @@ public class NPCController : MonoBehaviour
 
         Vector3 lenardJones = agent.transform.forward * Mathf.Clamp(U, -8, 8) * Time.deltaTime * agent.speed * 2;
 
-     //   Debug.Log(lenardJones);
+        Debug.Log("lenardJones" + lenardJones);
 
         return lenardJones;
     }
