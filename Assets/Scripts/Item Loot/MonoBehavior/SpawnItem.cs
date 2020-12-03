@@ -36,7 +36,7 @@ public class SpawnItem : MonoBehaviour, ISpawns
             whichToSpawn += ip.spawnChangeWeight;
             if (whichToSpawn >= chosen)
             {
-                itemSpawned = Instantiate(ip.itemSpawnObject, transform.position, Quaternion.identity);
+                itemSpawned = Instantiate(ip.itemSpawnObject, transform.position, ip.itemSpawnObject.transform.rotation);
 
                 itemMaterial = itemSpawned.GetComponent<Renderer>();
                 if (itemMaterial != null)

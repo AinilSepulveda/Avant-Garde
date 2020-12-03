@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dbf671080bf7a4ca6a4c24e9552f51, type: 3}
   m_Name: Aoe
   m_EditorClassIdentifier: 
-  Cooldown: 10
+  Cooldown: 5
   costAmount: 5
   Range: 5
   minDamage: 8

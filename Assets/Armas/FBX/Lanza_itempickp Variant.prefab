@@ -53,22 +53,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.445
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.315
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 150.671
+      value: 118.909996
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
@@ -78,12 +78,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
@@ -103,12 +103,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_Name
-      value: Lanza_itempickp
+      value: Lanza_itempickp Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cbd433a58f32e04e84ce869bfec7a0b, type: 3}

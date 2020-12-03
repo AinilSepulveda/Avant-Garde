@@ -134,7 +134,7 @@ public class AttackDefinition : ScriptableObject
 
             Vector3 lenardJones = attacker.transform.forward * Mathf.Clamp(U, -8, 8) * Time.deltaTime * attackernavMesh.speed;
 
-            Debug.Log(lenardJones);
+        //    Debug.Log(lenardJones);
 
             attackernavMesh.updatePosition = true;
             attackernavMesh.destination += attackernavMesh.nextPosition;

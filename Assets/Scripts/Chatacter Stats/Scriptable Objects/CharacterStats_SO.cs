@@ -139,7 +139,7 @@ public class CharacterStats_SO : ScriptableObject
         Debug.Log(weaponPickUp.name);
 
         Rigidbody newWeapon;
-        characterInventory.inventoryDisplaySlots[2].sprite = weaponPickUp.itemDefinition.ItemIcon;
+        characterInventory.inventoryDisplaySlots[1].sprite = weaponPickUp.itemDefinition.ItemIcon;
         newWeapon = Instantiate(weaponPickUp.itemDefinition.WeaponSpawnObject.weaponPreb, weaponSlot.transform);
 
 
@@ -282,7 +282,7 @@ public class CharacterStats_SO : ScriptableObject
                 previousWeaponSame = false;
                 Debug.Log("previos false");
             }
-            characterInventory.inventoryDisplaySlots[2].sprite = null;
+            characterInventory.inventoryDisplaySlots[1].sprite = null;
             Destroy(weaponSlot.transform.GetChild(0).gameObject);//Se destruye el primer Arma
             Debug.Log("Se destruyo el hijo");
             currentDamage -=  (int)weapon.itemDefinition.bonusDamage;

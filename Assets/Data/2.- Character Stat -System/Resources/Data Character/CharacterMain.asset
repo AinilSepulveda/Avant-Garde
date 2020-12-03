@@ -41,7 +41,7 @@ MonoBehaviour:
   OnHeroInitialized:
     m_PersistentCalls:
       m_Calls: []
-  isHero: 0
+  isHero: 1
   saveDataonClose: 0
   maxHealth: 770
   currentHeath: 770
@@ -57,7 +57,7 @@ MonoBehaviour:
   currentResistance: 47
   currentEncumbrance: 5
   maxEncumbrance: 20
-  charExperience: 310
+  charExperience: 360
   charLevel: 4
   charLevelups:
   - maxHealth: 200
@@ -89,4 +89,4 @@ MonoBehaviour:
     maxEncumberance: 20
     requiredXP: 0
   LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}
-  GodMode: 1
+  GodMode: 0
