@@ -272,14 +272,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hero: {fileID: 0}
+  Exp: 5
   OnMobDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
   mobyType: 0
   SpellHotSpot: {fileID: 6369459095491729500}
   IDenemy: 0
   showAgroo: 1
-  attackOnCooldown: 0
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
 --- !u!195 &5415609448692248965
@@ -320,6 +324,11 @@ MonoBehaviour:
   characterDefinition: {fileID: 0}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
+  characterArmorHeadSlot: {fileID: 0}
+  characterArmorBootsSlot: {fileID: 0}
+  characterArmorChestsSlot: {fileID: 0}
+  characterArmorHandsSlot: {fileID: 0}
+  characterArmorLegsSlot: {fileID: 0}
   caca: {fileID: 0}
   burnTickTimers: 
   iskeepDamage: 0
@@ -352,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77ea83cdf83dec458e4c0bb21ac4017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!114 &2488205057987343131
 MonoBehaviour:
   m_ObjectHideFlags: 0

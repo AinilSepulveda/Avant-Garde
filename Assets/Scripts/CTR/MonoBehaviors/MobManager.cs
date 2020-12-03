@@ -174,4 +174,10 @@ public class MobManager : MonoBehaviour
 
         return null;
     }
+    public  int Mobkilled(int cacaa)
+    {
+        MobWave currentWave = Waves[currentWaveIndex];
+        cacaa = currentWave.PointsPerkill;
+        return cacaa;
+    }
 }
