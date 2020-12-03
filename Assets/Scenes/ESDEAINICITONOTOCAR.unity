@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4745,6 +4745,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1126448651254142, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1274321195997132, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -7966,6 +7970,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4f83d2eb73c5e084c89df5c605d4aa63,
     type: 3}
   m_PrefabInstance: {fileID: 483774635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &486643938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1553249614825198, guid: bc7e7f7597afe0d449e8a93002061ffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 707965137}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &497627117
 PrefabInstance:
@@ -15537,21 +15547,25 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1553249614825198, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1843181581300458, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4369810511624676, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -175.3
+      value: -223.3
       objectReference: {fileID: 0}
     - target: {fileID: 4369810511624676, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.61
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 4369810511624676, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 113.78
+      value: 69.85
       objectReference: {fileID: 0}
     - target: {fileID: 4369810511624676, guid: bc7e7f7597afe0d449e8a93002061ffe, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27317,6 +27331,7 @@ MonoBehaviour:
   - {fileID: 2806325330459352919, guid: b62141bb2934d174cb7b92a7e8f0f253, type: 3}
   - {fileID: 8612178752234458532, guid: a8c62349fee004b46a930a29effee795, type: 3}
   activeMobs: 0
+  activeMobss: []
   dropTables:
   - {fileID: 11400000, guid: c5701dd419e9c9e4a8938c448a1d1087, type: 2}
   - {fileID: 11400000, guid: 3bd2d6deba397a74f91153c7d6561c9b, type: 2}
@@ -27345,7 +27360,7 @@ MonoBehaviour:
   OnWaveCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 450167566}
+      - m_Target: {fileID: 1486513376}
         m_MethodName: IncreaseXP
         m_Mode: 0
         m_Arguments:
@@ -27359,17 +27374,18 @@ MonoBehaviour:
   OnOutOfWave:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnOutOfWave
-        m_Mode: 1
+      - m_Target: {fileID: 486643938}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
+  cacaV2: {fileID: 486643938}
 --- !u!1 &1816689758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8852625255004171929, guid: cda631d51f5d9db44bbbac4ec53bc1fb,
@@ -29486,7 +29502,7 @@ PrefabInstance:
         type: 3}
       propertyPath: itemDefinitions.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: d3f05d1a4dc6afe42b57d980f2eefa56,
+      objectReference: {fileID: 11400000, guid: 917d3bbe431c6af45865e06bd5f1fa54,
         type: 2}
     - target: {fileID: 5543901059167146735, guid: bc7e7f7597afe0d449e8a93002061ffe,
         type: 3}

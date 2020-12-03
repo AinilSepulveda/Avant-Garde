@@ -12,6 +12,7 @@ public class MobManager : MonoBehaviour
     [SerializeField]
     private int activeMobs;
 
+    public List<GameObject> activeMobss = new List<GameObject>();
     //drops
     public List<DropTable> dropTables;
 
@@ -23,6 +24,9 @@ public class MobManager : MonoBehaviour
     public UnityEvent OnOutOfWave;
     //ALAScript
     alasScript alas;
+    bool caca;
+
+    public GameObject cacaV2;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,7 @@ public class MobManager : MonoBehaviour
 
     public void SpawnWave()
     {
+        caca = true;
         spawnpoints = FindObjectsOfType<Spawnpoint>();
 
         if (Waves.Length - 1 < currentWaveIndex)
@@ -52,9 +57,10 @@ public class MobManager : MonoBehaviour
         {
             SoundManager.Instance.PlaySoundEffect(SoundEffect.NextWave);
             //musica de waves
+            cacaV2.SetActive(true);
         }
 
-        activeMobs = Waves[currentWaveIndex].NumberOfMobs;
+
 
         for (int i = 0; i <= Waves[currentWaveIndex].NumberOfMobs - 1; i++)
         {
@@ -62,8 +68,8 @@ public class MobManager : MonoBehaviour
             Spawnpoint spawnpoint = selectRamdomSpawnpoint();
             GameObject mobs = Instantiate(selectRamdonMob(), spawnpoint.transform.position, Quaternion.identity);
 
+            activeMobss.Add(mobs);
 
-          
 
 
            // Mobs[Waves[currentWaveIndex].NumberOfMobs] = mobs; 
@@ -77,6 +83,7 @@ public class MobManager : MonoBehaviour
             stats.SetInitialResistence(currentWave.MobResistance);
 
         }
+        activeMobs = activeMobss.Count;
     }
     public void OnMobDeath(MobyType mobyType, Vector3 position)
     {
@@ -89,7 +96,7 @@ public class MobManager : MonoBehaviour
         SpawnDrops(mobyType, position);
         Debug.LogFormat("{0} killed at {1}", mobyType, position);
 
-        if (activeMobs == 0)
+        if (activeMobs <= 0 && caca == true)
         {
             OnWaveCompleted.Invoke(currentWave.WaveValue);
             currentWaveIndex += 1;
