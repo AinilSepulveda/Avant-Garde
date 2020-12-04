@@ -36,7 +36,7 @@ public class MouseManager : MonoBehaviour
     {
         if (_useDefaultCursor)
         {
-            Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
+            Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
             return;
         }
 
