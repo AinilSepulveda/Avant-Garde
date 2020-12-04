@@ -15,8 +15,7 @@ MonoBehaviour:
   itemName: Bootsconj1
   itemType: 4
   ItemArmorSubType: 5
-  itemMaterial: {fileID: 2541457280464432744, guid: 9ca7c18821d06de44ace74a2bbd6f658,
-    type: 3}
+  itemMaterial: {fileID: 2100000, guid: 7b5ce1e37f438eb40ab75d2f277d5945, type: 2}
   ItemIcon: {fileID: 21300000, guid: 83eab5476b1854d4dbe80e103cfedb0f, type: 3}
   itemSpawnObject: {fileID: 6038588436302501405, guid: ad481da0dfe0c6f4a8201afe5b626a4c,
     type: 3}
@@ -35,8 +34,8 @@ MonoBehaviour:
   destrouOnUse: 0
   itemAmount: 0
   itemWeight: 0
-  bonusResistence: 0
-  bonusHealthPoint: 0
-  bonusDamage: 0
-  bonusDamageMagic: 0
-  bonusManaPoint: 0
+  bonusResistence: 2
+  bonusHealthPoint: 15
+  bonusDamage: 5
+  bonusDamageMagic: 5
+  bonusManaPoint: 5

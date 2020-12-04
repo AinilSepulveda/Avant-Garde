@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: HeadArmor 1
   itemType: 4
   ItemArmorSubType: 1
-  itemMaterial: {fileID: 2100000, guid: 2503f12759a819341bff56e58e623a87, type: 2}
+  itemMaterial: {fileID: 2100000, guid: 5df23e7eaf4add54686977b020927886, type: 2}
   ItemIcon: {fileID: 21300000, guid: 4ee4ae08fb599db44896e8eb2ea16864, type: 3}
   itemSpawnObject: {fileID: 8326239941780932003, guid: c4a3532f37e2a114cb9903c86e38cf5e,
     type: 3}
@@ -33,9 +33,9 @@ MonoBehaviour:
   IsStackable: 0
   destrouOnUse: 0
   itemAmount: 0
-  itemWeight: 0
-  bonusResistence: 1
-  bonusHealthPoint: 1
-  bonusDamage: 1
-  bonusDamageMagic: 1
-  bonusManaPoint: 1
+  itemWeight: 2
+  bonusResistence: 2
+  bonusHealthPoint: 15
+  bonusDamage: 5
+  bonusDamageMagic: 5
+  bonusManaPoint: 5

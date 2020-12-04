@@ -15,8 +15,7 @@ MonoBehaviour:
   itemName: New Item
   itemType: 4
   ItemArmorSubType: 3
-  itemMaterial: {fileID: -8274133419916619345, guid: 6111c96f703fd0f469ad3c43ca38bc52,
-    type: 3}
+  itemMaterial: {fileID: 2100000, guid: 2316963fd0886d149b5435bab1d61ae1, type: 2}
   ItemIcon: {fileID: 21300000, guid: 35f7e60e3869570439cbbcca556e93c4, type: 3}
   itemSpawnObject: {fileID: 8964126778248617390, guid: 51a7557fa39748044b50eb9ed7f54988,
     type: 3}
@@ -36,8 +35,8 @@ MonoBehaviour:
   destrouOnUse: 0
   itemAmount: 0
   itemWeight: 0
-  bonusResistence: 0
-  bonusHealthPoint: 0
-  bonusDamage: 0
-  bonusDamageMagic: 0
-  bonusManaPoint: 0
+  bonusResistence: 2
+  bonusHealthPoint: 15
+  bonusDamage: 5
+  bonusDamageMagic: 5
+  bonusManaPoint: 5

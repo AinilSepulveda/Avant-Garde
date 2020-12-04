@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e58bb899f6986c4699cf173baad77ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_Template: {fileID: 11400000, guid: 3c6f0f398a2e589439565b0062c466de, type: 2}
+  character_Template: {fileID: 11400000, guid: 218329ff6c7d01a4a84ba9c8cbfeb877, type: 2}
   characterDefinition: {fileID: 0}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}

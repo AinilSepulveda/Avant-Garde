@@ -18,8 +18,12 @@ public class MouseManager : MonoBehaviour
 
     private bool _useDefaultCursor = false;
 
+    [SerializeField]
+    public bool showGizmo;
 
-
+    private Vector2 mouseTarget;
+    private Vector2 mousePointer = new Vector2(340, 376) ;
+    private Vector2 mouseSword = new Vector2(373, 492) ;
     private void Start()
     {   
         if(GameManager.Instance != null) //Se inicia la mismo tiempo que Gamager y sino, no se inicia
@@ -34,16 +38,30 @@ public class MouseManager : MonoBehaviour
     }
     void Update()
     {
-        if (_useDefaultCursor)
-        {
-            Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
-            return;
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+
+        //        showGizmo = false;
+           
+        //}
+        //if (Input.GetKeyUp(KeyCode.K))
+        //{
+        //    showGizmo = true;
+        //}
+
+        //if (_useDefaultCursor)
+        //{
+        //    Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
+        //    return;
+        //}
 
         // Raycast into scene
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 50, clickableLayer.value))
         {
+            Vector3 targerPosition = Input.mousePosition;
+            Debug.DrawRay(Camera.main.ScreenPointToRay(targerPosition).origin, hit.collider.transform.TransformDirection(Vector3.forward));
+
             bool isNPC = false;
             bool door = false;
             bool UI = false;
@@ -65,24 +83,32 @@ public class MouseManager : MonoBehaviour
 
 
                 UI = true;
-                Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
+                Cursor.SetCursor(pointer, mousePointer, CursorMode.Auto);
 
             }
             else
             {
-                Cursor.SetCursor(target, new Vector2(16 , 16), CursorMode.Auto);
+                if (showGizmo == false)
+                {
+                    Cursor.SetCursor(target, mouseTarget, CursorMode.Auto);
+                }
+                if (showGizmo == true)
+                {
+                    Cursor.SetCursor(null, Vector2.zero,  CursorMode.Auto);
+                }
+               
             }
 
             bool isAttackble = hit.collider.GetComponent(typeof(IAttackable)) != null;
             if (isAttackble)
             {
-                Cursor.SetCursor(swood, new Vector2(16 , 16), CursorMode.Auto);
+                Cursor.SetCursor(swood, mouseSword, CursorMode.Auto);
 
             }
 
             if (Input.GetMouseButton(0))
             {
-                
+                Debug.Log( hit.collider.name); 
                 if (door)
                 {
                     Transform doorway = hit.collider.gameObject.transform;
@@ -135,6 +161,13 @@ public class MouseManager : MonoBehaviour
         {
             Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
         }
+    }
+    void OnDrawGizmosSelected()
+    {
+        // Draws a 5 unit long red line in front of the object
+        Gizmos.color = Color.red;
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
+
     }
 }
 

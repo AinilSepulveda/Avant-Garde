@@ -15,8 +15,8 @@ MonoBehaviour:
   Cooldown: 2
   costAmount: 0
   Range: 2
-  minDamage: 10
-  maxDamage: 25
+  minDamage: 20
+  maxDamage: 30
   criticalMultiplier: 2
   criticalChange: 0.3
   VariableAttack: 2

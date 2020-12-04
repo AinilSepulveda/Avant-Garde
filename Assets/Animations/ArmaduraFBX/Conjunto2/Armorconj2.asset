@@ -35,8 +35,8 @@ MonoBehaviour:
   destrouOnUse: 0
   itemAmount: 0
   itemWeight: 0
-  bonusResistence: 0
-  bonusHealthPoint: 0
-  bonusDamage: 0
-  bonusDamageMagic: 0
-  bonusManaPoint: 0
+  bonusResistence: 2
+  bonusHealthPoint: 15
+  bonusDamage: 5
+  bonusDamageMagic: 5
+  bonusManaPoint: 5

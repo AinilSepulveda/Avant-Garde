@@ -168,7 +168,7 @@ public class CharacterStats : MonoBehaviour
                 if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorHeadSlot))
                 {
                     characterDefinition.EquipArmor(armorPick, charInv, characterArmorHeadSlot);
-                    // caca.SetActive(true);
+                     caca.SetActive(true);
                 }
                 break;            case ItemArmorSubType.Boots:
                 if (!characterDefinition.UnEquipArmor(armorPick, charInv, characterArmorBootsSlot))

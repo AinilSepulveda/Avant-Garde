@@ -1799,7 +1799,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  hero: {fileID: 0}
+  Exp: 5
   OnMobDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
   mobyType: 0
@@ -1842,7 +1847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e58bb899f6986c4699cf173baad77ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character_Template: {fileID: 11400000, guid: 3c6f0f398a2e589439565b0062c466de, type: 2}
+  character_Template: {fileID: 11400000, guid: 5289c3e9d1a258d409dc58f1da7cc9b3, type: 2}
   characterDefinition: {fileID: 0}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
@@ -1883,6 +1888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77ea83cdf83dec458e4c0bb21ac4017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
 --- !u!114 &1995131453189771725
 MonoBehaviour:
   m_ObjectHideFlags: 0
