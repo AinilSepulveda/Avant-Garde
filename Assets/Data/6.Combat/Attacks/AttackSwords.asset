@@ -13,11 +13,17 @@ MonoBehaviour:
   m_Name: AttackSwords
   m_EditorClassIdentifier: 
   Cooldown: 5
+  costAmount: 0
   Range: 2
-  minDamage: 5
-  maxDamage: 8
+  minDamage: 10
+  maxDamage: 15
   criticalMultiplier: 2
   criticalChange: 0.3
+  VariableAttack: 0
+  forceToadd: 300
+  isMagic: 0
+  Iskeep: 0
+  TimeInScene: 0
+  TickTimers: 
   weaponPreb: {fileID: 54489579891074848, guid: d254034d42cb8fd43964be17e93406f4,
     type: 3}
-  forceToadd: 300

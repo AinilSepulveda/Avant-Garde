@@ -57,7 +57,7 @@ MonoBehaviour:
   currentResistance: 47
   currentEncumbrance: 5
   maxEncumbrance: 20
-  charExperience: 360
+  charExperience: 540
   charLevel: 4
   charLevelups:
   - maxHealth: 200
@@ -73,20 +73,20 @@ MonoBehaviour:
     baseDamage: 12
     baseResistence: 12
     maxEncumberance: 13
-    requiredXP: 0
+    requiredXP: 50
   - maxHealth: 250
     maxMana: 250
     maxWealth: 22
     baseDamage: 15
     baseResistence: 15
     maxEncumberance: 15
-    requiredXP: 0
+    requiredXP: 70
   - maxHealth: 300
     maxMana: 300
     maxWealth: 25
     baseDamage: 20
     baseResistence: 20
     maxEncumberance: 20
-    requiredXP: 0
+    requiredXP: 120
   LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}
   GodMode: 0

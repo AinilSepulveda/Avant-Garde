@@ -47,13 +47,15 @@ public class HeroController : MonoBehaviour
 
     private void Start()
     {
-        stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnHeroLeveledUp);
-        stats.characterDefinition.OnHeroDamaged.AddListener(GameManager.Instance.OnHeroDamaged);
-        stats.characterDefinition.OnHeroGainedHealth.AddListener(GameManager.Instance.OnHeroGainedHealth);
-        stats.characterDefinition.OnHeroGainedMana.AddListener(GameManager.Instance.OnHeroGainedMana);
-        stats.characterDefinition.OnHeroDeath.AddListener(GameManager.Instance.OnHeroDied);
-        stats.characterDefinition.OnHeroInitialized.AddListener(GameManager.Instance.OnHeroInit);
-
+        if (GameManager.Instance != null)
+        {
+            stats.characterDefinition.OnLevelUp.AddListener(GameManager.Instance.OnHeroLeveledUp);
+            stats.characterDefinition.OnHeroDamaged.AddListener(GameManager.Instance.OnHeroDamaged);
+            stats.characterDefinition.OnHeroGainedHealth.AddListener(GameManager.Instance.OnHeroGainedHealth);
+            stats.characterDefinition.OnHeroGainedMana.AddListener(GameManager.Instance.OnHeroGainedMana);
+            stats.characterDefinition.OnHeroDeath.AddListener(GameManager.Instance.OnHeroDied);
+            stats.characterDefinition.OnHeroInitialized.AddListener(GameManager.Instance.OnHeroInit);
+        }
         stats.characterDefinition.OnHeroInitialized.Invoke();
     }
 

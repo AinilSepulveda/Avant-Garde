@@ -20,6 +20,8 @@ MonoBehaviour:
   itemSpawnObject: {fileID: 54381755956771222, guid: 851d5e8d6952d13469c3c9ff2c723899,
     type: 3}
   WeaponSpawnObject: {fileID: 11400000, guid: f282287774175db4b9634d41890b5a3e, type: 2}
+  itemArmor: {fileID: 0}
+  itemArmor2: {fileID: 0}
   spawnChangeWeight: 0
   isEquipped: 0
   isInteractable: 0
@@ -33,6 +35,6 @@ MonoBehaviour:
   itemWeight: 5
   bonusResistence: 2
   bonusHealthPoint: 10
-  bonusDamage: 10
+  bonusDamage: 15
   bonusDamageMagic: 2
   bonusManaPoint: 0

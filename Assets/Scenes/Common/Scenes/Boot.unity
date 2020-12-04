@@ -2879,6 +2879,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8026557877201254083, guid: 8394e2d15fb4493498fa45c226d39fba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8026557877254706808, guid: 8394e2d15fb4493498fa45c226d39fba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2982,7 +2987,7 @@ MonoBehaviour:
   OnGameStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  NameLevelRunnig: ESDEAINICITONOTOCAR
+  NameLevelRunnig: Mapa
 --- !u!4 &2015759414
 Transform:
   m_ObjectHideFlags: 0

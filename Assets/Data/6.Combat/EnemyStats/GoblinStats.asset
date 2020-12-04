@@ -21,6 +21,9 @@ MonoBehaviour:
   OnHeroGainedHealth:
     m_PersistentCalls:
       m_Calls: []
+  OnHeroGainedMana:
+    m_PersistentCalls:
+      m_Calls: []
   OnHeroDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -35,8 +38,8 @@ MonoBehaviour:
   currentMana: 0
   maxWealth: 0
   currentWealth: 0
-  baseDamage: 5
-  currentDamage: 10
+  baseDamage: 25
+  currentDamage: 30
   currentDamageMagic: 0
   baseDamageMagic: 0
   baseResistance: 5
@@ -46,3 +49,5 @@ MonoBehaviour:
   charExperience: 0
   charLevel: 0
   charLevelups: []
+  LevelUP: {fileID: 0}
+  GodMode: 0
