@@ -80338,6 +80338,8 @@ MonoBehaviour:
   - {fileID: 2234403662610979725, guid: 1216f789388b592438534fcfe0223f2f, type: 3}
   - {fileID: 2806325330459352919, guid: b62141bb2934d174cb7b92a7e8f0f253, type: 3}
   - {fileID: 8612178752234458532, guid: a8c62349fee004b46a930a29effee795, type: 3}
+  - {fileID: 8378161164562750430, guid: bb221e1237e3eaf43ac2a9119c345544, type: 3}
+  - {fileID: 6020218958153205478, guid: e3f5d1d9d51f4884d9143afb325db521, type: 3}
   activeMobs: 0
   activeMobss: []
   dropTables:

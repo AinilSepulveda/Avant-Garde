@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c062388f479b1245b8fe9bfe1d6fe27, type: 3}
   m_Name: MobWave_02
   m_EditorClassIdentifier: 
-  MobHealth: 40
-  MobDamage: 30
-  MobResistance: 10
-  NumberOfMobs: 5
+  MobHealth: 200
+  MobDamage: 40
+  MobResistance: 15
+  NumberOfMobs: 8
   PointsPerkill: 10
   WaveValue: 0
   waypoints: []
