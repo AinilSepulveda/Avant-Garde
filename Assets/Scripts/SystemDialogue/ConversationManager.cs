@@ -16,6 +16,7 @@ public class ConversationManager : Singleton <ConversationManager>
 
     public GameObject conversationPanel;
     public GameObject TextMision;
+    public GameObject DialogueSystem;
     public Button optionPrefabs;
     //Constructor
 
@@ -121,5 +122,6 @@ public class ConversationManager : Singleton <ConversationManager>
         TextMision.SetActive(true);
         currentDialogue = null;
         conversationPanel.SetActive(false);
+        DialogueSystem.SetActive(false);
     }
 }

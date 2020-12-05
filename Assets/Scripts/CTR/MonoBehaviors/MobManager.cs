@@ -50,7 +50,7 @@ public class MobManager : MonoBehaviour
             Debug.Log("No hay mas waves");
             OnOutOfWave.Invoke();
             alas.spawnpoints = null;
-            
+            cacaV2.SetActive(true);
             return;
         }
 
