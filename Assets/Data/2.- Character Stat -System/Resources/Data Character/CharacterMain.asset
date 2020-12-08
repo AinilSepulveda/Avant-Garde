@@ -60,32 +60,32 @@ MonoBehaviour:
   charExperience: 540
   charLevel: 4
   charLevelups:
-  - maxHealth: 50
+  - maxHealth: 10
     maxMana: 15
     maxWealth: 200
     baseDamage: 5
     baseResistence: 2
     maxEncumberance: 10
     requiredXP: 50
-  - maxHealth: 75
+  - maxHealth: 10
     maxMana: 20
     maxWealth: 11
     baseDamage: 5
-    baseResistence: 4
+    baseResistence: 2
     maxEncumberance: 13
     requiredXP: 75
-  - maxHealth: 85
+  - maxHealth: 10
     maxMana: 25
     maxWealth: 22
-    baseDamage: 5
-    baseResistence: 6
+    baseDamage: 2
+    baseResistence: 2
     maxEncumberance: 15
     requiredXP: 100
-  - maxHealth: 100
+  - maxHealth: 10
     maxMana: 30
     maxWealth: 25
-    baseDamage: 10
-    baseResistence: 8
+    baseDamage: 2
+    baseResistence: 2
     maxEncumberance: 20
     requiredXP: 120
   LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}

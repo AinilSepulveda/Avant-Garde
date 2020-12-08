@@ -15,10 +15,10 @@ MonoBehaviour:
   Cooldown: 0.5
   costAmount: 0
   Range: 3
-  minDamage: 3
+  minDamage: 10
   maxDamage: 15
   criticalMultiplier: 2.5
-  criticalChange: 0.5
+  criticalChange: 0.7
   VariableAttack: 8
   forceToadd: 300
   isMagic: 0

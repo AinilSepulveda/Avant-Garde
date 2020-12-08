@@ -27,6 +27,7 @@ public class MobManager : MonoBehaviour
     bool caca;
 
     public GameObject cacaV2;
+    public GameObject cacaV3;
   //  public GameObject cacaV3;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,7 @@ public class MobManager : MonoBehaviour
             OnOutOfWave.Invoke();
             alas.spawnpoints = null;
             cacaV2.SetActive(true);
+            cacaV3.SetActive(false);
             return;
         }
 
@@ -59,6 +61,7 @@ public class MobManager : MonoBehaviour
             SoundManager.Instance.PlaySoundEffect(SoundEffect.NextWave);
             //musica de waves
             cacaV2.SetActive(true);
+            cacaV3.SetActive(false);
         }
 
 

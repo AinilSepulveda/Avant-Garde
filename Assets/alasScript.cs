@@ -8,13 +8,14 @@ public class alasScript : MonoBehaviour
     MobManager mobManager;
     public GameObject[] spawnpoints;
     BoxCollider boxCollider;
-
+    UnityEngine.AI.NavMeshObstacle obstacle;
     MeshRenderer mesh;
     private void Start()
     {
         mobManager = FindObjectOfType<MobManager>();
         boxCollider = GetComponent<BoxCollider>();
         mesh = GetComponent<MeshRenderer>();
+        obstacle = GetComponent< UnityEngine.AI.NavMeshObstacle> ();
     }
 
     private void Update()
@@ -31,7 +32,7 @@ public class alasScript : MonoBehaviour
                 spawnpoints[i].SetActive(caca);
                 
                 mesh.enabled = false;
-                
+                obstacle.enabled = false;
             }
             mobManager.SpawnWave();
         }
@@ -43,8 +44,9 @@ public class alasScript : MonoBehaviour
         {
            // caca = false;
             mesh.enabled = true;
+            obstacle.enabled = true;
             //boxCollider.isTrigger = caca;
-            
+
         }
     }
 

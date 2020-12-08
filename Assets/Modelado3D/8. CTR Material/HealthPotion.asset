@@ -20,6 +20,8 @@ MonoBehaviour:
   itemSpawnObject: {fileID: 54210893519517534, guid: 2a226cf746bc64abab403477ee47867c,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
+  itemArmor: {fileID: 0}
+  itemArmor2: {fileID: 0}
   spawnChangeWeight: 5
   isEquipped: 0
   isInteractable: 1
@@ -29,7 +31,7 @@ MonoBehaviour:
   isQuestItem: 0
   IsStackable: 1
   destrouOnUse: 1
-  itemAmount: 20
+  itemAmount: 5
   itemWeight: 0
   bonusResistence: 0
   bonusHealthPoint: 0

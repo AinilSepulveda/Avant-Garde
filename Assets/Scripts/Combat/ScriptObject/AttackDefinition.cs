@@ -37,6 +37,10 @@ public class AttackDefinition : ScriptableObject
     public Attack CreateAttack(CharacterStats wielderStats, CharacterStats defenderStats) //wielder portador
     {
         float coreDamage;
+        float reduccionArm;
+
+        reduccionArm = defenderStats.GetResistence() / (100 + defenderStats.GetResistence());
+
         if (isMagic)
         {
             coreDamage = wielderStats.GetDamage();
@@ -57,10 +61,10 @@ public class AttackDefinition : ScriptableObject
             }    
             if (defenderStats != null)
             {
-                coreDamage -= defenderStats.GetResistence() ;
+                coreDamage -= reduccionArm;
             }
 
-        Debug.Log(coreDamage);
+        Debug.Log(reduccionArm);
 
         return new Attack((int)coreDamage, isCritical); 
 

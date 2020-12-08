@@ -15,10 +15,16 @@ MonoBehaviour:
   Cooldown: 3
   costAmount: 0
   Range: 10
-  minDamage: 5
-  maxDamage: 8
+  minDamage: 10
+  maxDamage: 15
   criticalMultiplier: 2
   criticalChange: 2
+  VariableAttack: 2
+  forceToadd: 0
+  isMagic: 0
+  Iskeep: 0
+  TimeInScene: 0
+  TickTimers: 
   projectileToFire: {fileID: 6333022463173871134, guid: 69a23db181aa0324bac80f7881852df2,
     type: 3}
   projectileSpeed: 10
