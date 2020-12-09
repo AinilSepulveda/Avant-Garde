@@ -15,8 +15,7 @@ MonoBehaviour:
   itemName: Armorconj1
   itemType: 4
   ItemArmorSubType: 2
-  itemMaterial: {fileID: 9185737683893222716, guid: 6111c96f703fd0f469ad3c43ca38bc52,
-    type: 3}
+  itemMaterial: {fileID: 2100000, guid: 73e0186d657d58043af1043b16cda273, type: 2}
   ItemIcon: {fileID: 21300000, guid: cbc76fe7f2767844a949b0d195312f0d, type: 3}
   itemSpawnObject: {fileID: 9111395719193393653, guid: d5211254d78b782468c8f53cc2b7c3ce,
     type: 3}
