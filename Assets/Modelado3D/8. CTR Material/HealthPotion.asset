@@ -22,7 +22,7 @@ MonoBehaviour:
   WeaponSpawnObject: {fileID: 0}
   itemArmor: {fileID: 0}
   itemArmor2: {fileID: 0}
-  spawnChangeWeight: 5
+  spawnChangeWeight: 12
   isEquipped: 0
   isInteractable: 1
   isStorable: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
   isQuestItem: 0
   IsStackable: 1
   destrouOnUse: 1
-  itemAmount: 5
+  itemAmount: 12
   itemWeight: 0
   bonusResistence: 0
   bonusHealthPoint: 0
