@@ -60,8 +60,8 @@ public class CharacterStats : MonoBehaviour
 
         if (characterDefinition.isHero) //no si controlamos la wea. 
         {
-            characterDefinition.maxHealth = 350 ;
-            characterDefinition.currentHeath = 350;
+            characterDefinition.maxHealth = 500 ;
+            characterDefinition.currentHeath = 500;
 
             characterDefinition.maxMana = 25;
             characterDefinition.currentMana = 25;
