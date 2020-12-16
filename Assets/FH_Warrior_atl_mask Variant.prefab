@@ -1723,6 +1723,7 @@ GameObject:
   - component: {fileID: 1995131453189771728}
   - component: {fileID: 1995131453189771729}
   - component: {fileID: 1995131453189771730}
+  - component: {fileID: 3268785475711634919}
   m_Layer: 9
   m_Name: FH_Warrior_atl_mask Variant
   m_TagString: Untagged
@@ -1792,24 +1793,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 15
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hero: {fileID: 0}
-  Exp: 5
+  player: {fileID: 0}
+  mobyType: 0
+  LayerName: EnemySpells
+  LayerNameTarget: Player
+  isEnemy: 1
+  TargetCharacter: {fileID: 0}
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
-  mobyType: 0
   SpellHotSpot: {fileID: 3632643663424910658}
-  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
@@ -1969,6 +1971,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5694473, z: 1}
   m_Center: {x: 0, y: 0.79176676, z: 0}
+--- !u!114 &3268785475711634919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020218958153205478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6020218958153205482
 GameObject:
   m_ObjectHideFlags: 0

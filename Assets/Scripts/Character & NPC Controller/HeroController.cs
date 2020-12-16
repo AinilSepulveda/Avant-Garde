@@ -23,8 +23,9 @@ public class HeroController : MonoBehaviour
 
     public QuestSO dataBase;
     public QuestTracker questTracker;
-    //  public QuestTrackerPanel TrackerPanel;
-    //  public questPanel Panel;
+
+    public NPCController aliade;
+
     //Cooldown
    public float timercooldown;
     bool attackOnCooldown;
@@ -42,7 +43,7 @@ public class HeroController : MonoBehaviour
         questTracker = GetComponent<QuestTracker>();
         //   dataBase = GetComponent<QuestSO>();
         characterInventory = GetComponent<CharacterInventory>();
-
+        aliade = GetComponent<NPCController>();
     }
 
     private void Start()
@@ -184,6 +185,7 @@ public class HeroController : MonoBehaviour
     //Funciones de Animacion
     public void Hit()
     {
+      
         /* if (attackTarget != null)
               stats.GetCurrentWeapon().ExecuteAttack(gameObject, attackTarget); */
         var weapon = stats.GetCurrentWeapon();

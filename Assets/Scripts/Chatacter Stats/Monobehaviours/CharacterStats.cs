@@ -60,8 +60,8 @@ public class CharacterStats : MonoBehaviour
 
         if (characterDefinition.isHero) //no si controlamos la wea. 
         {
-            characterDefinition.maxHealth = 350 ;
-            characterDefinition.currentHeath = 350;
+            characterDefinition.maxHealth = 250 ;
+            characterDefinition.currentHeath = 250;
 
             characterDefinition.maxMana = 25;
             characterDefinition.currentMana = 25;
@@ -111,6 +111,39 @@ public class CharacterStats : MonoBehaviour
     }
 
     #endregion
+
+    #region Stat Increasers Level UP
+    public void IncreaserDamage(int damages)
+    {
+
+            characterDefinition.IncreaserDamage(damages);
+            characterDefinition.Levelpoints--;
+        
+    }
+    public void IncreaserHealth(int Health)
+    {
+
+            Debug.Log("Diste HP:" + Health);
+            characterDefinition.IncreaserHealth(Health);
+            characterDefinition.Levelpoints--;
+        
+    }
+    public void IncreaserMana(int Mana)
+    {
+    
+            characterDefinition.IncreaserMana(Mana);
+            characterDefinition.Levelpoints--;
+        
+    }
+    public void IncreaserResistence(int Resistence)
+    {
+
+            characterDefinition.IncreaserResistence(Resistence);
+            characterDefinition.Levelpoints--;
+        
+    }
+    #endregion
+
 
     #region Stat Increasers
     public void ApplyHealth(int heathAmount)

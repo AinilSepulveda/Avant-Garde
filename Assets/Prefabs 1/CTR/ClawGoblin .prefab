@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8658744455472861063}
   - component: {fileID: 3125480322572254083}
   - component: {fileID: -4102611478799735319}
+  - component: {fileID: 336414806633301996}
   m_Layer: 9
   m_Name: 'ClawGoblin '
   m_TagString: Untagged
@@ -161,24 +162,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 15
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hero: {fileID: 0}
-  Exp: 5
+  player: {fileID: 0}
+  mobyType: 1
+  LayerName: EnemySpells
+  LayerNameTarget: Player
+  isEnemy: 1
+  TargetCharacter: {fileID: 0}
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
-  mobyType: 1
   SpellHotSpot: {fileID: 0}
-  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
@@ -337,6 +339,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67913f79df43bfd428bbe7e33c132ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &336414806633301996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234403662610979725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5954893718664302472

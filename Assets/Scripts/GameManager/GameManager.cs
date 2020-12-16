@@ -49,7 +49,7 @@ public class GameManager : Singleton<GameManager>
         
         _instancedSystemPrefabs = new List<GameObject>();
         _loadOperations = new List<AsyncOperation>();
-
+        MusicManager.Instance.PlaySoundEffect(MusicEnum.Menu);
         UIManager.Instance.OnMainMenuFadeComplete.AddListener(HandleMainMenuFadeComplete);
 
         OnGameStateChanged.Invoke(GameState.PREGAME, _currentGameState);
@@ -99,12 +99,14 @@ public class GameManager : Singleton<GameManager>
                 // Initialize any systems that need to be reset
                 Time.timeScale = 1.0f;
                 LoadLevel("Boot");
+                MusicManager.Instance.PlaySoundEffect(MusicEnum.Menu);
               //  UIManager.Instance.SetDummyCameraActive(true);
                 break;
 
             case GameState.RUNNING:
                 //  Unlock player, enemies and input in other systems, update tick if you are managing time
                 Time.timeScale = 1.0f;
+
                 break;
 
             case GameState.PAUSED:
@@ -174,6 +176,7 @@ public class GameManager : Singleton<GameManager>
     {
         LoadLevel(NameLevelRunnig);
         UpdateState(GameState.RUNNING);
+        MusicManager.Instance.PlaySoundEffect(MusicEnum.Ambient);
     }
 
     public void QuitGame()

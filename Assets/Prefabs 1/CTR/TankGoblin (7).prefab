@@ -146,8 +146,8 @@ GameObject:
   - component: {fileID: 1201513923225819566}
   - component: {fileID: 4889017433705950634}
   - component: {fileID: 3428981082122089408}
-  - component: {fileID: 5245934771299386892}
   - component: {fileID: -3694075008011056421}
+  - component: {fileID: 3357891802993460606}
   m_Layer: 9
   m_Name: TankGoblin (7)
   m_TagString: Untagged
@@ -203,24 +203,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 15
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hero: {fileID: 0}
-  Exp: 5
+  player: {fileID: 0}
+  mobyType: 2
+  LayerName: EnemySpells
+  LayerNameTarget: Player
+  isEnemy: 1
+  TargetCharacter: {fileID: 0}
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
-  mobyType: 2
   SpellHotSpot: {fileID: 653679154163976879}
-  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
@@ -381,19 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67913f79df43bfd428bbe7e33c132ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5245934771299386892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8612178752234458532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed0202568a66924aabe0aec8d34f42d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceToadd: 20
 --- !u!65 &-3694075008011056421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -407,6 +395,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4512134, y: 1, z: 1.4088707}
   m_Center: {x: -0.27764297, y: 0.85, z: -0.0114040375}
+--- !u!114 &3357891802993460606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612178752234458532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8613006323121527932
 GameObject:
   m_ObjectHideFlags: 0

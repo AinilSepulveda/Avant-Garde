@@ -9,11 +9,11 @@ public class AttackDefinition : ScriptableObject
     [Header("characteristics")]
     public float Cooldown;
     public int costAmount;
-    public float Range;
+    public float Range; 
     public float minDamage;
     public float maxDamage;
     public float criticalMultiplier;
-    public float criticalChange;
+    public float criticalChance;
     [Space(5)]
     [Header("Type Special Attacks")]
     public Attacks VariableAttack;
@@ -54,7 +54,7 @@ public class AttackDefinition : ScriptableObject
             //El daño recibido
             coreDamage += Random.Range(minDamage, maxDamage); //un rango de daño
 
-            bool isCritical = Random.value < criticalChange; //un random, tira un numero random de 1, 0 si es un 1 = true 0 = false
+            bool isCritical = Random.value < criticalChance; //un random, tira un numero random de 1, 0 si es un 1 = true 0 = false
             if (isCritical)
             {
                 coreDamage *= criticalMultiplier;
@@ -162,3 +162,11 @@ public enum Attacks
     none = 0,
     Teletransportacion = 8
 }
+
+public enum TypeSpells
+{
+    Melee,
+    Proyectile,
+    AOE
+}
+

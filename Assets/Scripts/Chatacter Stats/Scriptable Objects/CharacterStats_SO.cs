@@ -74,8 +74,30 @@ public class CharacterStats_SO : ScriptableObject
 
     public VisualEffectAsset LevelUP;
 
+    public int Levelpoints =0; 
 
     public bool GodMode;
+
+    #region Levelpoints Stat Increasers
+
+    public void IncreaserDamage(int damages)
+    {
+        currentDamage += damages; 
+    }
+    public void IncreaserHealth(int Health)
+    {
+        maxHealth += Health;
+    }
+    public void IncreaserMana(int Mana)
+    {
+        maxMana += Mana;
+    }
+    public void IncreaserResistence(int Resistence)
+    {
+        baseResistance += Resistence;
+    }
+
+    #endregion
 
     #region Stat Increasers
 
@@ -436,6 +458,7 @@ public class CharacterStats_SO : ScriptableObject
         charExperience = 0;
         GameManager.Instance.OnHeroInit();
 
+        Levelpoints++;
         if (charLevel > 1)
         {
             OnLevelUp.Invoke(charLevel);
