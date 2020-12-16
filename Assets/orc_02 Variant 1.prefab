@@ -752,6 +752,7 @@ GameObject:
   - component: {fileID: 5135873726745838458}
   - component: {fileID: 5135873726745838459}
   - component: {fileID: 5135873726745838460}
+  - component: {fileID: 6941647303711331237}
   m_Layer: 9
   m_Name: orc_02 Variant 1
   m_TagString: Untagged
@@ -952,27 +953,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 15
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hero: {fileID: 0}
-  Exp: 5
+  player: {fileID: 0}
+  mobyType: 2
+  LayerName: EnemySpells
+  LayerNameTarget: Player
+  isEnemy: 1
+  TargetCharacter: {fileID: 0}
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
-  mobyType: 2
   SpellHotSpot: {fileID: 0}
-  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
+--- !u!114 &6941647303711331237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582311656533757253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6582311656533757281
 GameObject:
   m_ObjectHideFlags: 0

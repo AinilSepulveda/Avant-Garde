@@ -6,6 +6,7 @@ using TMPro;
 public class PanelStats : MonoBehaviour
 {
     public CharacterStats character;
+    public GameObject buttons;
     public TextMeshProUGUI nivel;
     public TextMeshProUGUI heathpoints;
     public TextMeshProUGUI manapoints;
@@ -26,14 +27,15 @@ public class PanelStats : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.C) && gameObject.activeInHierarchy)
-        //{
-        //    this.gameObject.SetActive(false);
-        //}
-        //else
-        //{
-        //    this.gameObject.SetActive(true);
-        //}
+        if(character.characterDefinition.Levelpoints > 0 && buttons.activeInHierarchy == false)
+        {
+            buttons.SetActive(true);
+        }
+        else if (character.characterDefinition.Levelpoints <= 0 && buttons.activeInHierarchy == true)
+        {
+            buttons.SetActive(false);
+        }
+
     }
     //private void OnBecameVisible()
     //{
@@ -41,12 +43,12 @@ public class PanelStats : MonoBehaviour
     //    mostrarcositas();
     //}
 
-    void mostrarcositas()
+    public void mostrarcositas()
     {
         nivel.text = "Nivel: " + character.characterDefinition.charLevel.ToString();
         heathpoints.text = "Vida: " + character.characterDefinition.currentHeath.ToString() + "/" + character.characterDefinition.maxHealth.ToString();
         manapoints.text = "Mana: " + character.characterDefinition.currentMana.ToString() + "/" + character.characterDefinition.maxMana.ToString();
-        damagepoints.text = "Resist: " + character.characterDefinition.baseResistance.ToString() + "/" + character.characterDefinition.currentResistance.ToString();
-        resistpoints.text = "Daño: " + (character.characterDefinition.baseDamage + character.characterDefinition.currentDamage).ToString();
+        damagepoints.text = "Daño: " + (character.characterDefinition.baseDamage + character.characterDefinition.currentDamage).ToString();
+        resistpoints.text = "Resist: "  + character.characterDefinition.baseResistance.ToString() + "/" + character.characterDefinition.currentResistance.ToString();
     }
 }
