@@ -49,7 +49,7 @@ public class MusicManager : Singleton<MusicManager>
 
         activeSource.Stop();
         activeSource.clip = newClip;
-        activeSource.PlayOneShot(newClip);
+        activeSource.Play();
 
         //Fade in
         for (t = 0; t < transitionTime; t += Time.deltaTime)

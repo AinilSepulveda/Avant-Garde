@@ -32,18 +32,21 @@ public class CharacterInventory : MonoBehaviour
     void Start()
     {
         instance = this;
-      
+       // hotBarDisplayHolders = new Image[4];
         //    buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
         for (int i = 0; i < hotBarDisplayHolders.Length; i++)
         {
+
             Image image = GameObject.Find("Hotkeys").transform.GetChild(i).GetComponent<Image>();
             hotBarDisplayHolders[i] = image;
+          //  hotBarDisplayHolders[i] = image;
             //Button button = GameObject.Find("grpHotBarDisplay").transform.GetChild(i).GetComponent<Button>();
             //buttoninv[i] = button; 
           
         }
+        
 
-       
+
         InventoryDisplayHolder.SetActive(false);
         itemEntry = new InventoryEntry(0, null, null);
         itemsInInventory.Clear();
