@@ -4,28 +4,58 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1944694394832277516
-    second: AtlasHud_0
+    second: Estadisticas
   - first:
       213: 3286543391680513921
-    second: AtlasHud_1
+    second: Inventario
   - first:
       213: 3967087736804021185
-    second: AtlasHud_2
+    second: Option
   - first:
       213: -5071227609914131688
-    second: AtlasHud_3
+    second: BarraFront
   - first:
       213: 1176002511114560884
-    second: AtlasHud_4
+    second: CuadroInventario
   - first:
       213: -8701699508561079931
-    second: AtlasHud_5
+    second: BarraEstatusGeneral
   - first:
       213: -6294348962101884100
-    second: AtlasHud_6
+    second: BarraIndicadorEstadisticas
   - first:
       213: -3225550698019530104
-    second: AtlasHud_7
+    second: SelectorOptions
+  - first:
+      213: 2098697675768406016
+    second: Estadisticas
+  - first:
+      213: -7188192377409745728
+    second: Inventario
+  - first:
+      213: -3417629430839102372
+    second: Option
+  - first:
+      213: 5936276186397277271
+    second: BarraFront
+  - first:
+      213: 1930506455853641327
+    second: CuadroInventario
+  - first:
+      213: -8919200450285700178
+    second: BarraEstatusGeneral
+  - first:
+      213: 4132393116109749958
+    second: BarraIndicadorEstadisticas
+  - first:
+      213: -55861385198629115
+    second: SelectorOptions
+  - first:
+      213: 556676734922369720
+    second: BarraMana
+  - first:
+      213: -2726922020804775212
+    second: Barravida
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -110,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AtlasHud_0
+      name: Estadisticas
       rect:
         serializedVersion: 2
         x: 0
@@ -118,7 +148,7 @@ TextureImporter:
         width: 982
         height: 1604
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,7 +161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_2
+      name: Option
       rect:
         serializedVersion: 2
         x: 1016
@@ -139,7 +169,7 @@ TextureImporter:
         width: 1047
         height: 1588
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,15 +182,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_3
+      name: BarraFront
       rect:
         serializedVersion: 2
-        x: 3240
-        y: 1081
+        x: 3234
+        y: 1518
         width: 710
         height: 703
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,15 +203,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_4
+      name: CuadroInventario
       rect:
         serializedVersion: 2
-        x: 3446
-        y: 636
+        x: 3757
+        y: 518
         width: 166
         height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,7 +224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_5
+      name: BarraEstatusGeneral
       rect:
         serializedVersion: 2
         x: 128
@@ -202,7 +232,7 @@ TextureImporter:
         width: 2805
         height: 416
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +245,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_6
+      name: BarraIndicadorEstadisticas
       rect:
         serializedVersion: 2
         x: 3019
@@ -223,7 +253,7 @@ TextureImporter:
         width: 856
         height: 239
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +266,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_7
+      name: SelectorOptions
       rect:
         serializedVersion: 2
         x: 3019
@@ -244,7 +274,7 @@ TextureImporter:
         width: 883
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,7 +287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AtlasHud_1
+      name: Inventario
       rect:
         serializedVersion: 2
         x: 2059
@@ -265,7 +295,7 @@ TextureImporter:
         width: 1159
         height: 1732
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +303,48 @@ TextureImporter:
       bones: []
       spriteID: 18746084dc52c9d20800000000000000
       internalID: 3286543391680513921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarraMana
+      rect:
+        serializedVersion: 2
+        x: 3354
+        y: 846
+        width: 445
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8baa5cf7a86b9b700800000000000000
+      internalID: 556676734922369720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barravida
+      rect:
+        serializedVersion: 2
+        x: 3256
+        y: 1146
+        width: 636
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2bdb3bed6082ad0800000000000000
+      internalID: -2726922020804775212
       vertices: []
       indices: 
       edges: []
