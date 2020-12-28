@@ -78,6 +78,14 @@ public class HeroController : MonoBehaviour
          //   timercooldown = 0;
             
         }
+        if (Input.GetKeyDown(KeyCode.W)  && !attackOnCooldown)
+        {
+            timercooldown = 0;
+            AttackSpells2();
+            UIManager.Instance.UpdateUnitFrame(this);
+         //   timercooldown = 0;
+            
+        }
         if (attackOnCooldown)
             timercooldown += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.L))
@@ -220,6 +228,38 @@ public class HeroController : MonoBehaviour
 
     }
 
+    public void AttackSpells2()
+    {
+        if (Spell2 is AoE)
+        {
+            if (stats.characterDefinition.currentMana > Spell2.costAmount)
+            {
+                Debug.Log("Es un ataque AOE");
+
+                ((AoE)Spell2).Fire(gameObject, gameObject.transform.position, LayerMask.NameToLayer("PlayerSpells"));
+
+
+
+                stats.TakeMana(Spell.costAmount);
+            }
+        }
+
+        else if (Spell2 is AttackDefinition)
+        {
+            stats.GetCurrentWeapon().ExecuteAttack(gameObject, attackTarget);
+        }
+
+        else if (Spell2 is Spell)
+        {
+            if (stats.characterDefinition.currentMana > Spell2.costAmount)
+            {
+                ((Spell)Spell2).Cast(this.gameObject, stats.characterWeaponSlot.transform.position, attackTarget.gameObject.transform.position, LayerMask.NameToLayer("PlayerSpells"));
+
+                Debug.Log("Es un ataque Spell");
+            }
+        }
+    }
+
     public int GetCurrentHealth()
     {
         return stats.characterDefinition.currentHeath;
@@ -256,6 +296,7 @@ public class HeroController : MonoBehaviour
     public void OnOutOfWave()
     {
         cofrefin.SetActive(true);
+        MusicManager.Instance.PlaySoundEffect(MusicEnum.Ambient2, 1);
     }
     public void OnOutOfWave2()
     {

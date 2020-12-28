@@ -24,7 +24,7 @@ public class MobManager : MonoBehaviour
     public UnityEvent OnOutOfWave;
     //ALAScript
     alasScript alas;
-    bool caca;
+    bool isActiveWaves;
 
     public GameObject cacaV2;
     public GameObject cacaV3;
@@ -42,15 +42,17 @@ public class MobManager : MonoBehaviour
 
     public void SpawnWave()
     {
-        caca = true;
+        isActiveWaves = true;
         spawnpoints = FindObjectsOfType<Spawnpoint>();
+        MusicManager.Instance.PlaySoundEffect(MusicEnum.Wave, 1);
 
-        if (Waves.Length - 1 < currentWaveIndex)
+
+        if (Waves.Length < currentWaveIndex)
         {
-            
+            MusicManager.Instance.PlaySoundEffect(MusicEnum.WaveEndLoop, 1, true);
             Debug.Log("No hay mas waves");
             OnOutOfWave.Invoke();
-            alas.spawnpoints = null;
+         //   alas.spawnpoints = null;
             cacaV2.SetActive(true);
             cacaV3.SetActive(false);
             return;
@@ -60,6 +62,7 @@ public class MobManager : MonoBehaviour
         {
             SoundManager.Instance.PlaySoundEffect(SoundEffect.NextWave);
             //musica de waves
+
             cacaV2.SetActive(true);
             cacaV3.SetActive(false);
         }
@@ -85,23 +88,31 @@ public class MobManager : MonoBehaviour
             stats.SetInitialDamage(currentWave.MobDamage);
             stats.SetInitialHealth(currentWave.MobHealth);
             stats.SetInitialResistence(currentWave.MobResistance);
-
+         //   currentWaveIndex--;
         }
         activeMobs = activeMobss.Count;
+        currentWaveIndex = Waves.Length;
     }
     public void OnMobDeath(MobyType mobyType, Vector3 position)
     {
         SoundManager.Instance.PlaySoundEffect(SoundEffect.MobDeath);
         MobWave currentWave = Waves[currentWaveIndex];
 
-        activeMobs -= 1;
         OnMobKilled.Invoke(currentWave.PointsPerkill);
 
         SpawnDrops(mobyType, position);
         Debug.LogFormat("{0} killed at {1}", mobyType, position);
 
-        if (activeMobs <= 0 && caca == true)
+        if (isActiveWaves)
         {
+        activeMobss.RemoveAt(activeMobs); 
+        activeMobs -= 1;
+
+        }
+
+        if (activeMobss.Count <= 0 && isActiveWaves == true)
+        {
+            Debug.Log("Next Wave");
             OnWaveCompleted.Invoke(currentWave.WaveValue);
             currentWaveIndex += 1;
             SpawnWave();

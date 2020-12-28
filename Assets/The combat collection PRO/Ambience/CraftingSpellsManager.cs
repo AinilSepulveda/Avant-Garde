@@ -95,29 +95,33 @@ public class CraftingSpellsManager : MonoBehaviour
         NewMeleeSpells.VariableAttack = attacks;
 
         SettingLevelSpells(NewMeleeSpells, nivel);
+        NewMeleeSpells.name = "NewMeleeSpells";
 
         return NewMeleeSpells;
     }
     Spell CraftingProyectile(Attacks attacks, int nivel, Projectile projectile)
     {
-        Spell NewMeleeSpells = new Spell();
-         NewMeleeSpells.VariableAttack = attacks;
-        NewMeleeSpells.projectileSpeed = Random.Range(5, 15) * nivel;
-        NewMeleeSpells.projectileToFire = projectile;
-        SettingLevelSpells(NewMeleeSpells, nivel);
+        Spell NewProyectileSpells = new Spell();
+         NewProyectileSpells.VariableAttack = attacks;
+        NewProyectileSpells.projectileSpeed = Random.Range(5, 15) * nivel;
+        NewProyectileSpells.projectileToFire = projectile;
+        SettingLevelSpells(NewProyectileSpells, nivel);
+        NewProyectileSpells.name = "NewProyectileSpells";
 
-        return NewMeleeSpells;
+        return NewProyectileSpells;
     }
 
     AoE CraftingAOE(Attacks attacks, int nivel, GameObject aoePrefabs)
     {
-        AoE NewMeleeSpells = new AoE();
-        NewMeleeSpells.VariableAttack = attacks;
-        NewMeleeSpells.AOEprefab = aoePrefabs;
-        NewMeleeSpells.Radius = Random.Range(5, 15) * nivel;
-        SettingLevelSpells(NewMeleeSpells, nivel);
+        AoE NewAoESpells = new AoE();
+        NewAoESpells.VariableAttack = attacks;
+        NewAoESpells.AOEprefab = aoePrefabs;
+        NewAoESpells.Radius = Random.Range(5, 15) * nivel;
+        SettingLevelSpells(NewAoESpells, nivel);
+        NewAoESpells.name = "NewAoESpells";
+        NewAoESpells.TimeInScene = 5;
 
-        return NewMeleeSpells;
+        return NewAoESpells;
     }
 
     void SettingLevelSpells(AttackDefinition spell, int nivel)

@@ -55,9 +55,9 @@ MonoBehaviour:
   - Music: 2
     clip: {fileID: 8300000, guid: 01e7db79921d64c14a1b221291f357a7, type: 3}
   - Music: 3
-    clip: {fileID: 8300000, guid: 4371b9bfc86384264ad241a9ad3d76e4, type: 3}
+    clip: {fileID: 8300000, guid: 289d16eeffaba4e6f8bd8f7fa6931feb, type: 3}
   - Music: 4
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 54eb0b2d158ca413488409a1657a9bcd, type: 3}
   - Music: 5
     clip: {fileID: 8300000, guid: 1fb73cb7489304c3bbb791056d26d1e0, type: 3}
   - Music: 6
@@ -65,7 +65,8 @@ MonoBehaviour:
   - Music: 8
     clip: {fileID: 8300000, guid: 4c6dcdd683f304982af56520d7510e18, type: 3}
   MusicFXSource: {fileID: 3950846903581437877}
-  Music2: {fileID: 0}
+  Music2: {fileID: 8800505819558663452}
+  testMusic: 0
 --- !u!82 &3950846903581437877
 AudioSource:
   m_ObjectHideFlags: 0
