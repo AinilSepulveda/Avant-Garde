@@ -9,6 +9,8 @@ public class MusicManager : Singleton<MusicManager>
     public AudioSource Music2;
 
     private bool firstMusicSourceIsplaying;
+    [SerializeField]
+    private bool testMusic;
 
     public void PlaySoundEffect(MusicEnum music, float transitionTime = 1.0f, bool IsCrossFade = false)
     {
@@ -28,7 +30,7 @@ public class MusicManager : Singleton<MusicManager>
             newSource.clip = effect;
             newSource.Play();
 
-            StartCoroutine(MusicCrossFade(MusicFXSource, Music2, transitionTime));
+            StartCoroutine(MusicCrossFade(activeSource, newSource, transitionTime));
         }
 
     }
@@ -69,7 +71,30 @@ public class MusicManager : Singleton<MusicManager>
             newSource.volume = (t / transitionTime);
             yield return null;
         }
-
+        newSource.Play();
         original.Stop();
+    }
+
+    private void Update()
+    {
+       if( testMusic == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                PlaySoundEffect(MusicEnum.Wave, 1, true);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                PlaySoundEffect(MusicEnum.WaveEndLoop, 1, true);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                PlaySoundEffect(MusicEnum.Ambient, 1, true);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                PlaySoundEffect(MusicEnum.Menu, 1, true);
+            }
+        }
     }
 }

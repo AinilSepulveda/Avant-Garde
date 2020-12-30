@@ -15,7 +15,9 @@ public class CharacterInventory : MonoBehaviour
     public Image[] hotBarDisplayHolders = new Image[4]; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
     public Image[] inventoryDisplaySlots = new Image[30]; //los slots de inventario, las imagenes sipo, 
-    public Button[] buttoninv = new Button[30]; 
+    public Button[] buttoninv = new Button[30];
+
+    public int slotCounterinv = 9;
 
     int inventoryItemCap = 20; //Limite del slots
     int idCount = 1; //ID de los objetos
@@ -65,11 +67,11 @@ public class CharacterInventory : MonoBehaviour
     {
         #region Watch for Hotbar Keypresses 
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) )
         {
             TriggerItemUse(101);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) )
         {
             TriggerItemUse(102);
         }
@@ -145,7 +147,12 @@ public class CharacterInventory : MonoBehaviour
                         {
                             //Aqui Se añade un stack y se destruye la nueva instancia
                             ie.Value.stackSize += 1;
-                            AddItemToHotBar(ie.Value);
+                            if (itemsInInventory[idCount].invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON &&
+                                itemsInInventory[idCount].invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH &&
+                                 itemsInInventory[idCount].invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+                            {
+                                AddItemToHotBar(ie.Value);
+                            }
                             itsInInv = true;
                             Destroy(itemEntry.invEntry.gameObject);
                             break;
@@ -191,7 +198,9 @@ public class CharacterInventory : MonoBehaviour
         itemsInInventory.Add(idCount, new InventoryEntry(itemEntry.stackSize, Instantiate(itemEntry.invEntry), itemEntry.hbSprite));
         //Ya tenemos los datos, se destruye
         FillInventoryDisplay();
-        AddItemToHotBar(itemsInInventory[idCount]);
+
+        if (itemEntry.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+            AddItemToHotBar(itemsInInventory[idCount]);
 
 
         //El peso de arma, si excede no la tomara
@@ -230,6 +239,7 @@ public class CharacterInventory : MonoBehaviour
        bool increaseCount = false;
 
         //Check for open Hotbar slot
+        #region Agregar Items de forma normal
         foreach (Image image in hotBarDisplayHolders)
         {
             hotbarCounter += 1;
@@ -249,76 +259,82 @@ public class CharacterInventory : MonoBehaviour
             {
                 increaseCount = true;
             }
-
-            // //Si es el primero
-            // if(itemforHotBar.hotBarSlot == 0 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
-            // {
-            //     hotbarCounter = 1;
-            //     if (image.sprite == null)
-            //     {
-            //         Debug.Log("Caca");
-            //         //Añadir item a hotbar slot
-            //         itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-            //         image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-            //         increaseCount = true; //Todo bien y es verdadero
-            //         break;
-            //     }
-
-            // }
-            //else if (itemforHotBar.hotBarSlot == 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
-            //{
-            //     hotbarCounter = 2;
-            //     if (image.sprite == null)
-            //     {
-            //         Debug.Log("Caca");
-            //         //Añadir item a hotbar slot
-            //         itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-            //         image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-            //         increaseCount = true; //Todo bien y es verdadero
-            //         break;
-            //     }
-
-            //} 
-
-
-            // else if (itemforHotBar.hotBarSlot < 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
-            // {
-            //     hotbarCounter = 3;
-            //     if (image.sprite == null)
-            //     {
-            //         Debug.Log("Caca" + hotbarCounter);
-            //         //Añadir item a hotbar slot
-            //         itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-            //         image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-            //         increaseCount = true; //Todo bien y es verdadero
-            //         break;
-
-            //     }
-            // }
-            // else if (itemforHotBar.hotBarSlot < 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
-            // {
-            //     hotbarCounter = 4;
-            //     if (image.sprite == null)
-            //     {
-            //         Debug.Log("Caca" + hotbarCounter);
-            //         //Añadir item a hotbar slot
-            //         itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-            //         image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-            //         increaseCount = true; //Todo bien y es verdadero
-            //         break;
-            //     }
-            // }
-            // else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
-            // {
-            //     increaseCount = true;
-            // }
         }
+        #endregion
+        #region itms de forma no normal
+        //foreach (Image image in hotBarDisplayHolders)
+        //{
+        //    //Si es el primero
+        //    if (itemforHotBar.hotBarSlot == 0 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+        //    {
+        //        hotbarCounter = 1;
+        //        if (image.sprite == null)
+        //        {
+        //            Debug.Log("Caca" + itemforHotBar.invEntry.itemDefinition.itemType);
+        //            //Añadir item a hotbar slot
+        //            itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+        //            image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+        //            increaseCount = true; //Todo bien y es verdadero
+        //            break;
+        //        }
+
+        //    }
+        //    else if (itemforHotBar.hotBarSlot == 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+        //    {
+        //        hotbarCounter = 2;
+        //        if (image.sprite == null)
+        //        {
+        //            Debug.Log("Caca" + itemforHotBar.invEntry.itemDefinition.itemType);
+        //            //Añadir item a hotbar slot
+        //            itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+        //            image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+        //            increaseCount = true; //Todo bien y es verdadero
+        //            break;
+        //        }
+
+        //    }
+
+
+        //    else if (itemforHotBar.hotBarSlot < 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
+        //    {
+        //        hotbarCounter = 3;
+        //        if (image.sprite == null)
+        //        {
+        //            Debug.Log("Caca" + hotbarCounter + itemforHotBar.invEntry.itemDefinition.itemType);
+        //            //Añadir item a hotbar slot
+        //            itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+        //            image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+        //            increaseCount = true; //Todo bien y es verdadero
+        //            break;
+
+        //        }
+        //    }
+        //    else if (itemforHotBar.hotBarSlot < 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+        //    {
+        //        hotbarCounter = 4;
+        //        if (image.sprite == null)
+        //        {
+        //            Debug.Log("Caca" + hotbarCounter + itemforHotBar.invEntry.itemDefinition.itemType);
+        //            //Añadir item a hotbar slot
+        //            itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+        //            image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+        //            increaseCount = true; //Todo bien y es verdadero
+        //            break;
+        //        }
+        //    }
+        //    else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
+        //    {
+        //        increaseCount = true;
+        //    }
+        #endregion
+    
+
+
 
         if (increaseCount)
         {       //Si todo sale bien y bonito, pues en la barra saldra cuanto tienes de ese item;
             hotBarDisplayHolders[itemforHotBar.hotBarSlot - 1].GetComponentInChildren<Text>().text = itemforHotBar.stackSize.ToString();
         }
-
         increaseCount = false;
     }
     void DisplayInventory()
@@ -341,7 +357,7 @@ public class CharacterInventory : MonoBehaviour
             while (slotCounter < itemsInInventory.Count) //Para ver los Slot libres uwu
             {
                 slotCounter++;
-               // inventoryDisplaySlots[slotCounter].sprite = null;
+                inventoryDisplaySlots[slotCounter].sprite = null;
             }
 
         }
@@ -360,14 +376,14 @@ public class CharacterInventory : MonoBehaviour
     }
     void FillInventoryDisplay()
     {
-        int slotCounter = 9; // 9 porque no tiene que contar la armadura ni mistic y ni con el characterview
+        int slotCounter = 8; // 9 porque no tiene que contar la armadura ni mistic y ni con el characterview
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {
             slotCounter += 1;
             inventoryDisplaySlots[slotCounter].sprite = ie.Value.hbSprite;
-            ie.Value.inventorySlot = slotCounter - 9;
-            buttoninv[slotCounter - 9].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
+            ie.Value.inventorySlot = slotCounter - 8;
+          //  buttoninv[slotCounter - 9].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
         }
         while (slotCounter < itemsInInventory.Count) //Para ver los Slot libres uwu
         {
@@ -380,26 +396,26 @@ public class CharacterInventory : MonoBehaviour
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable
-        bool triggerItem = false; // si lo hemos tengo usado
+            bool triggerItem = false; // si lo hemos tengo usado
             if (itemToUseID > 100) //si es mayor a 100, se le resta 100 para ver de donde vino (por ejemplo de Hotbar) y así tienes el ID correcto
             {
+                // Debug.Log(ie.Key.ToString() + itemToUseID + "Triggeritemuse");
                 itemToUseID -= 100;
-               // Debug.Log(ie.Key.ToString() + itemToUseID + "Triggeritemuse");
-
-                if(ie.Value.hotBarSlot == itemToUseID)
+                if (ie.Value.hotBarSlot == itemToUseID)
                 {
                     triggerItem = true;
                 }
             }
-            else 
+            else
             {
                 if (ie.Value.inventorySlot == itemToUseID)
                 {
-                    triggerItem = true;
+
+                    triggerItem = true;               
                 }
             }
-      //      Debug.Log("te pillamos" + ie.Key + " " + triggerItem + " " + ie.Value.hotBarSlot); //Es por los items
-            if (triggerItem)
+            //      Debug.Log("te pillamos" + ie.Key + " " + triggerItem + " " + ie.Value.hotBarSlot); //Es por los items
+            if (triggerItem) //Se usa el items 
             {
                 if (ie.Value.stackSize == 1)
                 {
@@ -448,4 +464,5 @@ public class CharacterInventory : MonoBehaviour
             }
         }
     }
+
 }

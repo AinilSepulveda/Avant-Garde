@@ -15,6 +15,7 @@ public class MouseManager : MonoBehaviour
     public EventGameObject OnClickAttackble;
     public EventGameObject OnSpellAttackable;
     public EventGameObject NpcMision;
+    public EventGameObject BuildCraftingSpells;
 
     private bool _useDefaultCursor = false;
 
@@ -38,22 +39,22 @@ public class MouseManager : MonoBehaviour
     }
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
+        if (Input.GetKeyDown(KeyCode.K))
+        {
 
-        //        showGizmo = false;
-           
-        //}
-        //if (Input.GetKeyUp(KeyCode.K))
-        //{
-        //    showGizmo = true;
-        //}
+            showGizmo = false;
 
-        //if (_useDefaultCursor)
-        //{
-        //    Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
-        //    return;
-        //}
+        }
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            showGizmo = true;
+        }
+
+        if (_useDefaultCursor)
+        {
+            Cursor.SetCursor(pointer, new Vector2(0, 0), CursorMode.Auto);
+            return;
+        }
 
         // Raycast into scene
         RaycastHit hit;
@@ -63,6 +64,7 @@ public class MouseManager : MonoBehaviour
             Debug.DrawRay(Camera.main.ScreenPointToRay(targerPosition).origin, hit.collider.transform.TransformDirection(Vector3.forward));
 
             bool isNPC = false;
+            bool CraftingSpells = false;
             bool door = false;
             bool UI = false;
             if (hit.collider.gameObject.tag == "Doorway")
@@ -75,6 +77,13 @@ public class MouseManager : MonoBehaviour
             {
 
                 isNPC = true;
+                Cursor.SetCursor(NPC_Quest, new Vector2(16, 16), CursorMode.Auto);
+                Debug.Log(isNPC);
+            }
+            else if (hit.collider.gameObject.tag == "CraftingSpells")
+            {
+
+                CraftingSpells = true;
                 Cursor.SetCursor(NPC_Quest, new Vector2(16, 16), CursorMode.Auto);
                 Debug.Log(isNPC);
             }
