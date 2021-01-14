@@ -12,9 +12,9 @@ public class CharacterInventory : MonoBehaviour
     public CharacterStats charStats; //una referencia al los stast
     GameObject foundStats;
     public TMPro.TextMeshProUGUI textMeshPro;
-    public Image[] hotBarDisplayHolders = new Image[4]; //los slots de hechizos, las imagenes si po
+    public Image[] hotBarDisplayHolders; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
-    public Image[] inventoryDisplaySlots = new Image[30]; //los slots de inventario, las imagenes sipo, 
+    public Image[] inventoryDisplaySlots; //los slots de inventario, las imagenes sipo, 
     public Button[] buttoninv = new Button[30];
 
     public int slotCounterinv = 9;
@@ -33,13 +33,16 @@ public class CharacterInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inventoryDisplaySlots = new Image[28];
+        hotBarDisplayHolders = new Image[4];
         instance = this;
-       // hotBarDisplayHolders = new Image[4];
+
         //    buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
         for (int i = 0; i < hotBarDisplayHolders.Length; i++)
         {
 
             Image image = GameObject.Find("Hotkeys").transform.GetChild(i).GetComponent<Image>();
+           // hotBarDisplayHolders = new Image[4];
             hotBarDisplayHolders[i] = image;
           //  hotBarDisplayHolders[i] = image;
             //Button button = GameObject.Find("grpHotBarDisplay").transform.GetChild(i).GetComponent<Button>();

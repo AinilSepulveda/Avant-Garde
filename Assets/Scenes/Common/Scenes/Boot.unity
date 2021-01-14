@@ -8,8 +8,9 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: f5fa3dc9355a8ad429d0df059a475c97
+  m_OcclusionCullingData: {fileID: 36300000, guid: 7f4482d09125fb84eb36ada85f96a201,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -3002,6 +3003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hotkeys
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640750090900806613, guid: 8394e2d15fb4493498fa45c226d39fba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8394e2d15fb4493498fa45c226d39fba, type: 3}
