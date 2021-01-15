@@ -72,15 +72,43 @@ public class CharacterInventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1) )
         {
-            TriggerItemUse(101);
+            int IDWeapon;
+            foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+            {
+
+                if (ie.Value.invEntry.itemDefinition.isIndestructable)
+                {
+                    IDWeapon = ie.Key;
+                    TriggerItemUse(IDWeapon);
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) )
         {
-            TriggerItemUse(102);
+            int IDWeapon;
+            foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+            {
+
+                if (ie.Value.invEntry.itemDefinition.isIndestructable)
+                {
+                    IDWeapon = ie.Key;
+                    TriggerItemUse(IDWeapon);
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            TriggerItemUse(103);
+            int Idhealth;
+            foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+            {
+                
+                if (ie.Value.invEntry.itemDefinition.IsStackable) 
+                {
+                    Idhealth = ie.Key;
+                    TriggerItemUse(Idhealth);
+                }
+            }
+         //   TriggerItemUse(103);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
