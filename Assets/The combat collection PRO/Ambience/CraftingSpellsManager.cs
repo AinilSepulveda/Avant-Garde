@@ -15,6 +15,10 @@ public class CraftingSpellsManager : MonoBehaviour
     public List <Projectile> projectile;
 
     public HeroController hero;
+
+    public Spell newSpell;
+    public AoE newAoe;
+    public AttackDefinition newAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +95,8 @@ public class CraftingSpellsManager : MonoBehaviour
 
     AttackDefinition CraftingMelee(Attacks attacks, int nivel)
     {
-        AttackDefinition NewMeleeSpells = new AttackDefinition();
+      //  AttackDefinition NewMeleeSpells = new AttackDefinition();
+        AttackDefinition NewMeleeSpells = newAttack;
         NewMeleeSpells.VariableAttack = attacks;
 
         SettingLevelSpells(NewMeleeSpells, nivel);
@@ -101,8 +106,9 @@ public class CraftingSpellsManager : MonoBehaviour
     }
     Spell CraftingProyectile(Attacks attacks, int nivel, Projectile projectile)
     {
-        Spell NewProyectileSpells = new Spell();
-         NewProyectileSpells.VariableAttack = attacks;
+      //  Spell NewProyectileSpells = new Spell();
+        Spell NewProyectileSpells = newSpell;
+        NewProyectileSpells.VariableAttack = attacks;
         NewProyectileSpells.projectileSpeed = Random.Range(5, 15) * nivel;
         NewProyectileSpells.projectileToFire = projectile;
         SettingLevelSpells(NewProyectileSpells, nivel);
@@ -113,7 +119,8 @@ public class CraftingSpellsManager : MonoBehaviour
 
     AoE CraftingAOE(Attacks attacks, int nivel, GameObject aoePrefabs)
     {
-        AoE NewAoESpells = new AoE();
+      //  AoE NewAoESpells = new AoE();
+        AoE NewAoESpells = newAoe;
         NewAoESpells.VariableAttack = attacks;
         NewAoESpells.AOEprefab = aoePrefabs;
         NewAoESpells.Radius = Random.Range(5, 15) * nivel;
