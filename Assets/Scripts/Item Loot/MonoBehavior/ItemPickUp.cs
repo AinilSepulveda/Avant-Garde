@@ -15,7 +15,7 @@ public class ItemPickUp : MonoBehaviour
     #region Constructors 
     public ItemPickUp() //los metodos constructor se inicializan las variables, parecido un void Start
     {
-        charInventory = CharacterInventory.instance;
+        charInventory = CharacterInventory.Instance;
     }
 
     #endregion

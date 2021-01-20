@@ -40,6 +40,11 @@ public class AoeCollider : MonoBehaviour
             attackables.OnAttack(CasterStast.gameObject, attack);
             
         }
+
+         else
+        {
+            return;
+        }
          
 
 
