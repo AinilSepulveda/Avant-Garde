@@ -3778,6 +3778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PilarEnPunta
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 18be26e09d4bd5c43b59c5b5bd54d055,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18be26e09d4bd5c43b59c5b5bd54d055, type: 3}
 --- !u!4 &79742216 stripped
@@ -69548,6 +69553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PilarEnPunta (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 18be26e09d4bd5c43b59c5b5bd54d055,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18be26e09d4bd5c43b59c5b5bd54d055, type: 3}
