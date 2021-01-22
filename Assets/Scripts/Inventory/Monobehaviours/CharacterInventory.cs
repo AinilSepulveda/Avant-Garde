@@ -7,12 +7,10 @@ public class CharacterInventory : Singleton<CharacterInventory>
 {
     #region Variable Declarations;
 
-   
-
-    public CharacterStats charStats; //una referencia al los stast
     public TMPro.TextMeshProUGUI textItemEntry;
     public Image[] hotBarDisplayHolders; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
+    public GameObject HotskeysDisplayHolder; //UI del inventory 
     public Image[] inventoryDisplaySlots; //los slots de inventario, las imagenes sipo, 
     public Button[] buttoninv = new Button[30];
 
@@ -36,26 +34,15 @@ public class CharacterInventory : Singleton<CharacterInventory>
         hotBarDisplayHolders = new Image[4];
         itemEntry = new InventoryEntry(0, null, null);
         itemsInInventory.Clear();
-        
-
-        //    buttoninv = InventoryDisplayHolder.GetComponentsInChildren<Button>();
-        for (int i = 0; i < hotBarDisplayHolders.Length; i++)
-        {
-            Image image = GameObject.Find("Hotkeys").transform.GetChild(i).GetComponent<Image>();
-            hotBarDisplayHolders[i] = image;
-          //  hotBarDisplayHolders[i] = image;
-            //Button button = GameObject.Find("grpHotBarDisplay").transform.GetChild(i).GetComponent<Button>();
-            //buttoninv[i] = button; 
-          
-        }
-        
 
 
-       // InventoryDisplayHolder.SetActive(false);
+
+        hotBarDisplayHolders = HotskeysDisplayHolder.GetComponentsInChildren<Image>();
+        // InventoryDisplayHolder.SetActive(false);
 
         inventoryDisplaySlots = InventoryDisplayHolder.GetComponentsInChildren<Image>();
 
-        charStats = GetComponent<CharacterStats>();
+     
     }
 
 
@@ -69,30 +56,12 @@ public class CharacterInventory : Singleton<CharacterInventory>
 
         if (Input.GetKeyDown(KeyCode.Alpha1) )
         {
-            //int IDWeapon;
-            //foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
-            //{
 
-            //    if (ie.Value.invEntry.itemDefinition.isIndestructable)
-            //    {
-            //        IDWeapon = ie.Key;
-            //        TriggerItemUse(IDWeapon);
-            //    }
-            //}
             TriggerItemUse(101);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) )
         {
-            //int IDWeapon;
-            //foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
-            //{
 
-            //    if (ie.Value.invEntry.itemDefinition.isIndestructable)
-            //    {
-            //        IDWeapon = ie.Key;
-            //        TriggerItemUse(IDWeapon);
-            //    }
-            //}
             TriggerItemUse(102);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -145,19 +114,24 @@ public class CharacterInventory : Singleton<CharacterInventory>
         //Para ver si se puede meter al inventario 
         if (itemEntry.invEntry)
         {
+            if (itemsInInventory.Count == 0)
+            {
+                addedItem = AddItemToInv(addedItem);
+
+            }
+            else
+            {
 
                 if (itemEntry.invEntry.itemDefinition.IsStackable)
                 {
-                addedItem = AddItemToInv(addedItem);
 
-                foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+                    foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
                     {
                         if (itemEntry.invEntry.itemDefinition == ie.Value.invEntry.itemDefinition)
                         {
                             //Aqui Se añade un stack y se destruye la nueva instancia
-                            AddItemToHotBar(ie.Value);
                             ie.Value.stackSize += 1;
-                            
+                            AddItemToHotBar(ie.Value);
                             itsInInv = true;
                             Destroy(itemEntry.invEntry.gameObject);
                             break;
@@ -165,11 +139,8 @@ public class CharacterInventory : Singleton<CharacterInventory>
                         }
                         else
                         {
-
                             itsInInv = false;
                         }
-
-                        
                     }
 
                 }//Si el item no es stackeable - If not
@@ -178,7 +149,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
                     itsInInv = false;
 
                     //If no space y el item no es stackeable - say inventory full
-                    if(itemsInInventory.Count == inventoryItemCap)
+                    if (itemsInInventory.Count == inventoryItemCap)
                     {
                         itemEntry.invEntry.gameObject.SetActive(true);
                         Debug.Log("Inventary is Full");
@@ -191,6 +162,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
                     addedItem = AddItemToInv(addedItem);
                     itsInInv = true;
                 }
+            }
             
         }
             //    addedItem = AddItemToInv(addedItem);
@@ -202,9 +174,10 @@ public class CharacterInventory : Singleton<CharacterInventory>
         itemEntry.invEntry = itemToStore;
         itemEntry.stackSize = 1;
         itemEntry.hbSprite = itemToStore.itemDefinition.ItemIcon;
+        itemToStore.gameObject.SetActive(false);
         textItemEntry.gameObject.SetActive(true);
         textItemEntry.text = "Has recogido: " + itemEntry.invEntry.itemDefinition.name;
-        itemToStore.gameObject.SetActive(false);
+
     }
     public bool AddItemToInv (bool finishedAdding) //Si para ver si es stackable o no  y si lo hes para dar mas posiciones o sino darle un espacio mas
     {
@@ -214,16 +187,15 @@ public class CharacterInventory : Singleton<CharacterInventory>
         //El tamaño de fila , ItemPickUP , Sprite
         itemsInInventory.Add(idCount, new InventoryEntry(itemEntry.stackSize, Instantiate(itemEntry.invEntry), itemEntry.hbSprite));
         //Ya tenemos los datos, se destruye
+        Destroy(itemEntry.invEntry.gameObject);
         FillInventoryDisplay();
 
-        if (itemEntry.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
-            AddItemToHotBar(itemsInInventory[idCount]);
+        AddItemToHotBar(itemsInInventory[idCount]);
 
 
         //El peso de arma, si excede no la tomara
         //  charStats.characterDefinition.currentEncumbrance += itemEntry.invEntry.itemDefinition.itemWeight;
 
-        Destroy(itemEntry.invEntry.gameObject);
 
         #region Reset ItemEntry
         itemEntry.invEntry = null;
@@ -261,7 +233,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
         {
             hotbarCounter += 1;
             //Si es el primero
-            if (itemforHotBar.hotBarSlot <= 0)
+            if (itemforHotBar.hotBarSlot == 0)
             {
                 if (image.sprite == null)
                 {
@@ -284,7 +256,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
 
         if (increaseCount)
         {       //Si todo sale bien y bonito, pues en la barra saldra cuanto tienes de ese item;
-            hotBarDisplayHolders[itemforHotBar.hotBarSlot].GetComponentInChildren<Text>().text = itemforHotBar.stackSize.ToString();
+            hotBarDisplayHolders[itemforHotBar.hotBarSlot -1].GetComponentInChildren<Text>().text = itemforHotBar.stackSize.ToString();
         }
         increaseCount = false;
     }
@@ -298,18 +270,6 @@ public class CharacterInventory : Singleton<CharacterInventory>
         else
         {
             InventoryDisplayHolder.SetActive(true);
-            int slotCounter = 7;
-            foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
-            {
-                slotCounter += 1;
-                ie.Value.inventorySlot = slotCounter - 7;
-                buttoninv[slotCounter].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
-            }
-            while (slotCounter < itemsInInventory.Count) //Para ver los Slot libres uwu
-            {
-                slotCounter++;
-                inventoryDisplaySlots[slotCounter].sprite = null;
-            }
 
         }
     } 
@@ -327,14 +287,14 @@ public class CharacterInventory : Singleton<CharacterInventory>
     }
     void FillInventoryDisplay()
     {
-        int slotviewequiped = 8; // 9 porque no tiene que contar la armadura ni mistic y ni con el characterview
+        int slotviewequiped = 7; // 9 porque no tiene que contar la armadura ni mistic y ni con el characterview
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {
             slotviewequiped += 1;
             inventoryDisplaySlots[slotviewequiped].sprite = ie.Value.hbSprite;
-            ie.Value.inventorySlot = slotviewequiped - 8;
-          //  buttoninv[slotCounter - 9].onClick.AddListener(delegate { TriggerItemUse(ie.Key); });
+            ie.Value.inventorySlot = slotviewequiped - 7;
+         
         }
         while (slotviewequiped < itemsInInventory.Count) //Para ver los Slot libres uwu
         {
@@ -372,28 +332,24 @@ public class CharacterInventory : Singleton<CharacterInventory>
                 {
                     if (ie.Value.invEntry.itemDefinition.IsStackable) // Si stackeable el objeto usado (Pociones por dar un ejemplo)s
                     {
-                       if  (ie.Value.hotBarSlot <= 0)
+                       if  (ie.Value.hotBarSlot != 0)
                         {
                             hotBarDisplayHolders[ie.Value.hotBarSlot - 1].sprite = null;
                             hotBarDisplayHolders[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = "0";
                         }
                         ie.Value.invEntry.UseItem();
+                        inventoryDisplaySlots[idCount + 7].sprite = null;
                         itemsInInventory.Remove(ie.Key);
                         break;
                     }
                     else
                     {
                         ie.Value.invEntry.UseItem(); //Si no es Stackeable, (por ejemplo un objeto de mision)
-                        if (!ie.Value.invEntry.itemDefinition.isIndestructable)
-                        {
-                    //        Debug.Log("Mision");
-                            itemsInInventory.Remove(ie.Key);
-                            break;
-                        }
                     }
-                }else //Si es mayor que uno. se gasta un y se reescribe 
+                }
+                else //Si es mayor que uno. se gasta un y se reescribe 
                 {
-               //     Debug.Log("Normal");
+
                     ie.Value.invEntry.UseItem();
                     ie.Value.stackSize -= 1;
                     hotBarDisplayHolders[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
