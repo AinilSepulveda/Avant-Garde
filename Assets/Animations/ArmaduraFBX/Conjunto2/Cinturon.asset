@@ -16,7 +16,7 @@ MonoBehaviour:
   itemType: 4
   ItemArmorSubType: 4
   itemMaterial: {fileID: 2100000, guid: 73e0186d657d58043af1043b16cda273, type: 2}
-  ItemIcon: {fileID: 21300000, guid: 8a309d7ed14efb4479b3c2d1d90f8bb8, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 634895868077add4e8589933cb6cfea1, type: 3}
   itemSpawnObject: {fileID: 2555810156268831616, guid: 37d104f854d1d2443a805f9ed6925866,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
