@@ -117,7 +117,7 @@ public class MouseManager : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
-                Debug.Log( hit.collider.name); 
+               // Debug.Log( hit.collider.name); 
                 if (door)
                 {
                     Transform doorway = hit.collider.gameObject.transform;

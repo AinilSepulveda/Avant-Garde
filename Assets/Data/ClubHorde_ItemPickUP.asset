@@ -16,7 +16,7 @@ MonoBehaviour:
   itemType: 3
   ItemArmorSubType: 0
   itemMaterial: {fileID: 2100000, guid: ed55e60c7316b344793b3d14d9d8bd6b, type: 2}
-  ItemIcon: {fileID: 21300000, guid: 7a6e3d79f26e1fa45b21760fbb936826, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 7e149f1dc95b76a4389a5340eb9b2300, type: 3}
   itemSpawnObject: {fileID: 8226409667007659845, guid: 95f695afd77631048854fb4a132dcc39,
     type: 3}
   WeaponSpawnObject: {fileID: 11400000, guid: 77b4536d0adcf0c4691c76b3084eda68, type: 2}
@@ -27,7 +27,7 @@ MonoBehaviour:
   isInteractable: 0
   isStorable: 1
   isUnique: 1
-  isIndestructable: 1
+  isIndestructable: 0
   isQuestItem: 0
   IsStackable: 0
   destrouOnUse: 0

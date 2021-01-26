@@ -9,6 +9,7 @@ public class InventoryEntry //Es un contructor
     public int inventorySlot;  //los slots asignado para los items
     public int hotBarSlot;      //para los barra 
     public Sprite hbSprite;
+    public int idItem;
 
     public InventoryEntry(int stackSize, ItemPickUp invEntry, Sprite hbSprite)
     {
