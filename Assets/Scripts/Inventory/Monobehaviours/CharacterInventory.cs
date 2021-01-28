@@ -14,6 +14,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
     public Image[] inventoryDisplaySlots; //los slots de inventario, las imagenes sipo, 
     public Button[] buttoninv = new Button[30];
 
+    public GameObject uIInvetario;
     public int slotCounterinv = 9;
 
     int inventoryItemCap = 20; //Limite del slots
@@ -22,7 +23,8 @@ public class CharacterInventory : Singleton<CharacterInventory>
 
     public Dictionary<int, InventoryEntry> itemsInInventory = new Dictionary<int, InventoryEntry>(); // Para guardar el ID del item y además el item en si
     public InventoryEntry itemEntry;
-
+    [SerializeField]
+    bool isReset = true;
     public GameObject stastHUD;
     #endregion
 
@@ -30,11 +32,11 @@ public class CharacterInventory : Singleton<CharacterInventory>
     // Start is called before the first frame update
     void Start()
     {
-        inventoryDisplaySlots = new Image[28];
-        hotBarDisplayHolders = new Image[4];
-        itemEntry = new InventoryEntry(0, null, null);
-        itemsInInventory.Clear();
-
+        if (isReset == true)
+        {
+            ResetInventory();
+            Debug.Log("RESET COMPLETE");
+        }
 
 
         hotBarDisplayHolders = HotskeysDisplayHolder.GetComponentsInChildren<Image>();
@@ -43,6 +45,15 @@ public class CharacterInventory : Singleton<CharacterInventory>
         inventoryDisplaySlots = InventoryDisplayHolder.GetComponentsInChildren<Image>();
 
      
+    }
+
+    public void ResetInventory()
+    {
+        inventoryDisplaySlots = new Image[28];
+        hotBarDisplayHolders = new Image[4];
+        itemEntry = new InventoryEntry(0, null, null);
+        itemsInInventory.Clear();
+        isReset = false;
     }
 
 
@@ -89,12 +100,36 @@ public class CharacterInventory : Singleton<CharacterInventory>
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            DisplayInventory();
-           // Debug.Log("abriendo el inventario");
+            if (uIInvetario.activeSelf == true)
+            {
+                uIInvetario.SetActive(false);
+                textItemEntry.gameObject.SetActive(false);
+            }
+            else if ((uIInvetario.activeSelf == false))
+            {
+                uIInvetario.SetActive(true);
+            }
+            // Debug.Log("abriendo el inventario");
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (uIInvetario.activeSelf == true)
+                uIInvetario.SetActive(false);
+
+            if (stastHUD.activeSelf == true)
+                stastHUD.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            DisplayStast();
+            if (stastHUD.activeSelf == true)
+            {
+                stastHUD.SetActive(false);
+
+            }
+            else
+            {
+                stastHUD.SetActive(true);
+            }
             // Debug.Log("abriendo el inventario");
         }
 
@@ -259,31 +294,7 @@ public class CharacterInventory : Singleton<CharacterInventory>
             hotBarDisplayHolders[itemforHotBar.hotBarSlot -1].GetComponentInChildren<Text>().text = itemforHotBar.stackSize.ToString();
         }
         increaseCount = false;
-    }
-    void DisplayInventory()
-    {
-        if (InventoryDisplayHolder.activeSelf == true)
-        {
-            InventoryDisplayHolder.SetActive(false);
-            textItemEntry.gameObject.SetActive(false);
-        }
-        else
-        {
-            InventoryDisplayHolder.SetActive(true);
-
-        }
-    } 
-    void DisplayStast()
-    {
-        if (stastHUD.activeSelf == true)
-        {
-            stastHUD.SetActive(false);
-
-        }
-        else
-        {
-            stastHUD.SetActive(true);
-        }
+    
     }
     void FillInventoryDisplay()
     {

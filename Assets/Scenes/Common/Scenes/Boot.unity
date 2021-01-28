@@ -3053,7 +3053,7 @@ MonoBehaviour:
   OnGameStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  NameLevelRunnig: Mapa
+  NameLevelRunnig: MapaTutorial
 --- !u!4 &2015759414
 Transform:
   m_ObjectHideFlags: 0

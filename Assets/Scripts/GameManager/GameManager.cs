@@ -57,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.P))
         {
             TogglePause();
         }
@@ -169,11 +169,15 @@ public class GameManager : Singleton<GameManager>
 
     public void RestartGame()
     {
+        CharacterInventory.Instance.ResetInventory();
         UpdateState(GameState.PREGAME);
+        
     }
 
     public void StartGame()
     {
+        CharacterInventory.Instance.ResetInventory();
+      //  CharacterInventory.Instance.isReset = true;
         LoadLevel(NameLevelRunnig);
         UpdateState(GameState.RUNNING);
         MusicManager.Instance.PlaySoundEffect(MusicEnum.Ambient);
