@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class MouseManager : MonoBehaviour
 {
+    public Transform positionPortal;
+
     public LayerMask clickableLayer; // layermask used to isolate raycasts against clickable layers
 
     public Texture2D pointer; // normal mouse pointer
@@ -67,6 +69,7 @@ public class MouseManager : MonoBehaviour
             bool CraftingSpells = false;
             bool door = false;
             bool UI = false;
+            Debug.Log( hit.transform.name);
             if (hit.collider.gameObject.tag == "Doorway")
             {
                 Cursor.SetCursor(doorway, new Vector2(16, 16), CursorMode.Auto);
@@ -120,8 +123,8 @@ public class MouseManager : MonoBehaviour
                // Debug.Log( hit.collider.name); 
                 if (door)
                 {
-                    Transform doorway = hit.collider.gameObject.transform;
-                    HeroOnClickEnvironment.Invoke(doorway.position + doorway.forward * 10);
+                  //  Transform doorway = positionPortal;
+                    HeroOnClickEnvironment.Invoke(positionPortal.position);
                     //Si toco la puerta, pues me traslada el otro lado tomando la posicion de esta + hacia al frente * 10;
                 }
                 

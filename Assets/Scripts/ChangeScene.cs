@@ -6,6 +6,7 @@ public class ChangeScene : MonoBehaviour
 {
     public string levelLoad;
 
+    public Transform portalend;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,7 @@ public class ChangeScene : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.LoadLevel(levelLoad);
+        other.GetComponent<HeroController>().PortalEnd(portalend);
+     //   other.transform.position = portalend.transform.position;
     }
 }

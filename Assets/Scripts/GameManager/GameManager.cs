@@ -176,8 +176,6 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        CharacterInventory.Instance.ResetInventory();
-      //  CharacterInventory.Instance.isReset = true;
         LoadLevel(NameLevelRunnig);
         UpdateState(GameState.RUNNING);
         MusicManager.Instance.PlaySoundEffect(MusicEnum.Ambient);

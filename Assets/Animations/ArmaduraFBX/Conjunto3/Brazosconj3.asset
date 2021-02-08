@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: Brazosconj3
   m_EditorClassIdentifier: 
-  itemName: New Item
+  itemName: Armadura Brazos
   itemType: 4
   ItemArmorSubType: 3
   itemMaterial: {fileID: -8274133419916619345, guid: 6111c96f703fd0f469ad3c43ca38bc52,

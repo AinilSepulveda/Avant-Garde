@@ -318,11 +318,11 @@ public class CharacterInventory : Singleton<CharacterInventory>
 
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable
+                itemToUseID -= 100;
             bool triggerItem = false; // si lo hemos tengo usado
             if (itemToUseID > 100) //si es mayor a 100, se le resta 100 para ver de donde vino (por ejemplo de Hotbar) y así tienes el ID correcto
             {
                 // Debug.Log(ie.Key.ToString() + itemToUseID + "Triggeritemuse");
-                itemToUseID -= 100;
                 if (ie.Value.hotBarSlot == itemToUseID)
                 {
                     triggerItem = true;
@@ -330,9 +330,11 @@ public class CharacterInventory : Singleton<CharacterInventory>
             }
             else
             {
+               // itemToUseID -= 100;
                 if (ie.Value.inventorySlot == itemToUseID)
                 {
-
+                    Debug.Log("soy un evento por click");
+                    Debug.Log(itemToUseID);
                     triggerItem = true;               
                 }
             }

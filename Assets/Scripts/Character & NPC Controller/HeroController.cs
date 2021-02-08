@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class HeroController : MonoBehaviour
+public class HeroController : Singleton<HeroController>
 {
     public AttackDefinition demoAttack;
     public AttackDefinition Spell;
@@ -317,6 +317,22 @@ public class HeroController : MonoBehaviour
         }
     }
 
+    public void PortalEnd(Transform portaltransform)
+    {
+
+        agent.transform.position = portaltransform.position;
+        StartCoroutine(EnabledAgent());
+    }
+
+    IEnumerator EnabledAgent()
+    {
+        agent.isStopped = true;
+        agent.enabled = false;
+        yield return new WaitForEndOfFrame();
+        agent.enabled = true;
+        agent.isStopped = false;
+        //   SetDestination(portaltransform.position);
+    }
     //public void Rewards(Quest quest)
     //{
     //    // TrackerPanel.ActualizarBotones();

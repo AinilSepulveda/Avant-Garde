@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: ClubHorde_ItemPickUP
   m_EditorClassIdentifier: 
-  itemName: ClubHorde
+  itemName: Maza Horca
   itemType: 3
   ItemArmorSubType: 0
   itemMaterial: {fileID: 2100000, guid: ed55e60c7316b344793b3d14d9d8bd6b, type: 2}
