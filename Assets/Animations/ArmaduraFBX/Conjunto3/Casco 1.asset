@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: Casco 1
   m_EditorClassIdentifier: 
-  itemName: Casco sin filtro
+  itemName: HeadArmor 1
   itemType: 4
   ItemArmorSubType: 1
-  itemMaterial: {fileID: 7067299507677334536, guid: 6111c96f703fd0f469ad3c43ca38bc52,
-    type: 3}
+  itemMaterial: {fileID: 2100000, guid: 2503f12759a819341bff56e58e623a87, type: 2}
   ItemIcon: {fileID: 21300000, guid: 4ee4ae08fb599db44896e8eb2ea16864, type: 3}
-  itemSpawnObject: {fileID: 2272690211123230134, guid: 7913cd17192ca7a46a9d270031daf82c,
+  itemSpawnObject: {fileID: 8326239941780932003, guid: c4a3532f37e2a114cb9903c86e38cf5e,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
-  itemArmor: {fileID: 6858611281598592400, guid: 78a80eb3b2c168c45a3d42798c9336a0,
+  itemArmor: {fileID: -1808098284255893985, guid: 6e38fe169ae6d574fa7bc4aebd4dcee3,
     type: 3}
   itemArmor2: {fileID: 0}
   spawnChangeWeight: 0
@@ -35,8 +34,8 @@ MonoBehaviour:
   destrouOnUse: 0
   itemAmount: 0
   itemWeight: 0
-  bonusResistence: 5
-  bonusHealthPoint: 15
-  bonusDamage: 2
-  bonusDamageMagic: 15
-  bonusManaPoint: 10
+  bonusResistence: 1
+  bonusHealthPoint: 1
+  bonusDamage: 1
+  bonusDamageMagic: 1
+  bonusManaPoint: 1
