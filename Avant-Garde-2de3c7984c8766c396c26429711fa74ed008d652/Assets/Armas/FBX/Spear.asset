@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1773096611d388a4a8746b70ff875bb9, type: 3}
+  m_Name: Spear
+  m_EditorClassIdentifier: 
+  Cooldown: 2
+  costAmount: 0
+  Range: 6
+  minDamage: 25
+  maxDamage: 40
+  criticalMultiplier: 1.5
+  criticalChange: 0.3
+  VariableAttack: 0
+  forceToadd: 0
+  isMagic: 0
+  Iskeep: 0
+  TimeInScene: 0
+  TickTimers: 
+  weaponPreb: {fileID: 366985389432015558, guid: 20dea0d06dd88c945952465ce198bfc4,
+    type: 3}

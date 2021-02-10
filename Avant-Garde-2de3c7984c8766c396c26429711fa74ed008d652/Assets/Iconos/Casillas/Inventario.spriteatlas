@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Inventario
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 41b77292c10947a4aabaf80532da878f, type: 3}
+    - {fileID: 102900000, guid: 2dadb2bcb6418514b8fadb62a65b6e24, type: 3}
+    - {fileID: 102900000, guid: 48f8ef65949be6143bf46834b45ae50c, type: 3}
+    - {fileID: 102900000, guid: 46bd5b6dcb6a3774693b20e28428d2d3, type: 3}
+    totalSpriteSurfaceArea: 3821048
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9ce51e200488f714aae8f9553e2171ce, type: 3}
+  - {fileID: 21300000, guid: 70f339913b8818a4e8d9b049f8336e4a, type: 3}
+  - {fileID: 21300000, guid: 66f5fd124fef1ad4eaa7afe9a45f8367, type: 3}
+  - {fileID: 21300000, guid: dd960aa28bb49a949982dce6c14d17c2, type: 3}
+  - {fileID: 21300000, guid: 6a127163f29cd804f919807c0bad1fcd, type: 3}
+  - {fileID: 21300000, guid: 5723035490ad8904a856a43bf1bc3cbf, type: 3}
+  - {fileID: 21300000, guid: 733df0d48a098c84e89a76571930b6d1, type: 3}
+  - {fileID: 21300000, guid: 16e260551ed445c459eaf1e24d4cd631, type: 3}
+  - {fileID: 21300000, guid: 870a06667bd1d4344b94643317c03477, type: 3}
+  - {fileID: 21300000, guid: 634895868077add4e8589933cb6cfea1, type: 3}
+  - {fileID: 21300000, guid: c7b6d3479aab584448eb510c28e8db76, type: 3}
+  - {fileID: 21300000, guid: 707ae2b7e1acbde4a81a0a263a0daef7, type: 3}
+  - {fileID: 21300000, guid: d3ff4d380753baa46a6d7840e319559f, type: 3}
+  - {fileID: 21300000, guid: 2784bfac90415e34490fa50d3c1a461e, type: 3}
+  - {fileID: 21300000, guid: 4231c62d88f84b645bdb82effbf29b32, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - caeza
+  - CasillaArmaduraPies
+  - pocion roja
+  - brazo
+  - CasillaArmaduraCabeza
+  - CascoGas
+  - CasillaArmaduraBrazos
+  - cuadrados
+  - CasillaArmaduraPechera
+  - cinturon
+  - botas
+  - CasillaArmaduraCinturon
+  - fondo armor
+  - pocion azul
+  - pecho
+  m_Tag: Inventario
+  m_IsVariant: 0

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: aguaa
+  m_Shader: {fileID: -6465566751694194690, guid: 7f01aeb75de0abe48a86ea1915e07f79,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_4281FD5F: 2
+    - Vector1_5539390B: 1
+    - Vector1_84D20B1D: 1
+    - Vector1_DC7B9DF5: 10
+    - Vector1_E7FABCE5: 1
+    m_Colors:
+    - Color_6776D7: {r: 1.34902, g: 2, b: 1.843137, a: 0}
+    - Color_AF587EF3: {r: 0.259434, g: 0.9062611, b: 1, a: 0}

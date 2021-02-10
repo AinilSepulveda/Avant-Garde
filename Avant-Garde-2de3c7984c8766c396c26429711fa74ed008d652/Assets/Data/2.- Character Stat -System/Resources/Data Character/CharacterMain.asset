@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42433cce0c9f44a4181a1123d1dc4223, type: 3}
+  m_Name: CharacterMain
+  m_EditorClassIdentifier: 
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeroDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedMana:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  isHero: 1
+  saveDataonClose: 0
+  maxHealth: 770
+  currentHeath: 770
+  maxMana: 770
+  currentMana: 780
+  maxWealth: 58
+  currentWealth: 0
+  baseDamage: 57
+  currentDamage: 12
+  currentDamageMagic: 0
+  baseDamageMagic: 0
+  baseResistance: 47
+  currentResistance: 47
+  currentEncumbrance: 5
+  maxEncumbrance: 20
+  charExperience: 540
+  charLevel: 4
+  charLevelups:
+  - maxHealth: 25
+    maxMana: 5
+    maxWealth: 200
+    baseDamage: 5
+    baseResistence: 2
+    maxEncumberance: 10
+    requiredXP: 50
+  - maxHealth: 25
+    maxMana: 5
+    maxWealth: 11
+    baseDamage: 5
+    baseResistence: 2
+    maxEncumberance: 13
+    requiredXP: 75
+  - maxHealth: 25
+    maxMana: 5
+    maxWealth: 22
+    baseDamage: 2
+    baseResistence: 2
+    maxEncumberance: 15
+    requiredXP: 100
+  - maxHealth: 25
+    maxMana: 5
+    maxWealth: 25
+    baseDamage: 2
+    baseResistence: 2
+    maxEncumberance: 20
+    requiredXP: 120
+  LevelUP: {fileID: 8926484042661614526, guid: ebe063f319fa85942a2ff471c8779c71, type: 3}
+  Levelpoints: 0
+  GodMode: 0

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095cdd9f065ac4645bf884c0fa56309c, type: 3}
+  m_Name: Linda - option1 - Welcome
+  m_EditorClassIdentifier: 
+  nameAnnouncer: Linda
+  dialogues:
+  - sentence: "lo ataque para quitarle la m\xE1scara pero solo consegu\xED arrebatarle
+      las gafas y perforarle un pulm\xF3n con mi espada, asique dudo que el maldito
+      llegue lejos al igual que yo, ese maldito debe andar moribundo por ah\xED con
+      esa maldita m\xE1scara y yo inhale demasiado tiempo ese gas y al parecer estoy
+      envenenado. creo que descansar\xE9 un momento e intentare reponerme de esto\r\n"
+    options:
+    - text: Sallr
+      optionNumber: 0
+      response: {fileID: 0}

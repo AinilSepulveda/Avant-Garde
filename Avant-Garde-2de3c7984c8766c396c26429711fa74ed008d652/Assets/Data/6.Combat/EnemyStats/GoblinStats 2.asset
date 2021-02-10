@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42433cce0c9f44a4181a1123d1dc4223, type: 3}
+  m_Name: GoblinStats 2
+  m_EditorClassIdentifier: 
+  OnLevelUp:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroGainedMana:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeroInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  isHero: 0
+  saveDataonClose: 0
+  maxHealth: 120
+  currentHeath: 120
+  maxMana: 0
+  currentMana: 0
+  maxWealth: 0
+  currentWealth: 0
+  baseDamage: 50
+  currentDamage: 40
+  currentDamageMagic: 0
+  baseDamageMagic: 0
+  baseResistance: 5
+  currentResistance: 5
+  currentEncumbrance: 0
+  maxEncumbrance: 0
+  charExperience: 0
+  charLevel: 0
+  charLevelups: []
+  LevelUP: {fileID: 0}
+  GodMode: 0
