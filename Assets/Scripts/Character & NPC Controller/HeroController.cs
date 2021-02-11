@@ -88,12 +88,7 @@ public class HeroController : MonoBehaviour
         }
         if (attackOnCooldown)
             timercooldown += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            //TrackerPanel.ActualizarBotones();
-            //TrackerPanel.ActualizarDescripcionesConInfo(-1);
-            //TrackerPanel.gameObject.SetActive(!TrackerPanel.gameObject.activeSelf);
-        }
+
 
     }
 
@@ -334,59 +329,5 @@ public class HeroController : MonoBehaviour
         //   SetDestination(portaltransform.position);
     }
 
-    //public void Rewards(Quest quest)
-    //{
-    //    // TrackerPanel.ActualizarBotones();
-
-    //    stats.IncreaseXP(dataBase.misions[quest.id].xp);
-    //    stats.IncreaseWealth(dataBase.misions[quest.id].gold);
-
-    //    //Panel.accept_button.gameObject.SetActive(false);
-    //    //Panel.deny_button.gameObject.SetActive(false);
-
-    //    if (dataBase.misions[quest.id].hasSpecialR) //Recompensa especial
-    //    {
-    //        if (dataBase.misions[quest.id].specials.Length > 1)
-    //        {
-    //            string s = "¡Bien hecho!, Completaste " + dataBase.misions[quest.id].name + ", como recompensa has obtenido Oro(" + dataBase.misions[quest.id].gold
-    //            + "), " + "Experiencia(" + dataBase.misions[quest.id].xp + ") y los siguientes items ";
-
-    //            for (int i = 0; i < dataBase.misions[quest.id].specials.Length; i++)
-    //            {
-    //                s = string.Format("{0} {1}", s, dataBase.misions[quest.id].specials[i].nombre);
-    //                //{0} Representa s, {1} presenta dataBase.misions[quest.id].specials[i].nombre
-    //            }
-    //            //  Panel.ActualizarPanel(quest.name, s);
-    //        }
-    //        else
-    //        {
-    //            //Panel.ActualizarPanel("¡Bien hecho!, Completaste " + dataBase.misions[quest.id].name + ", como recompensa has obtenido Oro(" + dataBase.misions[quest.id].gold
-    //            //    + "), " + "Experiencia(" + dataBase.misions[quest.id].xp);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        //Panel.ActualizarPanel("¡Bien hecho!, Completaste " + dataBase.misions[quest.id].name + ", como recompensa has obtenido Oro(" + dataBase.misions[quest.id].gold
-    //        //    + "), " + "Experiencia(" + dataBase.misions[quest.id].xp);
-    //    }
-
-    //    if (quest.stayitems)
-    //    {
-    //        List<InventoryEntry> its = new List<InventoryEntry>();
-    //        int cantidadaAeliminar = quest.itemsArecogers[0].amount;
-
-    //        for (int i = 0; i < characterInventory.itemsInInventory.Count; i++)
-    //        {
-    //            if (characterInventory.itemsInInventory.ContainsKey(quest.itemsArecogers[0].itemID) && cantidadaAeliminar > 0)
-    //            {
-    //                its.Add(characterInventory.itemsInInventory[quest.itemsArecogers[0].itemID]);
-
-    //                characterInventory.TriggerItemUse(quest.itemsArecogers[0].itemID);
-
-    //                cantidadaAeliminar--;
-    //            }
-    //        }
-    //    }
-    //}
 }
     
