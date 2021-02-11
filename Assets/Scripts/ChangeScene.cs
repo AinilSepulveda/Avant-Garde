@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChangeScene : MonoBehaviour
 {
     public Transform portalEnd;
+    public GameObject lucesTutorial;
+    public GameObject lucesNivel;
 
     // Start is called before the first frame update
     void Start()
@@ -15,5 +17,8 @@ public class ChangeScene : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.GetComponent<HeroController>().PortalEnd(portalEnd);
+
+        lucesTutorial.SetActive(false);
+        lucesNivel.SetActive(true);
     }
 }
