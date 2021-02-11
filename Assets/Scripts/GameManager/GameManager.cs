@@ -169,14 +169,14 @@ public class GameManager : Singleton<GameManager>
 
     public void RestartGame()
     {
-        CharacterInventory.Instance.ResetInventory();
+      //  CharacterInventory.Instance.ResetInventory();
         UpdateState(GameState.PREGAME);
         
     }
 
     public void StartGame()
     {
-        CharacterInventory.Instance.ResetInventory();
+      //  CharacterInventory.Instance.ResetInventory();
       //  CharacterInventory.Instance.isReset = true;
         LoadLevel(NameLevelRunnig);
         UpdateState(GameState.RUNNING);

@@ -38,7 +38,7 @@ public class CharacterStats : MonoBehaviour
 
     public CharacterStats()
     {
-        charInv = CharacterInventory.Instance;
+        charInv = FindObjectOfType< CharacterInventory>();
     }
 
     #endregion

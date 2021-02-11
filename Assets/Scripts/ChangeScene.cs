@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string levelLoad;
+    public Transform portalEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,6 @@ public class ChangeScene : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.Instance.LoadLevel(levelLoad);
+        other.GetComponent<HeroController>().PortalEnd(portalEnd);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterInventory : Singleton<CharacterInventory>
+public class CharacterInventory : MonoBehaviour
 {
     #region Variable Declarations;
 
@@ -23,8 +23,6 @@ public class CharacterInventory : Singleton<CharacterInventory>
 
     public Dictionary<int, InventoryEntry> itemsInInventory = new Dictionary<int, InventoryEntry>(); // Para guardar el ID del item y además el item en si
     public InventoryEntry itemEntry;
-    [SerializeField]
-    bool isReset = true;
     public GameObject stastHUD;
     #endregion
 
@@ -32,11 +30,10 @@ public class CharacterInventory : Singleton<CharacterInventory>
     // Start is called before the first frame update
     void Start()
     {
-        if (isReset == true)
-        {
+
             ResetInventory();
             Debug.Log("RESET COMPLETE");
-        }
+
 
 
         hotBarDisplayHolders = HotskeysDisplayHolder.GetComponentsInChildren<Image>();
@@ -53,7 +50,6 @@ public class CharacterInventory : Singleton<CharacterInventory>
         hotBarDisplayHolders = new Image[4];
         itemEntry = new InventoryEntry(0, null, null);
         itemsInInventory.Clear();
-        isReset = false;
     }
 
 
