@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterInventory : MonoBehaviour
 {
     #region Variable Declarations;
-
+    public static CharacterInventory instance;
     public TMPro.TextMeshProUGUI textItemEntry;
     public Image[] hotBarDisplayHolders; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
@@ -30,7 +30,7 @@ public class CharacterInventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
             ResetInventory();
             Debug.Log("RESET COMPLETE");
 

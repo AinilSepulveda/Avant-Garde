@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class alasScript : MonoBehaviour
 {
-    public bool caca;
-    MobManager mobManager;
-    public GameObject[] spawnpoints;
+    public bool caca = true;
+    public MobManager mobManager;
+    public Spawnpoint[] spawnpoints;
     BoxCollider boxCollider;
     UnityEngine.AI.NavMeshObstacle obstacle;
     MeshRenderer mesh;
@@ -25,16 +25,16 @@ public class alasScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" )
+        if (caca)
         {
-            for (int i = 0; i < spawnpoints.Length; i++)
+
+            if (other.gameObject.tag == "Player" )
             {
-                spawnpoints[i].SetActive(caca);
-                
                 mesh.enabled = false;
                 obstacle.enabled = false;
+                
+                mobManager.SpawnWave();
             }
-            mobManager.SpawnWave();
         }
 
     }
@@ -46,6 +46,7 @@ public class alasScript : MonoBehaviour
             mesh.enabled = true;
             obstacle.enabled = true;
             //boxCollider.isTrigger = caca;
+                caca = false;
 
         }
     }

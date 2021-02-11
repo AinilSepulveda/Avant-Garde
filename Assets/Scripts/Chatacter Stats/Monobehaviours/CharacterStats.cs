@@ -38,7 +38,7 @@ public class CharacterStats : MonoBehaviour
 
     public CharacterStats()
     {
-        charInv = FindObjectOfType< CharacterInventory>();
+        charInv = CharacterInventory.instance;
     }
 
     #endregion

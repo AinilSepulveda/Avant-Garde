@@ -23,7 +23,7 @@ public class MobManager : MonoBehaviour
     public Events.EventIntegerEvent OnWaveCompleted;
     public UnityEvent OnOutOfWave;
     //ALAScript
-    alasScript alas;
+    public alasScript alas;
     bool isActiveWaves;
 
     public GameObject cacaV2;
@@ -32,7 +32,6 @@ public class MobManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        alas = GetComponent<alasScript>();
         //Spawn() y //spawnpoints
         // SpawnWave();
         //spawnpoints =  alasScripts[Alas].spawnpoints;
@@ -42,8 +41,9 @@ public class MobManager : MonoBehaviour
 
     public void SpawnWave()
     {
+       // alas = GetComponent<alasScript>();
         isActiveWaves = true;
-        spawnpoints = FindObjectsOfType<Spawnpoint>();
+      //  spawnpoints = alas.spawnpoints;
         MusicManager.Instance.PlaySoundEffect(MusicEnum.Wave, 1);
 
 
