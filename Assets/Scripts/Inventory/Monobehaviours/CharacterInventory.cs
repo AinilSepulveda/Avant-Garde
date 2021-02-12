@@ -31,8 +31,8 @@ public class CharacterInventory : MonoBehaviour
     void Start()
     {
         instance = this;
-            ResetInventory();
-            Debug.Log("RESET COMPLETE");
+        ResetInventory();
+        Debug.Log("RESET COMPLETE");
 
 
 
@@ -378,4 +378,82 @@ public class CharacterInventory : MonoBehaviour
         }
     }
 
+    public void WeaponInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
+    public void ArmorBootsInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.ARMOR && ie.Value.invEntry.itemDefinition.ItemArmorSubType == ItemArmorSubType.Boots)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
+    public void ArmorHeadInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.ARMOR && ie.Value.invEntry.itemDefinition.ItemArmorSubType == ItemArmorSubType.Boots)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
+    public void ArmorChestInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.ARMOR && ie.Value.invEntry.itemDefinition.ItemArmorSubType == ItemArmorSubType.Head)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
+    public void ArmorLegsInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.ARMOR && ie.Value.invEntry.itemDefinition.ItemArmorSubType == ItemArmorSubType.Legs)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
+    public void ArmorHandsInt()
+    {
+        int idItem = 0;
+        foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+        {
+            if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.ARMOR && ie.Value.invEntry.itemDefinition.ItemArmorSubType == ItemArmorSubType.Hands)
+            {
+                idItem = ie.Key;
+                TriggerItemUse(idItem);
+            }
+        }
+        Debug.Log("WeaponInt");
+    }
 }

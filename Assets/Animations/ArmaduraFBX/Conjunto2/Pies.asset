@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: Pies
   m_EditorClassIdentifier: 
-  itemName: Bootsconj1
+  itemName: Armadura de pie
   itemType: 4
   ItemArmorSubType: 5
   itemMaterial: {fileID: 2100000, guid: 73e0186d657d58043af1043b16cda273, type: 2}

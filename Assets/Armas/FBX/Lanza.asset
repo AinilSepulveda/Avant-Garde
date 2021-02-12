@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: Lanza
   m_EditorClassIdentifier: 
-  itemName: Spear
+  itemName: 'Lanza '
   itemType: 3
   ItemArmorSubType: 0
   itemMaterial: {fileID: 4874126678125670354, guid: 8cbd433a58f32e04e84ce869bfec7a0b,

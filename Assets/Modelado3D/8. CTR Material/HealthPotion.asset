@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: 
-  itemName: HealthPotion
+  itemName: Pocion de curacion
   itemType: 0
   ItemArmorSubType: 0
   itemMaterial: {fileID: 0}
