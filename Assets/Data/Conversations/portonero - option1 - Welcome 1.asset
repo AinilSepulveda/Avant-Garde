@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095cdd9f065ac4645bf884c0fa56309c, type: 3}
+  m_Name: portonero - option1 - Welcome 1
+  m_EditorClassIdentifier: 
+  nameAnnouncer: Pornero
+  dialogues:
+  - sentence: "Atacar: Con el click derecho podr\xE1s realizar ataques, tanto a enemigos
+      o elementos que deban ser destruidos en tu traves\xEDa.\r\np\xF3cima de vida:
+      con la tecla podr\xE1s consumir pociones que te brindaran salud si estas muy
+      herida.\r\npoci\xF3n de man\xE1: con la tecla podr\xE1s consumir pociones de
+      mana que restauran tu poder m\xE1gico.\r\n\n\n"
+    options:
+    - text: Seguir leyendo
+      optionNumber: 1
+      response: {fileID: 11400000, guid: 07fe938c6a8addb4093220f21eecae5b, type: 2}

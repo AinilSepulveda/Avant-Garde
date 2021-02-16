@@ -34,21 +34,11 @@ public class MouseManager : MonoBehaviour
 
     void HandleGameStateChanged(GameManager.GameState currentState, GameManager.GameState previosState)
     {
-        _useDefaultCursor = currentState != GameManager.GameState.RUNNING;
+        _useDefaultCursor = (currentState != GameManager.GameState.RUNNING);
 
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-
-            showGizmo = false;
-
-        }
-        if (Input.GetKeyUp(KeyCode.K))
-        {
-            showGizmo = true;
-        }
 
         if (_useDefaultCursor)
         {
@@ -63,49 +53,40 @@ public class MouseManager : MonoBehaviour
             Vector3 targerPosition = Input.mousePosition;
             Debug.DrawRay(Camera.main.ScreenPointToRay(targerPosition).origin, hit.collider.transform.TransformDirection(Vector3.forward));
 
-            bool isNPC = false;
+            Cursor.SetCursor(target, mousePointer, CursorMode.Auto);
+
             bool CraftingSpells = false;
-            bool door = false;
             bool UI = false;
+            bool door = false;
             if (hit.collider.gameObject.tag == "Doorway")
             {
                 Cursor.SetCursor(doorway, new Vector2(16, 16), CursorMode.Auto);
                 door = true;
             }
 
-            else if (hit.collider.gameObject.tag == "NPC_Mision")
+            bool isNPC = false;
+            if (hit.collider.gameObject.tag == "NPC_Mision")
             {
 
                 isNPC = true;
                 Cursor.SetCursor(NPC_Quest, new Vector2(16, 16), CursorMode.Auto);
                 Debug.Log(isNPC);
             }
-            else if (hit.collider.gameObject.tag == "CraftingSpells")
+
+            if (hit.collider.gameObject.tag == "CraftingSpells")
             {
 
                 CraftingSpells = true;
                 Cursor.SetCursor(NPC_Quest, new Vector2(16, 16), CursorMode.Auto);
                 Debug.Log(isNPC);
             }
-            else if (hit.collider.gameObject.tag == "UI")
+            if (hit.collider.gameObject.tag == "UI")
             {
-
+                Debug.Log("UI TAG" + UI);
 
                 UI = true;
                 Cursor.SetCursor(pointer, mousePointer, CursorMode.Auto);
 
-            }
-            else
-            {
-                if (showGizmo == false)
-                {
-                    Cursor.SetCursor(target, mouseTarget, CursorMode.Auto);
-                }
-                if (showGizmo == true)
-                {
-                    Cursor.SetCursor(null, Vector2.zero,  CursorMode.Auto);
-                }
-               
             }
 
             bool isAttackble = hit.collider.GetComponent(typeof(IAttackable)) != null;
@@ -128,6 +109,9 @@ public class MouseManager : MonoBehaviour
                 else if(door == false && UI == false)
                 { //sino se mueve normal xd
                     HeroOnClickEnvironment.Invoke(hit.point);
+                    Debug.Log("Door " + door + "ui " + UI);
+                    BuildCraftingSpells.Invoke(hit.collider.gameObject);
+
                 }
                 else if (isNPC)
                 {
@@ -135,16 +119,9 @@ public class MouseManager : MonoBehaviour
                     NpcMision.Invoke(NPC);
 
                 }
-                else if (hit.collider.gameObject.tag == "UI")
-                {
-
-
-                    Cursor.SetCursor(pointer, new Vector2(16, 16), CursorMode.Auto);
-
-                }
 
             }
-            if (Input.GetMouseButtonDown(1))
+            else if (Input.GetMouseButtonDown(1))
             {
                  if (isAttackble)
                 {
@@ -155,28 +132,12 @@ public class MouseManager : MonoBehaviour
                     Debug.Log(attackable.name);
                     OnClickAttackble.Invoke(attackable);
                 }
-                 else
+                 else if (isAttackble == false && UI == false)
                 {
                     HeroOnClickEnvironment.Invoke(hit.point);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                GameObject attackable = hit.collider.gameObject;
-                OnSpellAttackable.Invoke(attackable);
-            }
         }
-        else
-        {
-            Cursor.SetCursor(pointer, Vector2.zero, CursorMode.Auto);
-        }
-    }
-    void OnDrawGizmosSelected()
-    {
-        // Draws a 5 unit long red line in front of the object
-        Gizmos.color = Color.red;
-        Vector3 direction = transform.TransformDirection(Vector3.forward) * 5;
-
     }
 }
 

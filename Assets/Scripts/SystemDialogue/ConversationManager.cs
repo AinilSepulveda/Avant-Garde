@@ -14,6 +14,8 @@ public class ConversationManager : Singleton <ConversationManager>
 
     public Transform optionPanel; //es para el padre
 
+    public HeroController hero;
+
     public GameObject conversationPanel;
     public GameObject TextMision;
     public GameObject DialogueSystem;
@@ -78,6 +80,7 @@ public class ConversationManager : Singleton <ConversationManager>
 
                 Button optionButton = GameObject.Instantiate<Button>(optionPrefabs, optionPanel.transform);
                 optionButton.onClick.AddListener(delegate { SelectOptions(options.optionNumber); }); 
+                optionButton.onClick.AddListener(delegate { hero.PortalEnd(hero.gameObject.transform); }); 
                 //Se pone la funcion, de onclick de button, luego con delegate se le pasa la funcion "SelectOptions" 
 
                 optionButton.GetComponentInChildren<TMP_Text>().text = options.text;
@@ -98,10 +101,7 @@ public class ConversationManager : Singleton <ConversationManager>
                     StartConversation(options.response);
                     return;
                 }
-                else
-                {
-                    EndConversation();
-                }
+
             }
         }
     }
@@ -111,17 +111,19 @@ public class ConversationManager : Singleton <ConversationManager>
         for (int i = 0; i < optionPanel.childCount; i++)
         {
             Destroy(optionPanel.GetChild(i).gameObject);
+
         }
     }
 
    public void EndConversation()
     {
-        Debug.Log("End Conversation");
+        conversationPanel.SetActive(false);
         waitingAnswer = false;
         dialogues.Clear();
-        TextMision.SetActive(true);
+        ClearOptionsPanel();
+      //  TextMision.SetActive(true);
         currentDialogue = null;
-        conversationPanel.SetActive(false);
-        DialogueSystem.SetActive(false);
+        Debug.Log("End Conversation");
+
     }
 }

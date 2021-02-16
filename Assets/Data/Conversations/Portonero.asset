@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095cdd9f065ac4645bf884c0fa56309c, type: 3}
+  m_Name: Portonero
+  m_EditorClassIdentifier: 
+  nameAnnouncer: Portonero
+  dialogues:
+  - sentence: "Bienvenido a avant garde, acabas de entrar a la torre m\xE1s peligrosa
+      y codiciada por los aventureros, antes que nada, no queremos que nuestros aventureros
+      mueran de inmediato dentro de la torre, as\xED que te ense\xF1are unas cosas.
+      \r\n"
+    options:
+    - text: 'Seguir leyendo
+
+'
+      optionNumber: 1
+      response: {fileID: 11400000, guid: 607b5b37e874b1e45ba4eb613f20d8d6, type: 2}

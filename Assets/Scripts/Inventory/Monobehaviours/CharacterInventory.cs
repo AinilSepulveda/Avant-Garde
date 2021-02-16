@@ -8,6 +8,7 @@ public class CharacterInventory : MonoBehaviour
     #region Variable Declarations;
     public static CharacterInventory instance;
     public TMPro.TextMeshProUGUI textItemEntry;
+    public TMPro.TextMeshProUGUI textItemTutorial;
     public Image[] hotBarDisplayHolders; //los slots de hechizos, las imagenes si po
     public GameObject InventoryDisplayHolder; //UI del inventory 
     public GameObject HotskeysDisplayHolder; //UI del inventory 
@@ -100,6 +101,7 @@ public class CharacterInventory : MonoBehaviour
             {
                 uIInvetario.SetActive(false);
                 textItemEntry.gameObject.SetActive(false);
+                textItemTutorial.gameObject.SetActive(false);
             }
             else if ((uIInvetario.activeSelf == false))
             {

@@ -19,6 +19,7 @@ TagManager:
   - NPC_Mision
   - Conversacional
   - Spellmachine
+  - UI
   layers:
   - Default
   - TransparentFX

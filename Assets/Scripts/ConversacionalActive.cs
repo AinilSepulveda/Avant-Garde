@@ -13,7 +13,7 @@ public class ConversacionalActive : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
             Caca();
