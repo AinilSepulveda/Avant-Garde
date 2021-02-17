@@ -95,7 +95,7 @@ public class CharacterInventory : MonoBehaviour
             TriggerItemUse(105);
 
         }
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
         {
             if (uIInvetario.activeSelf == true)
             {

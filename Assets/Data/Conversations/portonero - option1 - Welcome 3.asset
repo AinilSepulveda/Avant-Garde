@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cdd9f065ac4645bf884c0fa56309c, type: 3}
   m_Name: portonero - option1 - Welcome 3
   m_EditorClassIdentifier: 
-  nameAnnouncer: Linda
+  nameAnnouncer: Guia de la torre
   dialogues:
   - sentence: "Equiparse objetos: Para equipar objetos debes tener el inventario
       activado y presionar click sobre el objeto que quieres equipar y desequipar.\r\nPoder:

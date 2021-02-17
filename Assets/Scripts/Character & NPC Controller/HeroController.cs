@@ -323,7 +323,7 @@ public class HeroController : MonoBehaviour
     {
         agent.isStopped = true;
         agent.enabled = false;
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForFixedUpdate();
         agent.enabled = true;
         agent.isStopped = false;
         //   SetDestination(portaltransform.position);

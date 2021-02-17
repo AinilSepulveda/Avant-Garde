@@ -5,38 +5,33 @@ using UnityEngine;
 public class ConversacionalActive : MonoBehaviour
 {
     public GameObject con_Manager;
+    [SerializeField]
     Conversational Conversational;
 
     private void Awake()
     {
         Conversational = GetComponent<Conversational>();
+
+
     }
 
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
+            con_Manager.SetActive(true);
             Caca();
+            Caca();
+        }
+
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //        StartCoroutine(cacaa());
-    //}
-
-    // Update is called once per frame
     public void Caca()
     {
-        con_Manager.SetActive(true);
+        Conversational.TriggerConversation();
         Conversational.TriggerConversation();
     }
 }
 
-//    public IEnumerator cacaa()
-//    {
-//        yield return new WaitForSeconds(5);
-//        con_Manager.SetActive(false);
 
-//    }
-//}

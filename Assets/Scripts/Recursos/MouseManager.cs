@@ -109,7 +109,7 @@ public class MouseManager : MonoBehaviour
                 else if(door == false && UI == false)
                 { //sino se mueve normal xd
                     HeroOnClickEnvironment.Invoke(hit.point);
-                    Debug.Log("Door " + door + "ui " + UI);
+                  //  Debug.Log("Door " + door + "ui " + UI);
                     BuildCraftingSpells.Invoke(hit.collider.gameObject);
 
                 }

@@ -29,7 +29,7 @@ public class ConversationManager : Singleton <ConversationManager>
 
     }
 
-    private void Start()
+    private void OnEnable()
     {
         dialogues = new Queue<Dialogue>();
     }
