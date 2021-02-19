@@ -261,29 +261,98 @@ public class CharacterInventory : MonoBehaviour
        bool increaseCount = false;
 
         //Check for open Hotbar slot
-        #region Agregar Items de forma normal
+        /* #region Agregar Items de forma normal
+         foreach (Image image in hotBarDisplayHolders)
+         {
+             hotbarCounter += 1;
+             //Si es el primero
+             if (itemforHotBar.hotBarSlot == 0)
+             {
+                 if (image.sprite == null)
+                 {
+                     //Añadir item a hotbar slot
+                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                     increaseCount = true; //Todo bien y es verdadero
+                     break;
+                 }
+             }
+             //Si tomamos algo que es Stackeable
+             else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
+             {
+                 increaseCount = true;
+             }
+         }
+         #endregion */
+
         foreach (Image image in hotBarDisplayHolders)
         {
-            hotbarCounter += 1;
+
             //Si es el primero
-            if (itemforHotBar.hotBarSlot == 0)
+            if (itemforHotBar.hotBarSlot == 0 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
             {
+                hotbarCounter = 1;
                 if (image.sprite == null)
                 {
+                    Debug.Log("Caca");
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = false; //Todo bien y es verdadero
+                    break;
+                }
+
+            }
+             if (itemforHotBar.hotBarSlot == 1 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.WEAPON)
+            {
+                hotbarCounter = 2;
+                if (image.sprite == null)
+                {
+                    Debug.Log("Caca");
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = false  ; //Todo bien y es verdadero
+                    break;
+                }
+
+            }
+
+
+             if (itemforHotBar.hotBarSlot == 2 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
+            {
+                hotbarCounter = 3;
+                if (image.sprite == null)
+                {
+                    Debug.Log("Caca" + hotbarCounter);
+                    //Añadir item a hotbar slot
+                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    increaseCount = true; //Todo bien y es verdadero
+                    break;
+
+                }
+            }
+             if (itemforHotBar.hotBarSlot == 3 && itemforHotBar.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+            {
+                hotbarCounter = 4;
+                if (image.sprite == null)
+                {
+                    Debug.Log("Caca" + hotbarCounter);
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
                     increaseCount = true; //Todo bien y es verdadero
                     break;
                 }
-            } //Si tomamos algo que es Stackeable
+            }
             else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
             {
                 increaseCount = true;
             }
         }
-        #endregion
-    
+
+
 
 
 
