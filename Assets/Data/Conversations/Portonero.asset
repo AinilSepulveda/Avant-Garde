@@ -21,7 +21,7 @@ MonoBehaviour:
     options:
     - text: Aceptar
       optionNumber: 1
-      response: {fileID: 11400000, guid: 0c0604278dc8edf41a5a025ab09bfdbc, type: 2}
+      response: {fileID: 11400000, guid: 607b5b37e874b1e45ba4eb613f20d8d6, type: 2}
     - text: 'Seguir adelante
 
 '
