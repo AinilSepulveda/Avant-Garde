@@ -21,9 +21,12 @@ public class ConversationManager : Singleton <ConversationManager>
     public GameObject DialogueSystem;
     public Button optionPrefabs;
     //Constructor
+    public Image imageCharacter;
 
     public TMP_Text dialogueText;
     public TMP_Text nameText;
+
+    public BoxCollider boxCollider;
     protected ConversationManager()
     {
 
@@ -32,16 +35,17 @@ public class ConversationManager : Singleton <ConversationManager>
     private void OnEnable()
     {
         dialogues = new Queue<Dialogue>();
+        boxCollider = GetComponent<BoxCollider>();
     }
     public void StartConversation(Conversation conversation)
     {
         conversationPanel.SetActive(true);
 
         nameText.text = conversation.nameAnnouncer;
-
+        imageCharacter.sprite = conversation.imageAnnouncer;
       //  dialogues.Clear(); //Para no mostrar una conversacion que ya paso 
 
-        foreach(Dialogue dialogue in conversation.dialogues)
+        foreach (Dialogue dialogue in conversation.dialogues)
         {
             dialogues.Enqueue(dialogue); //para meter en cola todas las conversaciones
         }
@@ -81,6 +85,7 @@ public class ConversationManager : Singleton <ConversationManager>
                 Button optionButton = GameObject.Instantiate<Button>(optionPrefabs, optionPanel.transform);
                 optionButton.onClick.AddListener(delegate { SelectOptions(options.optionNumber); }); 
                 optionButton.onClick.AddListener(delegate { hero.PortalEnd(hero.gameObject.transform); }); 
+                optionButton.onClick.AddListener(delegate { boxCollider.enabled = false; }); 
                 //Se pone la funcion, de onclick de button, luego con delegate se le pasa la funcion "SelectOptions" 
 
                 optionButton.GetComponentInChildren<TMP_Text>().text = options.text;
@@ -123,6 +128,7 @@ public class ConversationManager : Singleton <ConversationManager>
         ClearOptionsPanel();
       //  TextMision.SetActive(true);
         currentDialogue = null;
+        //boxCollider.enabled = false;
         Debug.Log("End Conversation");
 
     }

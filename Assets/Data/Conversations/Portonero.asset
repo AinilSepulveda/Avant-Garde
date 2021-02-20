@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Portonero
   m_EditorClassIdentifier: 
   nameAnnouncer: Guia de la torre
+  imageAnnouncer: {fileID: 21300000, guid: 7082edb8250f2cf46bed2f8aa09ee327, type: 3}
   dialogues:
   - sentence: "Bienvenido a avant garde, acabas de entrar a la torre m\xE1s peligrosa
-      y codiciada por los aventureros, antes que nada, no queremos que nuestros aventureros
-      mueran de inmediato dentro de la torre, as\xED que te ense\xF1are unas cosas.
-      \r\n"
+      y codiciada por los aventureros, si quieres que te de ciertos consejos para
+      que empieces bien baja las escaleras o si te sientes capas sigue adelante."
     options:
-    - text: 'Si por favor adelante
+    - text: Aceptar
+      optionNumber: 1
+      response: {fileID: 11400000, guid: 0c0604278dc8edf41a5a025ab09bfdbc, type: 2}
+    - text: 'Seguir adelante
 
 '
-      optionNumber: 1
-      response: {fileID: 11400000, guid: 607b5b37e874b1e45ba4eb613f20d8d6, type: 2}
-    - text: No quiero. Adios
-      optionNumber: 0
-      response: {fileID: 0}
+      optionNumber: 2
+      response: {fileID: 11400000, guid: 0c0604278dc8edf41a5a025ab09bfdbc, type: 2}

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Conversation : ScriptableObject
 {
     public string nameAnnouncer;
-
+    public Sprite imageAnnouncer;
     public Dialogue[] dialogues;
 }
 [System.Serializable]
