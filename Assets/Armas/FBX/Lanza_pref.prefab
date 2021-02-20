@@ -130,6 +130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lanza_itempickp (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4579979831244290685, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe9b656b21f73c546b1dd3a58004d2d7, type: 2}
     m_RemovedComponents:
     - {fileID: 5641165985688544919, guid: 3c7f413215d6c8f4699660133e5e8ac0, type: 3}
     - {fileID: 6826469809611693645, guid: 3c7f413215d6c8f4699660133e5e8ac0, type: 3}
