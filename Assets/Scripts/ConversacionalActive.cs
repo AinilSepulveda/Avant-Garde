@@ -22,7 +22,7 @@ public class ConversacionalActive : MonoBehaviour
         {
             con_Manager.SetActive(true);
             Caca();
-            Caca();
+
         }
 
     }
@@ -30,7 +30,7 @@ public class ConversacionalActive : MonoBehaviour
     public void Caca()
     {
         Conversational.TriggerConversation();
-        Conversational.TriggerConversation();
+
     }
 }
 
