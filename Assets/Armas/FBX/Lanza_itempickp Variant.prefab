@@ -43,6 +43,160 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDefinition: {fileID: 0}
   charStats: {fileID: 0}
+--- !u!1001 &1037185069461549081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1290515147193859250}
+    m_Modifications:
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Name
+      value: "tama\xF1o pelota"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Name
+      value: "tama\xF1o de sombra"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Name
+      value: "tama\xF1o de pelotitas1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
+      value: 1.6245048
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
+      value: 0.68523973
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
+      value: 0.11467092
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0066
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0132
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00044
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.61909384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.785317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -76.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425060538240786930, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Name
+      value: visual (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 092b6e27735275c4dad09b3bca8ca371, type: 3}
 --- !u!1001 &6094039343764707240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,6 +259,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe9b656b21f73c546b1dd3a58004d2d7, type: 2}
     - target: {fileID: -927199367670048503, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
         type: 3}
       propertyPath: m_Name
@@ -118,3 +292,193 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6094039343764707240}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1290515147193859250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8cbd433a58f32e04e84ce869bfec7a0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6094039343764707240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7725872488851409578
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1290515147193859250}
+    m_Modifications:
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Name
+      value: "tama\xF1o pelota"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.x
+      value: 0.090056054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.y
+      value: 0.046059668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Value.z
+      value: 0.01571733
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Value
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Name
+      value: "tama\xF1o de pelotitas1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Name
+      value: "tama\xF1o de pelotitas 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01319
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00044
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.61909384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.785317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -76.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841048553210716438, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425060538240786930, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Name
+      value: visual
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 092b6e27735275c4dad09b3bca8ca371, type: 3}

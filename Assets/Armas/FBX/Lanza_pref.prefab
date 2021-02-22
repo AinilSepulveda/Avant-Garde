@@ -125,16 +125,171 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2444487280356020715, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2860785669118545569, guid: 3c7f413215d6c8f4699660133e5e8ac0,
         type: 3}
       propertyPath: m_Name
       value: Lanza_itempickp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Value
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Value
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Name
+      value: "tama\xF1o de pelotitas 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[7].m_Value
+      value: -55.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[7].m_Name
+      value: densidad de pelota central
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905221288826371921, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[7].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957102197597999375, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957102197597999375, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408292021967328097, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408292021967328097, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408292021967328097, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408292021967328097, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4579979831244290685, guid: 3c7f413215d6c8f4699660133e5e8ac0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fe9b656b21f73c546b1dd3a58004d2d7, type: 2}
+    - target: {fileID: 4953839133219842904, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341178732596079058, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341178732596079058, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341178732596079058, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5341178732596079058, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Value
+      value: 6.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Name
+      value: "tama\xF1o de pelotitas1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[4].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Value
+      value: -1.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Name
+      value: "tama\xF1o de pelotitas 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[5].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Value
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Name
+      value: densidad de pelota central
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549113232742827490, guid: 3c7f413215d6c8f4699660133e5e8ac0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[6].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5641165985688544919, guid: 3c7f413215d6c8f4699660133e5e8ac0, type: 3}
     - {fileID: 6826469809611693645, guid: 3c7f413215d6c8f4699660133e5e8ac0, type: 3}

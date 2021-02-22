@@ -339,6 +339,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2389297979517379448, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2753310216685473608, guid: 092b6e27735275c4dad09b3bca8ca371,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
@@ -518,6 +523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: visual
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425060538240786930, guid: 092b6e27735275c4dad09b3bca8ca371,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 092b6e27735275c4dad09b3bca8ca371, type: 3}

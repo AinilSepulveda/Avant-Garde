@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class giro : MonoBehaviour
 {
+    public float equis;
+    public float igriega;
+    public float zeta;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class giro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 30f, 0f) * Time.deltaTime);
+        transform.Rotate(new Vector3(equis, igriega, zeta) * Time.deltaTime);
     }
 }
