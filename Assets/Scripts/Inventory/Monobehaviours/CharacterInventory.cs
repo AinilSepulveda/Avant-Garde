@@ -296,8 +296,9 @@ public class CharacterInventory : MonoBehaviour
                  {
                      //Añadir item a hotbar slot
                      itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-                     increaseCount = true; //Todo bien y es verdadero
+                     image.sprite = itemforHotBar.hbSprite;
+                    image.color = Color.white;//Añadimos el Srite
+                    increaseCount = true; //Todo bien y es verdadero
                      break;
                  }
              }
@@ -310,6 +311,7 @@ public class CharacterInventory : MonoBehaviour
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    image.color = Color.white;
                     increaseCount = true; //Todo bien y es verdadero
                     break;
                 }
@@ -348,6 +350,7 @@ public class CharacterInventory : MonoBehaviour
                     //Añadir item a hotbar slot
                     itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
                     image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+                    image.color = Color.white;
                     increaseCount = true; //Todo bien y es verdadero
                     break;
                 }
@@ -431,6 +434,7 @@ public class CharacterInventory : MonoBehaviour
                         {
                             hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].sprite = null;
                             hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = "0";
+                            hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].color = Color.clear;
                         }
                         ie.Value.invEntry.UseItem();
                         inventoryDisplaySlots[idCount + 7].sprite = null;
