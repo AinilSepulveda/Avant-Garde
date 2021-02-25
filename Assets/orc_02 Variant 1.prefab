@@ -744,6 +744,7 @@ GameObject:
   - component: {fileID: 6582311656524283585}
   - component: {fileID: 5135873726745838454}
   - component: {fileID: 5135873726745838453}
+  - component: {fileID: 5081966135605112619}
   - component: {fileID: 5135873726745838451}
   - component: {fileID: 5135873726745838452}
   - component: {fileID: 5135873726745838455}
@@ -825,6 +826,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4863539, y: 1, z: 1.8144608}
   m_Center: {x: 0.04276502, y: 0.85, z: -0.24010849}
+--- !u!114 &5081966135605112619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582311656533757253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67913f79df43bfd428bbe7e33c132ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5135873726745838451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,25 +966,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolTime: 5
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
-  mobyType: 2
-  LayerName: EnemySpells
-  LayerNameTarget: Player
-  isEnemy: 1
-  TargetCharacter: {fileID: 0}
+  hero: {fileID: 0}
+  Exp: 5
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
+  mobyType: 2
   SpellHotSpot: {fileID: 0}
+  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0

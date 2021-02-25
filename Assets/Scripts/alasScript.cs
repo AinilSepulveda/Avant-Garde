@@ -17,38 +17,19 @@ public class alasScript : MonoBehaviour
         mesh = GetComponent<MeshRenderer>();
         obstacle = GetComponent< UnityEngine.AI.NavMeshObstacle> ();
     }
-
-    private void Update()
-    {
-       // boxCollider.isTrigger = caca;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (caca)
-        {
-
             if (other.gameObject.tag == "Player" )
             {
                 mesh.enabled = false;
                 obstacle.enabled = false;
-                
-                mobManager.SpawnWave();
+                    if (caca)
+                    {
+                mobManager.isActiveWaves = true;
+                        mobManager.SpawnWave();
+                    }
             }
-        }
+        
 
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-           // caca = false;
-            mesh.enabled = true;
-            obstacle.enabled = true;
-            //boxCollider.isTrigger = caca;
-                caca = false;
-
-        }
-    }
-
 }

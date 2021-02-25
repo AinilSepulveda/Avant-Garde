@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Linda - option1 - Welcome 1
   m_EditorClassIdentifier: 
   nameAnnouncer: Linda
+  imageAnnouncer: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   dialogues:
   - sentence: "lo ataque para quitarle la m\xE1scara pero solo consegu\xED arrebatarle
       las gafas y perforarle un pulm\xF3n con mi espada, asique dudo que el maldito

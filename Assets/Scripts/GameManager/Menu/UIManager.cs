@@ -73,13 +73,13 @@ public class UIManager : Singleton<UIManager>
 
         //Inventory.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
         //panelstats.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
-        Debug.Log(currentState + " " + previousState);
 
         instrucciones.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
         logo.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
 
         //  TrackerPanel.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
         //  InventoryDisplay.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
+        Debug.Log(currentState + " " + previousState);
     }
 
     public void SetDummyCameraActive(bool active)

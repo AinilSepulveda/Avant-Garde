@@ -27,6 +27,10 @@ public class AoeCollider : MonoBehaviour
             collisionStats = collisionGo.GetComponent<CharacterStats>();
 
         //Si el es false, se genera una vez el CreataAttack
+            if(collisionStats == null)
+            {
+                return;
+            }
 
          if (!collisionStats.iskeepDamage)
         {

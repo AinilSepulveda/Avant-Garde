@@ -171,6 +171,7 @@ public class GameManager : Singleton<GameManager>
     {
       //  CharacterInventory.Instance.ResetInventory();
         UpdateState(GameState.PREGAME);
+        Debug.Log("Update State : Pregame");
         
     }
 

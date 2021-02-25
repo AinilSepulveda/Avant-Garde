@@ -1793,25 +1793,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolTime: 5
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
-  mobyType: 0
-  LayerName: EnemySpells
-  LayerNameTarget: Player
-  isEnemy: 1
-  TargetCharacter: {fileID: 0}
+  hero: {fileID: 0}
+  Exp: 5
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
+  mobyType: 0
   SpellHotSpot: {fileID: 3632643663424910658}
+  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
@@ -1931,7 +1930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7385cb586c83334fb21d93e5eee435d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdollObject: {fileID: 1761445832, guid: 6de8d302e9663ad44b55946789f996f4, type: 3}
+  ragdollObject: {fileID: 228450445771553846, guid: 44e6516293450e045ab36bcd1a6ba880,
+    type: 3}
   force: 5000
   Lift: 1
 --- !u!114 &1995131453189771728

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Linda-Welcome
   m_EditorClassIdentifier: 
   nameAnnouncer: Linda
+  imageAnnouncer: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   dialogues:
   - sentence: "mierda! casi me quema los pulmones ese gas del sal\xF3n principal,
       por suerte recib\xED la ayuda de un gentil tipo, inteligente y noble, pero
@@ -24,4 +25,4 @@ MonoBehaviour:
 
 '
       optionNumber: 1
-      response: {fileID: 11400000, guid: 07fe938c6a8addb4093220f21eecae5b, type: 2}
+      response: {fileID: 11400000, guid: 1c1591abf22094645ab2ee953ebda06d, type: 2}

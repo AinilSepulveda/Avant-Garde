@@ -284,6 +284,7 @@ public class NPCController : MonoBehaviour
     private void OnDestroy()
     {
         hero.OnMobKilled(Exp);
+       // OnMobDeath.Invoke(mobyType, transform.position);
     }
 }
 
