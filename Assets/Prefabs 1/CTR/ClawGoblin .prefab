@@ -162,25 +162,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3b2c7605f17544e9239614b5e22a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolTime: 5
   aggroRange: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
-  mobyType: 1
-  LayerName: EnemySpells
-  LayerNameTarget: Player
-  isEnemy: 1
-  TargetCharacter: {fileID: 0}
+  hero: {fileID: 0}
+  Exp: 5
   OnMobDeath:
     m_PersistentCalls:
       m_Calls: []
   OnMobKilled:
     m_PersistentCalls:
       m_Calls: []
+  mobyType: 1
   SpellHotSpot: {fileID: 0}
+  IDenemy: 0
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
@@ -219,7 +218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_Template: {fileID: 11400000, guid: 218329ff6c7d01a4a84ba9c8cbfeb877, type: 2}
-  characterDefinition: {fileID: 0}
+  characterDefinition: {fileID: 11400000, guid: 218329ff6c7d01a4a84ba9c8cbfeb877,
+    type: 2}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
   characterArmorHeadSlot: {fileID: 0}

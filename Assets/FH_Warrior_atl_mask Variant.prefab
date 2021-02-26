@@ -1724,6 +1724,7 @@ GameObject:
   - component: {fileID: 1995131453189771729}
   - component: {fileID: 1995131453189771730}
   - component: {fileID: 3268785475711634919}
+  - component: {fileID: 1877821607705221117}
   m_Layer: 9
   m_Name: FH_Warrior_atl_mask Variant
   m_TagString: Untagged
@@ -1849,7 +1850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_Template: {fileID: 11400000, guid: 5289c3e9d1a258d409dc58f1da7cc9b3, type: 2}
-  characterDefinition: {fileID: 0}
+  characterDefinition: {fileID: 11400000, guid: 5289c3e9d1a258d409dc58f1da7cc9b3,
+    type: 2}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
   characterArmorHeadSlot: {fileID: 0}
@@ -1981,6 +1983,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1877821607705221117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020218958153205478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67913f79df43bfd428bbe7e33c132ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6020218958153205482

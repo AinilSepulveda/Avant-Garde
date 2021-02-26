@@ -281,6 +281,7 @@ public class CharacterStats_SO : ScriptableObject
         if(currentHeath <= 0)
         {
             Death();
+            
         }
     }
     public void TakeMana(int amount)

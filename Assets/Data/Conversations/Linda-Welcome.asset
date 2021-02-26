@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cdd9f065ac4645bf884c0fa56309c, type: 3}
   m_Name: Linda-Welcome
   m_EditorClassIdentifier: 
-  nameAnnouncer: Linda
+  nameAnnouncer: Nota del muerto
   imageAnnouncer: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   dialogues:
   - sentence: "mierda! casi me quema los pulmones ese gas del sal\xF3n principal,

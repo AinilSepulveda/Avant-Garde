@@ -57,6 +57,7 @@ public class HeroController : MonoBehaviour
             stats.characterDefinition.OnHeroDeath.AddListener(GameManager.Instance.OnHeroDied);
             stats.characterDefinition.OnHeroInitialized.AddListener(GameManager.Instance.OnHeroInit);
         }
+        UIManager.Instance.UpdateUnitFrame(this);
         stats.characterDefinition.OnHeroInitialized.Invoke();
     }
 

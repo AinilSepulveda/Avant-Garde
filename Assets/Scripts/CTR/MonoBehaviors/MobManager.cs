@@ -97,7 +97,7 @@ public class MobManager : MonoBehaviour
     public void OnMobDeath(MobyType mobyType, Vector3 position)
     {
         SoundManager.Instance.PlaySoundEffect(SoundEffect.MobDeath);
-        MobWave currentWave = Waves[currentWaveIndex];
+        MobWave currentWave = Waves[0];
 
         OnMobKilled.Invoke(currentWave.PointsPerkill);
 

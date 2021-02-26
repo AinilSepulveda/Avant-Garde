@@ -334,7 +334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_Template: {fileID: 11400000, guid: 3c6f0f398a2e589439565b0062c466de, type: 2}
-  characterDefinition: {fileID: 0}
+  characterDefinition: {fileID: 11400000, guid: 3c6f0f398a2e589439565b0062c466de,
+    type: 2}
   charInv: {fileID: 0}
   characterWeaponSlot: {fileID: 0}
   characterArmorHeadSlot: {fileID: 0}

@@ -37,7 +37,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Update()
     {
-       // Debug.Log(GameManager.Instance.CurrentGameState);
+        // Debug.Log(GameManager.Instance.CurrentGameState);
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.PREGAME)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -76,7 +76,7 @@ public class UIManager : Singleton<UIManager>
 
         instrucciones.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
         logo.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
-
+        InitUnitFrame();
         //  TrackerPanel.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
         //  InventoryDisplay.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
         Debug.Log(currentState + " " + previousState);
@@ -89,7 +89,7 @@ public class UIManager : Singleton<UIManager>
 
     public void InitUnitFrame()
     {
-        levelTex.text = "1";
+        levelTex.text = "Nivel: 1";
         healhBar.fillAmount = 1;
         spellsCooldown.fillAmount = 1;
     }
@@ -107,6 +107,6 @@ public class UIManager : Singleton<UIManager>
         ManaBar.fillAmount = (float)curMana / maxMana;
 
         //spellsCooldown.fillAmount = hero.timercooldown / hero.Spell.Cooldown ;
-        levelTex.text = hero.GetCurrentLevel().ToString();
+        levelTex.text = "Nivel: " + hero.GetCurrentLevel().ToString();
     }
 }

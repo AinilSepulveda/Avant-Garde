@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 7519442729652540897}
   - component: {fileID: 7519442729652540896}
   - component: {fileID: 7519442729652540903}
+  - component: {fileID: 1378375081115471792}
   m_Layer: 0
   m_Name: orc_02 Variant
   m_TagString: Untagged
@@ -985,6 +986,18 @@ MonoBehaviour:
   showAgroo: 1
   offsetDistanciaMin: 0
   offsetDistanciaMax: 0
+--- !u!114 &1378375081115471792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8378161164562750430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8894a8074b26db349ad9de9b59445afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8378161164562750432
 GameObject:
   m_ObjectHideFlags: 0
