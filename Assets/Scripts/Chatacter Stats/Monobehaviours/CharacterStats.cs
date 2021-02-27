@@ -33,6 +33,11 @@ public class CharacterStats : MonoBehaviour
     //Ataques
     public AttackDefinition attackDefault;
     public AttackDefinition attackSpecial;
+    [Header ("Avisador de Estado")]
+    public Scrollingtxt text;
+    public Color textColor;
+    public Color textColorCritical;
+    public Color textColorLevelUP;
 
     #region Constructor
 
@@ -185,10 +190,14 @@ public class CharacterStats : MonoBehaviour
     public void ChangeWeapon(ItemPickUp weaponPickUp) 
     {   //Basicamente cuando esta funcion hace que llame la funcion de abajo, pero si resulta negativo, te equipa el arma 
         Debug.Log("Chanje wapom");
-        if (!characterDefinition.UnEquipWeapon(weaponPickUp, charInv, characterWeaponSlot))
-        {
-            characterDefinition.EquipWeapon(weaponPickUp, charInv, characterWeaponSlot); //Se equipa otra arma
-        }
+       if (!characterDefinition.UnEquipWeapon(weaponPickUp, charInv, characterWeaponSlot))
+       {
+            if(characterWeaponSlot.transform.childCount == 0)
+            {
+                characterDefinition.EquipWeapon(weaponPickUp, charInv, characterWeaponSlot); //Se equipa otra arma
+            }
+       }
+
 
     }
 
@@ -310,8 +319,10 @@ public class CharacterStats : MonoBehaviour
             for (int i = 0; i < burnTickTimers.Count; i++)
             {
                 burnTickTimers[i]--;
+
             }
             TakeDamage(damage);
+            TextUpDateState("Quemado", textColor);
             burnTickTimers.RemoveAll(number => number == 0);
             yield return new WaitForSeconds(0.75f);
         }
@@ -328,6 +339,7 @@ public class CharacterStats : MonoBehaviour
             
             yield return null;
         }
+        TextUpDateState("Quemado", textColor);
         iskeepDamage = false;
     }
     //Punch
@@ -349,6 +361,7 @@ public class CharacterStats : MonoBehaviour
 
             yield return null;
         }
+        TextUpDateState("Empujado", textColorCritical);
         agent.enabled = true;
         rbody.isKinematic = true;
         agent.transform.position = rbody.transform.position;
@@ -358,7 +371,15 @@ public class CharacterStats : MonoBehaviour
 
     }
 
+   public void TextUpDateState(string state, Color color)
+    {
+        var textstring = state;
 
+        var scrollingText = Instantiate(text, transform.position, Quaternion.identity);
+        scrollingText.SetText(textstring);
+
+        scrollingText.SetColor(textColor);
+    }
 
 
 

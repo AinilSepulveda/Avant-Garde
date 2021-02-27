@@ -273,6 +273,10 @@ MonoBehaviour:
   iskeepDamage: 0
   attackDefault: {fileID: 11400000, guid: 2a56e2ded01e2aa4899cab013520041d, type: 2}
   attackSpecial: {fileID: 11400000, guid: 12b0e9e8ca71a164885cd5cb3e2e35ce, type: 2}
+  text: {fileID: 4504927922208956334, guid: 1a65b8c113654d34694f4890b2a78ef9, type: 3}
+  textColor: {r: 1, g: 1, b: 1, a: 0}
+  textColorCritical: {r: 0, g: 0, b: 0, a: 0}
+  textColorLevelUP: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &6392761004291672729
 MonoBehaviour:
   m_ObjectHideFlags: 0

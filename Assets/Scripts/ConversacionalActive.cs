@@ -5,6 +5,7 @@ using UnityEngine;
 public class ConversacionalActive : MonoBehaviour
 {
     public GameObject con_Manager;
+    public GameObject text_mision;
     [SerializeField]
     Conversational Conversational;
 
@@ -23,6 +24,10 @@ public class ConversacionalActive : MonoBehaviour
             con_Manager.SetActive(true);
             Caca();
 
+            if(text_mision != null)
+            {
+                text_mision.SetActive(true);
+            }
         }
 
     }

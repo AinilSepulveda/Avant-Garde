@@ -15,7 +15,7 @@ MonoBehaviour:
   nameAnnouncer: Guia de la torre
   imageAnnouncer: {fileID: 21300000, guid: 7082edb8250f2cf46bed2f8aa09ee327, type: 3}
   dialogues:
-  - sentence: "Bienvenido a avant garde, acabas de entrar a la torre m\xE1s peligrosa
+  - sentence: "Bienvenido  Avant Garde, acabas de entrar a la torre m\xE1s peligrosa
       y codiciada por los aventureros, si quieres que te de ciertos consejos para
       que empieces bien baja las escaleras o si te sientes capas sigue adelante."
     options:

@@ -182,6 +182,7 @@ public class GameManager : Singleton<GameManager>
         LoadLevel(NameLevelRunnig);
         UpdateState(GameState.RUNNING);
         MusicManager.Instance.PlaySoundEffect(MusicEnum.Ambient);
+        UIManager.Instance.UpdateUnitFrame(hero);
     }
 
     public void QuitGame()
@@ -197,6 +198,7 @@ public class GameManager : Singleton<GameManager>
     public void OnHeroLeveledUp(int newLevel)
     {
         UIManager.Instance.UpdateUnitFrame(hero);
+        hero.stats.TextUpDateState("Subiste de Nivel", Color.white);
 
     }
     public void OnHeroDamaged(int damage)
@@ -228,6 +230,7 @@ public class GameManager : Singleton<GameManager>
     public void OnHeroDied()
     {
         UIManager.Instance.UpdateUnitFrame(hero);
+        UIManager.Instance.panelDefeat.SetActive(true);
        // SoundManager.Instance.PlaySoundEffect(SoundEffect.MobDeath);
     }
     public void OnHeroInit()

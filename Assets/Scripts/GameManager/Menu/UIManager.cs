@@ -11,6 +11,7 @@ public class UIManager : Singleton<UIManager>
     //[SerializeField] private GameObject Inventory;
     [SerializeField] private GameObject instrucciones;
     [SerializeField] private GameObject logo;
+    [SerializeField] public GameObject panelDefeat;
     //[SerializeField] private GameObject panelstats;
     //   [SerializeField] private  QuestTrackerPanel TrackerPanel;
     //  [SerializeField] private GameObject InventoryDisplay;

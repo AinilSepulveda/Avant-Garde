@@ -81,7 +81,7 @@ public class CharacterInventory : MonoBehaviour
             foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
             {
                 
-                if (ie.Value.invEntry.itemDefinition.IsStackable) 
+                if (ie.Value.invEntry.itemDefinition.destrouOnUse) 
                 {
                     Idhealth = ie.Key;
                     TriggerItemUse(Idhealth);
@@ -91,7 +91,16 @@ public class CharacterInventory : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            TriggerItemUse(104);
+            int Idhealth;
+            foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
+            {
+
+                if (ie.Value.invEntry.itemDefinition.destrouOnUse)
+                {
+                    Idhealth = ie.Key;
+                    TriggerItemUse(Idhealth);
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
@@ -287,11 +296,10 @@ public class CharacterInventory : MonoBehaviour
          #region Agregar Items de forma normal
          foreach (Image image in hotBarDisplayHoldersWeapons)
          {
-            // hotbarCounter += 1;
-             //Si es el primero
-             if (itemforHotBar.hotBarSlot == 0)
+            hotbarCounter += 1;
+            //Si es el primero
+            if (itemforHotBar.hotBarSlot == 0)
              {
-                hotbarCounter = 1;
                 if (image.sprite == null)
                  {
                      //Añadir item a hotbar slot
@@ -303,19 +311,19 @@ public class CharacterInventory : MonoBehaviour
                  }
              }
 
-            if (itemforHotBar.hotBarSlot == 1)
-            {
-                hotbarCounter = 2;
-                if (image.sprite == null)
-                {
-                    //Añadir item a hotbar slot
-                    itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
-                    image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
-                    image.color = Color.white;
-                    increaseCount = true; //Todo bien y es verdadero
-                    break;
-                }
-            }
+            //if (itemforHotBar.hotBarSlot == 1)
+            //{
+            //    hotbarCounter = 2;
+            //    if (image.sprite == null)
+            //    {
+            //        //Añadir item a hotbar slot
+            //        itemforHotBar.hotBarSlot = hotbarCounter; //Tomamos el slot
+            //        image.sprite = itemforHotBar.hbSprite;    //Añadimos el Srite
+            //        image.color = Color.white;
+            //        increaseCount = true; //Todo bien y es verdadero
+            //        break;
+            //    }
+            //}
             //Si tomamos algo que es Stackeable
             //else if (itemforHotBar.invEntry.itemDefinition.IsStackable)
             // {
@@ -402,7 +410,7 @@ public class CharacterInventory : MonoBehaviour
     }
     public void TriggerItemUse(int itemToUseID) //usar los items
     {
-
+        FillInventoryDisplay();
         foreach (KeyValuePair<int, InventoryEntry> ie in itemsInInventory)
         {      //Esto es solo para ver de donde se uso el items, es descartable
             bool triggerItem = false; // si lo hemos tengo usado
@@ -426,11 +434,11 @@ public class CharacterInventory : MonoBehaviour
             //      Debug.Log("te pillamos" + ie.Key + " " + triggerItem + " " + ie.Value.hotBarSlot); //Es por los items
             if (triggerItem) //Se usa el items 
             {
-                if (ie.Value.stackSize == 1) //Si es 1 significa es puede ser un objeto
+                if (ie.Value.stackSize <= 1) //Si es 1 significa es puede ser un objeto
                 {
                     if (ie.Value.invEntry.itemDefinition.IsStackable) // Si stackeable el objeto usado (Pociones por dar un ejemplo)s
                     {
-                       if  (ie.Value.hotBarSlot >= 0)
+                       if  (ie.Value.hotBarSlot > 0)
                         {
                             hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].sprite = null;
                             hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = "0";
@@ -439,6 +447,7 @@ public class CharacterInventory : MonoBehaviour
                         ie.Value.invEntry.UseItem();
                         inventoryDisplaySlots[idCount + 7].sprite = null;
                         itemsInInventory.Remove(ie.Key);
+                        FillInventoryDisplay();
                         break;
                     }
                     else
@@ -446,7 +455,7 @@ public class CharacterInventory : MonoBehaviour
                         ie.Value.invEntry.UseItem(); //Si no es Stackeable, (por ejemplo un objeto de mision)
                     }
                 }
-                else //Si es mayor que uno. se gasta un y se reescribe 
+                else if(ie.Value.stackSize <= 1) //Si es mayor que uno. se gasta un y se reescribe 
                 {
 
                     ie.Value.invEntry.UseItem();
@@ -460,8 +469,14 @@ public class CharacterInventory : MonoBehaviour
 
                         hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
                     }
-                    
+                    FillInventoryDisplay();
+
                 }
+                //else if(ie.Value.stackSize < 0)
+                //{
+                //    inventoryDisplaySlots[idCount + 7].sprite = null;
+                //    itemsInInventory.Remove(ie.Key);
+                //}
                 Debug.Log(ie.Value.invEntry.itemDefinition + "Is use");
             }
         }

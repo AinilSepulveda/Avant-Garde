@@ -12,7 +12,7 @@ public class HeroController : MonoBehaviour
 
     Animator animator; // reference to the animator component
     NavMeshAgent agent; // reference to the NavMeshAgent
-    CharacterStats stats;
+   public CharacterStats stats;
 
     GameObject attackTarget;
 
