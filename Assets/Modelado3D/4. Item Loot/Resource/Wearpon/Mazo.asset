@@ -19,9 +19,11 @@ MonoBehaviour:
   ItemIcon: {fileID: 21300000, guid: 7a6e3d79f26e1fa45b21760fbb936826, type: 3}
   itemSpawnObject: {fileID: 407959148, guid: 14a82eb09100c204092b848b492bb86c, type: 3}
   WeaponSpawnObject: {fileID: 11400000, guid: d7f438f0b219df64b9312b199b399d64, type: 2}
+  itemArmor: {fileID: 0}
+  itemArmor2: {fileID: 0}
   spawnChangeWeight: 5
   isEquipped: 0
-  isInteractable: 1
+  isInteractable: 0
   isStorable: 1
   isUnique: 1
   isIndestructable: 1

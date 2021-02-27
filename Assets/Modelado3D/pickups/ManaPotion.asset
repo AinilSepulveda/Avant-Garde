@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f154c260db793438b7d3f3e3aaa084, type: 3}
   m_Name: ManaPotion
   m_EditorClassIdentifier: 
-  itemName: ManaPotion
+  itemName: pp
   itemType: 2
   ItemArmorSubType: 0
   itemMaterial: {fileID: 0}
   ItemIcon: {fileID: 21300000, guid: 2784bfac90415e34490fa50d3c1a461e, type: 3}
-  itemSpawnObject: {fileID: 54210893519517534, guid: 2a226cf746bc64abab403477ee47867c,
+  itemSpawnObject: {fileID: 54210893519517534, guid: ddbe06064b59adc46950bde4f8f98a2e,
     type: 3}
   WeaponSpawnObject: {fileID: 0}
   itemArmor: {fileID: 0}
