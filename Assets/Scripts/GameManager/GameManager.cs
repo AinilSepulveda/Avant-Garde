@@ -57,7 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetKeyUp(KeyCode.P) && _currentGameState == GameState.RUNNING)
         {
             TogglePause();
         }
