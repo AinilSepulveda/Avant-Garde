@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConversacionalActive : MonoBehaviour
 {
     public GameObject con_Manager;
-    public GameObject text_mision;
+    public TMPro.TextMeshProUGUI text_mision;
     [SerializeField]
     Conversational Conversational;
 
@@ -26,7 +26,8 @@ public class ConversacionalActive : MonoBehaviour
 
             if(text_mision != null)
             {
-                text_mision.SetActive(true);
+                text_mision.gameObject.SetActive(true);
+                text_mision.text = "Consigue un casco con filtro";
             }
         }
 

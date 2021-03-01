@@ -31,7 +31,7 @@ MonoBehaviour:
   isQuestItem: 0
   IsStackable: 1
   destrouOnUse: 1
-  itemAmount: 25
+  itemAmount: 50
   itemWeight: 0
   bonusResistence: 0
   bonusHealthPoint: 0

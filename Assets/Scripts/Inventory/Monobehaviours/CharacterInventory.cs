@@ -14,6 +14,7 @@ public class CharacterInventory : MonoBehaviour
     public GameObject InventoryDisplayHolder; //UI del inventory 
     public GameObject HotskeysDisplayHolderWeapons; //UI del inventory 
     public GameObject HotskeysDisplayHolder; //UI del inventory 
+    public GameObject HotskeysSpells; //UI del inventory 
     public Image[] inventoryDisplaySlots; //los slots de inventario, las imagenes sipo, 
     public Button[] buttoninv = new Button[30];
 
@@ -89,6 +90,9 @@ public class CharacterInventory : MonoBehaviour
             }
          //   TriggerItemUse(103);
         }
+        HotskeysDisplayHolderWeapons.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING);
+        HotskeysDisplayHolder.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING);
+        HotskeysSpells.SetActive(GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING);
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             int Idhealth;
@@ -107,6 +111,7 @@ public class CharacterInventory : MonoBehaviour
             TriggerItemUse(105);
 
         }
+
         if (Input.GetKeyDown(KeyCode.I) && GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
         {
             if (uIInvetario.activeSelf == true)
@@ -400,9 +405,8 @@ public class CharacterInventory : MonoBehaviour
             slotviewequiped += 1;
             inventoryDisplaySlots[slotviewequiped].sprite = ie.Value.hbSprite;
             ie.Value.inventorySlot = slotviewequiped - 7;
-         
         }
-        while (slotviewequiped < itemsInInventory.Count) //Para ver los Slot libres uwu
+        while (slotviewequiped < inventoryDisplaySlots.Length - 1 ) //Para ver los Slot libres uwu
         {
             slotviewequiped++;
             inventoryDisplaySlots[slotviewequiped].sprite = null;
@@ -434,7 +438,7 @@ public class CharacterInventory : MonoBehaviour
             //      Debug.Log("te pillamos" + ie.Key + " " + triggerItem + " " + ie.Value.hotBarSlot); //Es por los items
             if (triggerItem) //Se usa el items 
             {
-                if (ie.Value.stackSize <= 1) //Si es 1 significa es puede ser un objeto
+                if (ie.Value.stackSize == 1) //Si es 1 significa es puede ser un objeto
                 {
                     if (ie.Value.invEntry.itemDefinition.IsStackable) // Si stackeable el objeto usado (Pociones por dar un ejemplo)s
                     {
@@ -455,7 +459,7 @@ public class CharacterInventory : MonoBehaviour
                         ie.Value.invEntry.UseItem(); //Si no es Stackeable, (por ejemplo un objeto de mision)
                     }
                 }
-                else if(ie.Value.stackSize <= 1) //Si es mayor que uno. se gasta un y se reescribe 
+                else if(ie.Value.stackSize >= 1) //Si es mayor que uno. se gasta un y se reescribe 
                 {
 
                     ie.Value.invEntry.UseItem();
@@ -464,20 +468,33 @@ public class CharacterInventory : MonoBehaviour
                     {
                         hotBarDisplayHoldersWeapons[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString(); ;
                     }
-                    else if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH || itemEntry.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+                    else if (ie.Value.invEntry.itemDefinition.itemType == ItemTypeDefinition.HEALTH)
                     {
 
+                        hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
+                    }
+                    else if(itemEntry.invEntry.itemDefinition.itemType == ItemTypeDefinition.MANA)
+                    {
                         hotBarDisplayHoldersPotions[ie.Value.hotBarSlot - 1].GetComponentInChildren<Text>().text = ie.Value.stackSize.ToString();
                     }
                     FillInventoryDisplay();
 
                 }
-                //else if(ie.Value.stackSize < 0)
-                //{
-                //    inventoryDisplaySlots[idCount + 7].sprite = null;
-                //    itemsInInventory.Remove(ie.Key);
-                //}
+                else if (ie.Value.stackSize <= 0)
+                {
+                    inventoryDisplaySlots[idCount + 7].sprite = null;
+                    itemsInInventory.Remove(ie.Key);
+                    ie.Value.invEntry.UseItem();
+                    if(inventoryDisplaySlots[idCount + 7] != null)
+                    {
+                        inventoryDisplaySlots[idCount + 7].sprite = null;
+                        Debug.Log(inventoryDisplaySlots[idCount + 7].sprite);
+                    }
+                        Debug.Log(inventoryDisplaySlots[idCount + 7].sprite);
+                    inventoryDisplaySlots[ 7 + (itemsInInventory.Count - 1)].sprite = null;
+                }
                 Debug.Log(ie.Value.invEntry.itemDefinition + "Is use");
+                inventoryDisplaySlots[7 + (itemsInInventory.Count)].sprite = null;
             }
         }
 

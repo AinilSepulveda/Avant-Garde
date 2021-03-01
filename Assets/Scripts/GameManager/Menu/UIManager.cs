@@ -70,7 +70,7 @@ public class UIManager : Singleton<UIManager>
         _pauseMenu.gameObject.SetActive(currentState == GameManager.GameState.PAUSED);
         _dummyCamera.gameObject.SetActive(currentState == GameManager.GameState.PREGAME);
 
-        UnitFrame.gameObject.SetActive( currentState == GameManager.GameState.RUNNING || currentState == GameManager.GameState.PAUSED);
+        UnitFrame.gameObject.SetActive( currentState == GameManager.GameState.RUNNING);
 
         //Inventory.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);
         //panelstats.gameObject.SetActive(currentState == GameManager.GameState.RUNNING);

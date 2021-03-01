@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cooldown: 2
   costAmount: 0
-  Range: 6
+  Range: 7
   minDamage: 25
   maxDamage: 40
   criticalMultiplier: 1.5
-  criticalChange: 0.3
+  criticalChance: 0
   VariableAttack: 0
   forceToadd: 0
   isMagic: 0
