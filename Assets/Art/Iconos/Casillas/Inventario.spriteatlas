@@ -28,14 +28,16 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 41b77292c10947a4aabaf80532da878f, type: 3}
     - {fileID: 102900000, guid: 2dadb2bcb6418514b8fadb62a65b6e24, type: 3}
     - {fileID: 102900000, guid: 48f8ef65949be6143bf46834b45ae50c, type: 3}
     - {fileID: 102900000, guid: 46bd5b6dcb6a3774693b20e28428d2d3, type: 3}
-    totalSpriteSurfaceArea: 3821048
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 9ce51e200488f714aae8f9553e2171ce, type: 3}
@@ -69,5 +71,6 @@ SpriteAtlas:
   - fondo armor
   - pocion azul
   - pecho
+  m_RenderDataMap: {}
   m_Tag: Inventario
   m_IsVariant: 0
